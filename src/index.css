@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@keyframes shine {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(100%); }
+  }
+  
+  .animate-shine {
+    animation: shine 3s ease-in-out infinite;
+  }
+
+  @keyframes text-shine {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+.animate-text-shine {
+  background-size: 200% auto;
+  animation: text-shine 3s linear infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 6s ease-in-out infinite;
+}
+@keyframes text-shine {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+  
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.05); }
+  }
+  
+  .animate-text-shine {
+    background-size: 200% auto;
+    animation: text-shine 3s linear infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse-slow 6s ease-in-out infinite;
+  }
