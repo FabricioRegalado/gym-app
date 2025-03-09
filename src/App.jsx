@@ -12,7 +12,7 @@ function PrivateRoute({ element: Component, ...rest }) {
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<PrivateRoute element={Home} />} />
