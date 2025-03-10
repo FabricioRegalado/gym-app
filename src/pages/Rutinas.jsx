@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import rutinasData from '../data/rutinasData';
 import { motion } from 'framer-motion';
+import rutinasData from '../data/rutinasData';
 
 function ExpandableContent({ expanded, children }) {
   const contentRef = useRef(null);
@@ -28,38 +28,11 @@ function ExpandableContent({ expanded, children }) {
 }
 
 function Rutinas() {
-
-  useEffect(() => {
-    const handleContextMenu = (e) => e.preventDefault();
-    const handleKeyDown = (e) => {
-      if (e.key === 'PrintScreen' || (e.ctrlKey && e.key === 'p')) {
-        e.preventDefault();
-      }
-    };
-
-    const handleKeyUp = (e) => {
-      if (e.key === 'PrintScreen') {
-        navigator.clipboard.writeText('');
-        alert('Captura de pantalla deshabilitada');
-      }
-    };
-
-    document.addEventListener('contextmenu', handleContextMenu);
-    document.addEventListener('keydown', handleKeyDown);
-    document.addEventListener('keyup', handleKeyUp);
-
-    return () => {
-      document.removeEventListener('contextmenu', handleContextMenu);
-      document.removeEventListener('keydown', handleKeyDown);
-      document.removeEventListener('keyup', handleKeyUp);
-    };
-  }, []);
-
   const [expandedCard, setExpandedCard] = useState(null);
 
   const getTodayIndex = () => {
-    const today = new Date().getDay();
-    const adjustedToday = today === 0 ? 6 : today - 1;
+    const today = new Date().getDay(); // 0 (Domingo) - 6 (Sábado)
+    const adjustedToday = today === 0 ? 6 : today - 1; // Ajuste para domingo
     return adjustedToday > 4 ? 0 : adjustedToday;
   };
 
@@ -78,12 +51,14 @@ function Rutinas() {
 
   const statusStyles = {
     past: 'bg-gray-800/60 backdrop-blur-sm border border-gray-700/50 cursor-not-allowed',
-    current: 'bg-gradient-to-br from-green-700/90 via-emerald-600/90 to-cyan-500/90 border border-cyan-400/30 hover:border-cyan-300/50 cursor-pointer',
+    current:
+      'bg-gradient-to-br from-green-700/90 via-emerald-600/90 to-cyan-500/90 border border-cyan-400/30 hover:border-cyan-300/50 cursor-pointer',
     future: 'bg-amber-800/70 backdrop-blur-sm border border-amber-600/50 cursor-not-allowed'
   };
 
   return (
     <div className="relative min-h-screen bg-black text-white pb-24">
+      {/* Fondo */}
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-stripes.png')] opacity-20" />
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-emerald-900/30" />
 
@@ -98,7 +73,6 @@ function Rutinas() {
               Mis Rutinas
             </h2>
             <div className="mx-auto w-48 h-1 bg-gradient-to-r from-green-400 to-cyan-500 rounded-full my-6" />
-
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -106,7 +80,6 @@ function Rutinas() {
             >
               {`Hoy es ${rutinas[todayIndex]?.dia || 'día de descanso'}`}
             </motion.p>
-
             <div className="flex justify-center gap-4 text-sm">
               <span className="flex items-center gap-2 text-emerald-300">
                 <div className="w-2 h-2 bg-emerald-400 rounded-full" />
@@ -136,8 +109,9 @@ function Rutinas() {
                 >
                   <div
                     onClick={() => isCurrent && handleCardToggle(idx)}
-                    className={`p-6 rounded-2xl shadow-xl transition-all duration-300 relative overflow-hidden ${statusStyles[status]} 
-                      ${expandedCard === idx ? 'ring-2 ring-cyan-400/50' : ''}`}
+                    className={`p-6 rounded-2xl shadow-xl transition-all duration-300 relative overflow-hidden ${statusStyles[status]} ${
+                      expandedCard === idx ? 'ring-2 ring-cyan-400/50' : ''
+                    }`}
                   >
                     {isCurrent && (
                       <div className="absolute inset-0 opacity-20 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full animate-shine" />
@@ -173,7 +147,6 @@ function Rutinas() {
                                   {seccion.ejercicios.length} ejercicios
                                 </span>
                               </div>
-
                               <ul className="space-y-4">
                                 {seccion.ejercicios.map((ejercicio, eIdx) => (
                                   <motion.li
@@ -185,62 +158,67 @@ function Rutinas() {
                                     
                                     {ejercicio.link && (
                                       <a
-                                      href={ejercicio.link}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="inline-flex items-center gap-1 bg-cyan-600/80 hover:bg-cyan-500/90 text-white text-xs px-3 py-1 rounded-full transition-colors mt-4"
-                                    >
-                                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                      </svg>
-                                      Ejemplo
-                                    </a>
+                                        href={ejercicio.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-1 bg-cyan-600/80 hover:bg-cyan-500/90 text-white text-xs px-3 py-1 rounded-full transition-colors mb-2"
+                                      >
+                                        <svg
+                                          className="w-4 h-4"
+                                          fill="none"
+                                          stroke="currentColor"
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                                          />
+                                        </svg>
+                                        Ejemplo
+                                      </a>
                                     )}
 
-                                    <h4 className="font-bold text-cyan-300 mb-3">{ejercicio.nombre}</h4>
+                                    <h4 className="font-bold text-cyan-300 mb-3">
+                                      {ejercicio.nombre}
+                                    </h4>
 
-                                    <div className="grid grid-cols-2 gap-3 mb-4">
-                                      {ejercicio.subdivisiones ? (
-                                        ejercicio.subdivisiones.map((sub, subIdx) => (
-                                          <div key={subIdx} className="bg-black/20 p-2 rounded-lg text-center border border-cyan-400/10">
-                                            <p className="text-sm font-medium text-cyan-200">{sub.series}</p>
-                                            <p className="text-xs text-emerald-300">{sub.repeticiones}</p>
-                                          </div>
-                                        ))
-                                      ) : (
-                                        <>
-                                          <div className="bg-black/20 p-2 rounded-lg text-center border border-cyan-400/10">
-                                            <p className="text-sm text-cyan-200">Series</p>
-                                            <p className="text-emerald-300">{ejercicio.series}</p>
-                                          </div>
-                                          <div className="bg-black/20 p-2 rounded-lg text-center border border-cyan-400/10">
-                                            <p className="text-sm text-cyan-200">Reps</p>
-                                            <p className="text-emerald-300">{ejercicio.repeticiones}</p>
-                                          </div>
-                                        </>
-                                      )}
+                                    {/* Sección de Series y Reps en dos columnas */}
+                                    <div className="grid grid-cols-2 gap-4 mb-1">
+                                      <div>
+                                        <p className="text-sm text-green-400">
+                                          <strong>Series:</strong>
+                                          {ejercicio.series.map((serie, idx) => (
+                                            <span key={idx} className="block ml-4">{serie}</span>
+                                          ))}
+                                        </p>
+                                      </div>
+                                      <div>
+                                        <p className="text-sm text-amber-400">
+                                          <strong>Reps:</strong>
+                                          {ejercicio.repeticiones.map((rep, idx) => (
+                                            <span key={idx} className="block ml-4">{rep}</span>
+                                          ))}
+                                        </p>
+                                      </div>
                                     </div>
 
-                                    <div className="flex flex-wrap gap-2">
-                                      <div className="flex items-center bg-cyan-900/30 px-3 py-1 rounded-full text-sm">
-                                        <svg className="w-4 h-4 mr-1 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                        <span className="text-cyan-200">{ejercicio.descanso}</span>
-                                      </div>
-
+                                    <div className="flex flex-col gap-1 text-sm">
+                                      <p>
+                                        <span className="text-gray-500">Descanso:</span>{" "}
+                                        <span className="text-blue-300">{ejercicio.descanso}</span>
+                                      </p>
                                       {ejercicio.tecnica && (
-                                        <div className="flex items-center bg-purple-900/30 px-3 py-1 rounded-full text-sm">
-                                          <svg className="w-4 h-4 mr-1 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                          </svg>
-                                          <span className="text-purple-200">{ejercicio.tecnica}</span>
-                                        </div>
+                                        <p>
+                                          <span className="text-gray-500">Técnica:</span>{" "}
+                                          <span className="text-purple-300">{ejercicio.tecnica}</span>
+                                        </p>
                                       )}
                                     </div>
 
                                     {ejercicio.detalle && (
-                                      <p className="mt-3 text-sm text-gray-300 italic">
+                                      <p className="mt-2 text-sm text-gray-300 italic">
                                         {ejercicio.detalle}
                                       </p>
                                     )}
