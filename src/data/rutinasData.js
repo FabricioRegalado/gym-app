@@ -4,7 +4,7 @@ const rutinasData = [
   {
     dia: "Lunes",
     titulo: "Pecho - Hombro - Tríceps",
-    duracion: "?",
+    duracion: "99 min",
     tipo: "detallada",
     contenido: {
       secciones: [
@@ -102,6 +102,7 @@ const rutinasData = [
   {
     dia: "Martes",
     titulo: "Espalda - Bíceps - Trapecios",
+    duracion: "78 min",
     tipo: "detallada",
     contenido: {
       secciones: [
@@ -186,7 +187,7 @@ const rutinasData = [
   {
     dia: "Miércoles",
     titulo: "Pierna",
-    duracion: "55 min",
+    duracion: "70 min",
     tipo: "detallada",
     contenido: {
       secciones: [
@@ -347,7 +348,7 @@ const rutinasData = [
   {
     dia: "Viernes",
     titulo: "Espalda - Biceps - Trapecios",
-    duracion: "50 min",
+    duracion: "65 min",
     tipo: "detallada",
     contenido: {
       secciones: [
