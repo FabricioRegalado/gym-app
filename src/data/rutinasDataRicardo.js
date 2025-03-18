@@ -142,7 +142,7 @@ const rutinasData = [
                 repeticiones: ["Agutamos 10s + 10 reps por lado"],
                 detalle: "Control total del movimiento, los segundos se aguantan con el brazo extendido",
                 descanso: "1 minuto y medio de descanso",
-                Link: "https://youtu.be/256T3BjiUnU"
+                link: "https://youtu.be/256T3BjiUnU"
               },
               {
                 nombre: "Press Militar con mancuernas ",
