@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import rutinasData from '../data/rutinasData';
+import rutinasDataRicardo from '../data/rutinasDataRicardo';
 
 function ExpandableContent({ expanded, children }) {
   const contentRef = useRef(null);
@@ -29,6 +30,20 @@ function ExpandableContent({ expanded, children }) {
 
 function Rutinas() {
   const [expandedCard, setExpandedCard] = useState(null);
+  const [rutinas, setRutinas] = useState(rutinasData);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    try {
+      const userData = JSON.parse(sessionStorage.getItem('userData'));
+      if (userData && userData.username === 'ricardo') {
+        setRutinas(rutinasDataRicardo);
+      }
+    } catch (error) {
+      console.error('Error al obtener los datos del usuario:', error);
+      setError(error);
+    }
+  }, []);
 
   const getTodayIndex = () => {
     const today = new Date().getDay(); // 0 (Domingo) - 6 (Sábado)
@@ -37,7 +52,6 @@ function Rutinas() {
   };
 
   const todayIndex = getTodayIndex();
-  const rutinas = rutinasData;
 
   const handleCardToggle = (index) => {
     setExpandedCard(expandedCard === index ? null : index);
@@ -55,6 +69,17 @@ function Rutinas() {
       'bg-gradient-to-br from-green-700/90 via-emerald-600/90 to-cyan-500/90 border border-cyan-400/30 hover:border-cyan-300/50 cursor-pointer',
     future: 'bg-amber-800/70 backdrop-blur-sm border border-amber-600/50 cursor-not-allowed'
   };
+
+  if (error) {
+    return (
+      <div className="relative min-h-screen bg-black text-white flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold text-red-500">Ocurrió un error</h2>
+          <p className="text-lg text-gray-300 mt-4">No se pudieron cargar las rutinas. Por favor, intenta nuevamente más tarde.</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="relative min-h-screen bg-black text-white pb-24">
@@ -97,7 +122,7 @@ function Rutinas() {
           </motion.div>
 
           <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {rutinas.map((rutina, idx) => {
+            {rutinas && rutinas.map((rutina, idx) => {
               const status = getCardStatus(idx);
               const isCurrent = status === 'current';
               return (
@@ -132,7 +157,7 @@ function Rutinas() {
                     <ExpandableContent expanded={expandedCard === idx}>
                       <div className="mt-4 text-base space-y-6">
                         {rutina.tipo === "detallada" ? (
-                          rutina.contenido.secciones.map((seccion, sIdx) => (
+                          rutina.contenido.secciones && rutina.contenido.secciones.map((seccion, sIdx) => (
                             <motion.div
                               key={sIdx}
                               initial={{ opacity: 0 }}
@@ -148,7 +173,7 @@ function Rutinas() {
                                 </span>
                               </div>
                               <ul className="space-y-4">
-                                {seccion.ejercicios.map((ejercicio, eIdx) => (
+                                {seccion.ejercicios && seccion.ejercicios.map((ejercicio, eIdx) => (
                                   <motion.li
                                     key={eIdx}
                                     whileHover={{ translateX: 5 }}
@@ -189,7 +214,7 @@ function Rutinas() {
                                       <div>
                                         <p className="text-sm text-green-400">
                                           <strong>Series:</strong>
-                                          {ejercicio.series.map((serie, idx) => (
+                                          {ejercicio.series && ejercicio.series.map((serie, idx) => (
                                             <span key={idx} className="block ml-4">{serie}</span>
                                           ))}
                                         </p>
@@ -197,7 +222,7 @@ function Rutinas() {
                                       <div>
                                         <p className="text-sm text-amber-400">
                                           <strong>Reps:</strong>
-                                          {ejercicio.repeticiones.map((rep, idx) => (
+                                          {ejercicio.repeticiones && ejercicio.repeticiones.map((rep, idx) => (
                                             <span key={idx} className="block ml-4">{rep}</span>
                                           ))}
                                         </p>
@@ -229,7 +254,7 @@ function Rutinas() {
                           ))
                         ) : (
                           <ul className="space-y-3">
-                            {rutina.contenido.ejercicios.map((ej, ejIdx) => (
+                            {rutina.contenido.ejercicios && rutina.contenido.ejercicios.map((ej, ejIdx) => (
                               <li key={ejIdx} className="bg-gray-800/30 p-3 rounded-lg border border-cyan-400/10">
                                 {ej}
                               </li>
