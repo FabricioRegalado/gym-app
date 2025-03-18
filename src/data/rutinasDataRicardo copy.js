@@ -2,7 +2,7 @@
 const rutinasData = [
   {
     dia: "Lunes",
-    titulo: "Pecho - Triceps",
+    titulo: "Femoral - Hombros",
     
     tipo: "detallada",
     contenido: {
@@ -77,7 +77,75 @@ const rutinasData = [
       ]
     }
   },
-  
+  {
+    dia: "",
+    titulo: "Pecho - Triceps ",
+    
+    tipo: "detallada",
+    contenido: {
+      secciones: [
+        {
+          grupoMuscular: "Pecho",
+          ejercicios: [
+            {
+              nombre: "Peck Deck",
+              series: ["1 serie","3 series"],
+              repeticiones: ["15 reps "," 8 - 10 reps"],
+              detalle: "La serie de 15 reps es de aproximacion (peso inicial), las reps de 8-10 son pesadas ya que seran las efectivas, no olvides controlar el cierre y la apertura",
+              descanso: "2 minutos",
+              link: "https://fitcron.com/exercise/aperturas-en-maquina-pectoral/"
+            },
+            {
+              nombre: "Press de banca inclinado con barra",
+              series: ["3 series"],
+              repeticiones: ["8 - 10 reps"],
+              detalle: "Control total del movimiento, subiendo en 3s y bajando en 3s",
+              descanso: "2 minutos de descanso",
+              link: "https://eresfitness.com/press-de-banca-inclinado-con-barra/"
+            },
+            {
+              nombre: "Press de banca con mancuernas",
+              series: ["2 series","1 serie DropSet"],
+              repeticiones: ["8 - 12 reps"," 6 reps (cambiamos a un peso menor de mancuernas) + 6 reps (bajamos otro peso de mancuernas) + 8 reps a fallo"],
+              detalle: "Las 2 series de 8 - 12 reps son controladas y la serie DropSet al finalizar cada 6 reps ve por un peso menor de mancuernas",
+              descanso: "2 minutos",
+              link: "https://eresfitness.com/press-de-banca-con-mancuernas/"
+            },
+            
+          ]
+        },
+        {
+          grupoMuscular: "Triceps",
+          ejercicios: [
+            {
+              nombre: "Maneral: Triangulo o agarre en v",
+              series: ["1 serie","3 series"],
+              repeticiones: ["12 - 15  reps "," 8 - 10 reps"],
+              detalle: "La seroe de 12 - 15 reps es de aproximacion (peso inicial), las reps de 8 - 10 son pesadas ya que seran las efectivas, no olvides controlar la subida y bajada (exentrica y concentrica)",
+              descanso: "2 minutos y medio de descanso",
+              link: "https://fitcron.com/exercise/extension-vertical-en-pronacion-en-polea-alta-triceps/"
+            },
+            {
+              nombre: "Press Frances (Rompe Craneos) en banco inclinado, con mancuernas",
+              series: ["3 series"],
+              repeticiones: ["15 reps"],
+              detalle: "Control total del movimiento, trata de llegar por debajo de la cabeza",
+              descanso: "2 minutos",
+              link: "https://fitcron.com/exercise/extensiones-inclinadas-con-mancuernas-triceps/"
+            },
+            {
+              nombre: "Maneral: Cuerda en polea alta ",
+              series: ["2 series","2 series Rest Pause"],
+              repeticiones: ["8 - 10 reps"," 8 reps + 10s de descanso + 8 reps + 10s de descanso + 8 reps"],
+              detalle: "Control total del movimiento, subiendo y bajando en 2s (realiza una pausa de 3s tanto al llegar arriba como cuando estes abajo)",
+              descanso: "2 minutos",
+              link: "https://fitcron.com/exercise/extension-vertical-neutro-en-polea-alta-triceps/"
+            }
+          ]
+        }
+      ]
+    }
+  },
   {
     dia: "Martes",
     titulo: "Cuadriceps - Hombro",
