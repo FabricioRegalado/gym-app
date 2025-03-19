@@ -166,9 +166,8 @@ const rutinasData = [
     }
   },
   {
-    dia: "Jueves",
+    dia: "Miercoles",
     titulo: "Espalda - Biceps",
-    
     tipo: "detallada",
     contenido: {
       secciones: [
@@ -242,7 +241,161 @@ const rutinasData = [
     }
   },
   {
+    dia: "Jueves",
+    titulo: "Femoral - Hombro",
+    
+    tipo: "detallada",
+    contenido: {
+      secciones: [
+        {
+          grupoMuscular: "Femoral",
+          ejercicios: [
+            {
+              nombre: "Peso muerto rumano con barra",
+              series: ["4 series"],
+              repeticiones: ["8 - 12 reps controladas"],
+              detalle: "Control total del movimiento, bajando en 3s y subiendo en 3s",
+              descanso: "2 minutos",
+              link: "https://eresfitness.com/peso-muerto-rumano/"
+            },
+            {
+              nombre: "Sentadilla sumo con barra (landmine)",
+              series: ["3 series exigentes"],
+              repeticiones: ["8 - 12 reps"],
+              detalle: "Control total del movimiento, bajando en 3s y subiendo en 3s OJO: manten 2s al final de cada rep",
+              descanso: "2 minutos",
+              link: "https://eresfitness.com/sentadilla-sumo-con-barra-landmine/"
+            },
+            {
+              nombre: "Curl femoral acostado en máquina",
+              series: ["3 series exigentes"],
+              repeticiones: ["6 reps a fallo exigentes"],
+              detalle: "Control total del movimiento, bajando en 3s y subiendo en 3s OJO: Que no se levante la cadera",
+              descanso: "2 minutos",
+              link: "https://eresfitness.com/curl-femoral-acostado-en-maquina/"
+            },
+            {
+              nombre: "Bulgaras con mancuernas",
+              series: ["3 series"],
+              repeticiones: ["8 - 10 reps por pierna"],
+              detalle: "Control total del movimiento, bajando en 3s y subiendo en 3s OJO: La rodilla debe de estar recta para activar gluteos",
+              descanso: "2 minutos",
+              link: "https://emetraininguy.com/blog/f/modificar-sentadillas-b%C3%BAlgaras"
+            }
+          ]
+        },
+        {
+          grupoMuscular: "Hombro",
+          ejercicios: [
+            {
+              nombre: "Elevaciones Laterales con Mancuernas",
+              series: ["4 series"],
+              repeticiones: ["15 reps con 20/25lbs", "+ 15 reps con 10/15lbs"],
+              detalle: "Control total tanto al bajar y al subir",
+              descanso: "1 minuto y medio de descanso",
+              link: "https://eresfitness.com/elevaciones-laterales-con-mancuernas/"
+            },
+            {
+              nombre: "Maquina de hombro (agarre abierto)",
+              series: ["4 series"],
+              repeticiones: ["6-8 reps (exigentes) +", " 10 - 12 reps explocivas (2 - 3 placas menos)"],
+              detalle: "",
+              descanso: "1 minuto y medio de descanso",
+              link: "https://eresfitness.com/press-de-hombros-en-maquina/"
+            },
+            {
+              nombre: "Vuelos posteriores en poleas",
+              series: ["4 series"],
+              repeticiones: ["12-15 reps"],
+              detalle: "Lo mayor controlado posible",
+              descanso: "1 minuto y medio de descanso",
+              link: "https://eresfitness.com/aperturas-posteriores-en-polea/"
+            },
+            {
+              nombre: "Elevaciones frontales con mancuernas en banco inclinado",
+              series: ["4 series"],
+              repeticiones: ["8 reps + 8 reps explosivas"],
+              detalle: "Las primeras 8 reps son controladas y las explosivas son subiendo y bajando en 1s",
+              descanso: "1 minuto y medio de descanso",
+              link: "https://fitcron.com/exercise/elevaciones-frontales-declinadas-neutras-con-mancuernas-deltoides/"
+            }
+          ]
+        },
+        
+      ]
+    }
+  },
+  {
     dia: "Viernes",
+    titulo: "Pecho - Triceps",
+    
+    tipo: "detallada",
+    contenido: {
+      secciones: [
+        {
+          grupoMuscular: "Pecho",
+          ejercicios: [
+            {
+              nombre: "Press para pecho en máquina",
+              series: ["2 series","2 series"],
+              repeticiones: ["6 - 8 reps ","5 reps a cada brazo + 8 reps dobles"],
+              detalle: "Control total del movimiento, las primeras 2 series son pesadas y las segundas son con menor peso para trabajar las idividuales ",
+              descanso: "2 minutos y medio",
+              link: "https://fitcron.com/exercise/press-frontal-superior-en-maquina-pectoral/"
+            },
+            {
+              nombre: "Press banca inclinado con barra",
+              series: ["3 series exigentes"],
+              repeticiones: ["6 - 8reps"],
+              detalle: "Control total del movimiento, bajando en 3s y subiendo en 3s",
+              descanso: "2 minutos",
+              link: "https://eresfitness.com/press-de-banca-inclinado-con-barra/"
+            },
+            {
+              nombre: "Crossover",
+              series: ["3 series "],
+              repeticiones: ["10s isometricos + 8 reps"],
+              detalle: "Control total del movimiento, los isometricos son aguantando con los brazos extendidos",
+              descanso: "2 minutos",
+              link: "https://eresfitness.com/cruces-en-polea-alta-crossover/"
+            },
+          ]
+        },
+        {
+          grupoMuscular: "Triceps",
+          ejercicios: [
+            {
+              nombre: "Press de pecho en maquina o en banco plano con barra",
+              series: ["1 serie", "3 series"],
+              repeticiones: ["15 reps", "6-8 reps + (bajamos peso y realizamos 8-10 reps)"],
+              detalle: "Controlando el movimiento, apretando 2s al final de cada repetición",
+              descanso: "2 minutos y medio de descanso",
+              link: "https://eresfitness.com/press-de-pecho-en-maquina/"
+            },
+            {
+              nombre: "Banco inclinado con mancuernas",
+              series: ["1 serie", "3 series"],
+              repeticiones: ["6 reps", "12-15 reps"],
+              detalle: "Controlando el movimiento",
+              descanso: "2 minutos",
+              link: "https://eresfitness.com/press-de-banca-inclinado-con-mancuernas/"
+            },
+            {
+              nombre: "Cruces en polea baja",
+              series: ["3 series"],
+              repeticiones: ["8-10 reps"],
+              detalle: "Apretando 2s en cada repetición y bajando lentamente",
+              descanso: "1 minuto y medio de descanso",
+              link: "https://eresfitness.com/cruces-en-polea-baja/"
+            }
+          ]
+        },
+        
+      ]
+    }
+  },
+  {
+    dia: "Sabado",
     titulo: "Femoral - Pecho",
     
     tipo: "detallada",
@@ -314,9 +467,10 @@ const rutinasData = [
             }
           ]
         },
+        
       ]
     }
-  }
+  },
 ];
 
 export default rutinasData;
