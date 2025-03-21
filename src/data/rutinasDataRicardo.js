@@ -373,7 +373,7 @@ const rutinasData = [
               link: "https://eresfitness.com/extension-en-polea-con-cuerda-sobre-la-cabeza/"
             },
             {
-              nombre: "Maquina predicador de triceps",
+              nombre: "Maquina predicador de triceps (individual)",
               series: ["3 series"],
               repeticiones: ["Aguantamos 10s con los brazos extendidos y depues realizamos 10 reps"],
               detalle: "Individual por cada brazo",
