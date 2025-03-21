@@ -396,7 +396,7 @@ const rutinasData = [
   },
   {
     dia: "Sabado",
-    titulo: "Femoral - Pecho",
+    titulo: "Femoral - Biceps - Espalda",
     
     tipo: "detallada",
     contenido: {
