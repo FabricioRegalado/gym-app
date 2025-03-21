@@ -346,7 +346,7 @@ const rutinasData = [
             {
               nombre: "Press banca inclinado con barra",
               series: ["3 series exigentes"],
-              repeticiones: ["6 - 8reps"],
+              repeticiones: ["6 - 8 reps"],
               detalle: "Control total del movimiento, bajando en 3s y subiendo en 3s",
               descanso: "2 minutos",
               link: "https://eresfitness.com/press-de-banca-inclinado-con-barra/"
@@ -362,31 +362,31 @@ const rutinasData = [
           ]
         },
         {
-          grupoMuscular: "Triceps",
+          grupoMuscular: "Tríceps",
           ejercicios: [
             {
-              nombre: "Press de pecho en maquina o en banco plano con barra",
-              series: ["1 serie", "3 series"],
-              repeticiones: ["15 reps", "6-8 reps + (bajamos peso y realizamos 8-10 reps)"],
-              detalle: "Controlando el movimiento, apretando 2s al final de cada repetición",
-              descanso: "2 minutos y medio de descanso",
-              link: "https://eresfitness.com/press-de-pecho-en-maquina/"
+              nombre: "Maneral: Cuerda tras nuca",
+              series: ["2 series","2 series"],
+              repeticiones: ["6-8 reps", "1 + 1s, 2 + 2s (hasta llegar a 5)"],
+              detalle: "Las repeticiones de 6-8 son exigentes, las reps de 1 + 1s, 2 + 2s son con menos peso (Los segundos se aguantan con el brazo extendido)",
+              descanso: "2 de descanso",
+              link: "https://eresfitness.com/extension-en-polea-con-cuerda-sobre-la-cabeza/"
             },
             {
-              nombre: "Banco inclinado con mancuernas",
-              series: ["1 serie", "3 series"],
-              repeticiones: ["6 reps", "12-15 reps"],
-              detalle: "Controlando el movimiento",
-              descanso: "2 minutos",
-              link: "https://eresfitness.com/press-de-banca-inclinado-con-mancuernas/"
-            },
-            {
-              nombre: "Cruces en polea baja",
+              nombre: "Maquina predicador de triceps",
               series: ["3 series"],
-              repeticiones: ["8-10 reps"],
-              detalle: "Apretando 2s en cada repetición y bajando lentamente",
-              descanso: "1 minuto y medio de descanso",
-              link: "https://eresfitness.com/cruces-en-polea-baja/"
+              repeticiones: ["Aguantamos 10s con los brazos extendidos y depues realizamos 10 reps"],
+              detalle: "Individual por cada brazo",
+              descanso: "2 minutos y medio de descanso",
+              link: "https://fitcron.com/exercise/extensiones-en-pronacion-en-maquina-triceps/"
+            },
+            {
+              nombre: "Maneral: V (Triangulito)",
+              series: ["3 series"],
+              repeticiones: ["6 reps a Fallo"],
+              detalle: "Exigentes y controlando las subida y bajada (Exentrica y concentrica)",
+              descanso: "2 minutos",
+              link: "https://fitcron.com/exercise/extension-vertical-en-pronacion-en-polea-alta-triceps/"
             }
           ]
         },
