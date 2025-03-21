@@ -368,7 +368,7 @@ const rutinasData = [
               nombre: "Maneral: Cuerda tras nuca",
               series: ["2 series","2 series"],
               repeticiones: ["6-8 reps", "1 + 1s, 2 + 2s (hasta llegar a 5)"],
-              detalle: "Las repeticiones de 6-8 son exigentes, las reps de 1 + 1s, 2 + 2s son con menos peso (Los segundos se aguantan con el brazo extendido)",
+              detalle: "Las repeticiones de 6-8 son exigentes, las reps de 1 repeticion normal + 1s, 2 + 2s son con menos peso (Los segundos se aguantan con el brazo extendido)",
               descanso: "2 de descanso",
               link: "https://eresfitness.com/extension-en-polea-con-cuerda-sobre-la-cabeza/"
             },
