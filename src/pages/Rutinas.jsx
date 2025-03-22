@@ -47,8 +47,12 @@ function Rutinas() {
 
   const getTodayIndex = () => {
     const today = new Date().getDay(); // 0 (Domingo) - 6 (Sábado)
+    const userData = JSON.parse(sessionStorage.getItem('userData'));
     const adjustedToday = today === 0 ? 6 : today - 1; // Ajuste para domingo
-    return adjustedToday > 4 ? 0 : adjustedToday;
+    if (userData && userData.username === 'ricardo') {
+      return adjustedToday; // Incluye sábado para Ricardo
+    }
+    return adjustedToday > 4 ? 0 : adjustedToday; // Excluye sábado para otros usuarios
   };
 
   const todayIndex = getTodayIndex();
