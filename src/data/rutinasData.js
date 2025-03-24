@@ -44,7 +44,7 @@ const rutinasData = [
             {
               nombre: "Elevaciones Laterales con Mancuernas",
               series: ["4 series"],
-              repeticiones: ["1 rep + 1s arriba + 2 rep + 2s abajo ... Hasta llegar a 6 reps + 6s arriba"],
+              repeticiones: ["1 rep + 1s arriba + 2 rep + 2s arriba ... Hasta llegar a 6 reps + 6s arriba"],
               detalle: "Control total tanto al bajar y al subir",
               descanso: "2 minutos y medio de descanso",
               link: "https://eresfitness.com/elevaciones-laterales-con-mancuernas/"
