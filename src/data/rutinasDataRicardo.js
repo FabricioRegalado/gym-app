@@ -111,6 +111,14 @@ const rutinasData = [
               descanso: "2 minutos",
               link: "https://eresfitness.com/elevacion-de-talones-sentado/"
             },
+            {
+              nombre: "Femoral recostado",
+              series: ["3 series"],
+              repeticiones: ["12 - 15 reps"],
+              detalle: "Control total del movimiento, 1s al subir | 3s al bajar",
+              descanso: "2 minutos",
+              link: "https://eresfitness.com/curl-femoral-acostado-en-maquina/"
+            },
           ]
         },
         {
