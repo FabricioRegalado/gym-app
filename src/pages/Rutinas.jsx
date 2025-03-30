@@ -46,13 +46,13 @@ function Rutinas() {
   }, []);
 
   const getTodayIndex = () => {
-    const today = new Date().getDay(); // 0 (Domingo) - 6 (Sábado)
+    const today = new Date().getDay();
     const userData = JSON.parse(sessionStorage.getItem('userData'));
-    const adjustedToday = today === 0 ? 0 : today - 1; // Ajuste para que domingo sea lunes
+    const adjustedToday = today === 0 ? 0 : today - 1;
     if (userData && userData.username === 'ricardo') {
-      return adjustedToday; // Incluye sábado para Ricardo
+      return adjustedToday;
     }
-    return adjustedToday > 4 ? 0 : adjustedToday; // Excluye sábado para otros usuarios
+    return adjustedToday > 4 ? 0 : adjustedToday;
   };
 
   const todayIndex = getTodayIndex();
@@ -62,23 +62,22 @@ function Rutinas() {
   };
 
   const getCardStatus = (index) => {
-    const today = new Date().getDay(); // 0 (Sunday) - 6 (Saturday)
-    const adjustedToday = today === 0 ? 0 : today - 1; // Adjust Sunday to Monday
+    const today = new Date().getDay();
+    const adjustedToday = today === 0 ? 0 : today - 1;
     if (index < adjustedToday) return 'past';
     if (index === adjustedToday) return 'current';
     return 'future';
   };
 
   const statusStyles = {
-    past: 'bg-[#FFFFFF] border border-[#D9D9D9]/50 text-[#4A4A4A] cursor-not-allowed', // White for completed days
-    current:
-      'bg-[#6b9080] border border-[#56776A]/50 text-[#F9F9F9] hover:border-[#56776A]/70 cursor-pointer', // Updated green for active days
-    future: 'bg-[#9e2a2b] border border-[#7e2223]/50 text-[#FFFFFF] cursor-not-allowed' // Updated red for unavailable days with white text
+    past: 'bg-gray-100 border border-gray-300 text-gray-500 cursor-not-allowed',
+    current: 'bg-green-500 border border-green-600 text-white hover:border-green-700 cursor-pointer',
+    future: 'bg-red-500 border border-red-600 text-white cursor-not-allowed'
   };
 
   if (error) {
     return (
-      <div className="relative min-h-screen bg-black text-white flex items-center justify-center">
+      <div className="relative min-h-screen bg-gray-900 text-white flex items-center justify-center">
         <div className="text-center">
           <h2 className="text-3xl font-bold text-red-500">Ocurrió un error</h2>
           <p className="text-lg text-gray-300 mt-4">No se pudieron cargar las rutinas. Por favor, intenta nuevamente más tarde.</p>
@@ -88,10 +87,9 @@ function Rutinas() {
   }
 
   return (
-    <div className="relative min-h-screen bg-[#1A1B27] text-[#EDF2F4] pb-24"> {/* Dark background with light text */}
-      {/* Fondo */}
-      <div className="absolute inset-0 bg-[#1A1B27]" /> {/* Dark background */}
-      <div className="absolute inset-0 bg-[#2B2D42]/30" /> {/* Slight overlay */}
+    <div className="relative min-h-screen bg-gray-900 text-gray-100 pb-24">
+      <div className="absolute inset-0 bg-gray-900" />
+      <div className="absolute inset-0 bg-gray-800/30" />
 
       <div className="relative z-10 pt-10 pb-16">
         <div className="max-w-6xl mx-auto px-4">
@@ -100,28 +98,26 @@ function Rutinas() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-12"
           >
-            <h2 className="text-5xl font-extrabold text-[#2ECC71]"> {/* Green for title */}
-              Mis Rutinas
-            </h2>
-            <div className="mx-auto w-48 h-1 bg-[#2ECC71] my-6" /> {/* Green underline */}
+            <h2 className="text-5xl font-extrabold text-green-400">Mis Rutinas</h2>
+            <div className="mx-auto w-48 h-1 bg-green-400 my-6" />
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-lg text-[#ffffff] mb-4" // Muted text
+              className="text-lg text-gray-300 mb-4"
             >
               {`Hoy es ${rutinas[todayIndex]?.dia || 'día de descanso'}`}
             </motion.p>
             <div className="flex justify-center gap-4 text-sm">
-              <span className="flex items-center gap-2 text-[#6b9080]"> {/* Updated green for available days */}
-                <div className="w-2 h-2 bg-[#6b9080] rounded-full" />
+              <span className="flex items-center gap-2 text-green-400">
+                <div className="w-2 h-2 bg-green-400 rounded-full" />
                 Día actual
               </span>
-              <span className="flex items-center gap-2 text-[#9e2a2b]"> {/* Updated red for unavailable days */}
-                <div className="w-2 h-2 bg-[#9e2a2b] rounded-full animate-pulse" />
+              <span className="flex items-center gap-2 text-red-500">
+                <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
                 Próximamente
               </span>
-              <span className="flex items-center gap-2 text-[#FFFFFF]"> {/* White for completed days */}
-                <div className="w-2 h-2 bg-[#FFFFFF] rounded-full" />
+              <span className="flex items-center gap-2 text-gray-100">
+                <div className="w-2 h-2 bg-gray-100 rounded-full" />
                 Completado
               </span>
             </div>
@@ -140,30 +136,30 @@ function Rutinas() {
                 >
                   <div
                     onClick={() => isCurrent && handleCardToggle(idx)}
-                    className={`p-6 rounded-2xl shadow-xl transition-all duration-300 relative overflow-hidden ${statusStyles[status]} ${
-                      expandedCard === idx ? 'ring-2 ring-[#EDF2F4]/50' : ''
+                    className={`p-6 rounded-2xl shadow-lg transition-all duration-300 relative overflow-hidden ${statusStyles[status]} ${
+                      expandedCard === idx ? 'ring-2 ring-gray-100/50' : ''
                     }`}
                   >
                     {isCurrent && (
-                      <div className="absolute inset-0 opacity-20 bg-gradient-to-r from-transparent via-[#EDF2F4]/30 to-transparent -translate-x-full animate-shine" />
+                      <div className="absolute inset-0 opacity-20 bg-gradient-to-r from-transparent via-gray-100/30 to-transparent -translate-x-full animate-shine" />
                     )}
 
-                    <div className="flex items-center justify-between border-b border-[#8D99AE]/20 pb-3 mb-4">
+                    <div className="flex items-center justify-between border-b border-gray-600 pb-3 mb-4">
                       <div>
-                        <h3 className={`text-xl font-bold ${status === 'future' ? 'text-[#FFFFFF]' : 'text-[#2b2d42]'}`}> {/* White for future days */}
+                        <h3 className={`text-xl font-bold ${status === 'future' ? 'text-white' : 'text-gray-800'}`}>
                           {rutina.dia}
                         </h3>
-                        <p className={`text-sm mt-1 ${status === 'future' ? 'text-[#FFFFFF]' : 'text-[#2b2d42]'}`}> {/* White for future days */}
+                        <p className={`text-sm mt-1 ${status === 'future' ? 'text-white' : 'text-gray-800'}`}>
                           {rutina.titulo}
                         </p>
                       </div>
-                      <span className="text-sm bg-[#1A1B27]/30 px-3 py-1 rounded-full border border-[#8D99AE]/20">
+                      <span className="text-sm bg-gray-800/30 px-3 py-1 rounded-full border border-gray-600">
                         {rutina.duracion}
                       </span>
                     </div>
 
                     <ExpandableContent expanded={expandedCard === idx}>
-                      <div className="mt-4 text-base space-y-6 text-[#f4f4f4]"> {/* Updated text color for routine details */}
+                      <div className="mt-4 text-base space-y-6 text-gray-300">
                         {rutina.tipo === "detallada" ? (
                           rutina.contenido.secciones && rutina.contenido.secciones.map((seccion, sIdx) => (
                             <motion.div
@@ -172,11 +168,11 @@ function Rutinas() {
                               animate={{ opacity: 1 }}
                               className="group"
                             >
-                              <div className="flex items-center justify-between mb-4 pb-2 border-b border-[#8D99AE]/20">
-                                <h3 className="text-lg font-semibold text-[#ffffff]"> {/* Updated text color for body part */}
+                              <div className="flex items-center justify-between mb-4 pb-2 border-b border-gray-600">
+                                <h3 className="text-lg font-semibold text-white">
                                   {seccion.grupoMuscular}
                                 </h3>
-                                <span className="text-sm bg-[#2B2D42]/30 px-2 py-1 rounded-full">
+                                <span className="text-sm bg-gray-800/30 px-2 py-1 rounded-full">
                                   {seccion.ejercicios.length} ejercicios
                                 </span>
                               </div>
@@ -185,16 +181,16 @@ function Rutinas() {
                                   <motion.li
                                     key={eIdx}
                                     whileHover={{ translateX: 5 }}
-                                    className="bg-[#1A1B27]/50 p-4 rounded-xl border border-[#8D99AE]/10 hover:border-[#8D99AE]/20 transition-all relative"
+                                    className="bg-gray-800/50 p-4 rounded-xl border border-gray-600 hover:border-gray-500 transition-all relative"
                                   >
-                                    <div className="absolute left-0 top-0 h-full w-1 bg-[#2ECC71]" /> {/* Green accent */}
+                                    <div className="absolute left-0 top-0 h-full w-1 bg-green-400" />
                                     
                                     {ejercicio.link && (
                                       <a
                                         href={ejercicio.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-1 bg-[#2ECC71] hover:bg-[#27AE60] text-white text-xs px-3 py-1 rounded-full transition-colors mb-2"
+                                        className="inline-flex items-center gap-1 bg-green-400 hover:bg-green-500 text-white text-xs px-3 py-1 rounded-full transition-colors mb-2"
                                       >
                                         <svg
                                           className="w-4 h-4"
@@ -213,14 +209,13 @@ function Rutinas() {
                                       </a>
                                     )}
 
-                                    <h4 className="font-bold text-[#ffba08] mb-3"> {/* Light text */}
+                                    <h4 className="font-bold text-yellow-400 mb-3">
                                       {ejercicio.nombre}
                                     </h4>
 
-                                    {/* Sección de Series y Reps en dos columnas */}
                                     <div className="grid grid-cols-2 gap-4 mb-1">
                                       <div>
-                                        <p className="text-sm text-[#ffff]">
+                                        <p className="text-sm text-white">
                                           <strong>Series:</strong>
                                           {ejercicio.series && ejercicio.series.map((serie, idx) => (
                                             <span key={idx} className="block ml-4">{serie}</span>
@@ -228,7 +223,7 @@ function Rutinas() {
                                         </p>
                                       </div>
                                       <div>
-                                        <p className="text-sm text-[#ffff]">
+                                        <p className="text-sm text-white">
                                           <strong>Reps:</strong>
                                           {ejercicio.repeticiones && ejercicio.repeticiones.map((rep, idx) => (
                                             <span key={idx} className="block ml-4">{rep}</span>
@@ -239,19 +234,19 @@ function Rutinas() {
 
                                     <div className="flex flex-col gap-1 text-sm">
                                       <p>
-                                        <span className="text-[#d00000]">Descanso:</span>{" "}
-                                        <span className="text-[#EDF2F4]">{ejercicio.descanso}</span>
+                                        <span className="text-red-500">Descanso:</span>{" "}
+                                        <span className="text-gray-100">{ejercicio.descanso}</span>
                                       </p>
                                       {ejercicio.tecnica && (
                                         <p>
-                                          <span className="text-[#8D99AE]">Técnica:</span>{" "}
-                                          <span className="text-[#03071e]">{ejercicio.tecnica}</span>
+                                          <span className="text-gray-400">Técnica:</span>{" "}
+                                          <span className="text-gray-800">{ejercicio.tecnica}</span>
                                         </p>
                                       )}
                                     </div>
 
                                     {ejercicio.detalle && (
-                                      <p className="mt-2 text-sm text-[#ffff] italic">
+                                      <p className="mt-2 text-sm text-white italic">
                                         {ejercicio.detalle}
                                       </p>
                                     )}
@@ -263,7 +258,7 @@ function Rutinas() {
                         ) : (
                           <ul className="space-y-3">
                             {rutina.contenido.ejercicios && rutina.contenido.ejercicios.map((ej, ejIdx) => (
-                              <li key={ejIdx} className="bg-[#2B2D42]/30 p-3 rounded-lg border border-[#8D99AE]/10">
+                              <li key={ejIdx} className="bg-gray-800/30 p-3 rounded-lg border border-gray-600">
                                 {ej}
                               </li>
                             ))}
@@ -272,17 +267,17 @@ function Rutinas() {
                       </div>
                     </ExpandableContent>
 
-                    <div className="mt-4 pt-3 border-t border-[#8D99AE]/20">
+                    <div className="mt-4 pt-3 border-t border-gray-600">
                       {status === "current" && (
                         <motion.button
                           whileHover={{ scale: 1.05 }}
                           className="w-full flex items-center justify-between group"
                         >
-                          <span className="text-sm text-[#EDF2F4] group-hover:text-[#8D99AE]">
+                          <span className="text-sm text-gray-100 group-hover:text-gray-400">
                             {expandedCard === idx ? "Ocultar detalles" : "Mostrar detalles"}
                           </span>
                           <svg
-                            className={`w-5 h-5 text-[#EDF2F4] transform transition-transform ${expandedCard === idx ? 'rotate-180' : ''}`}
+                            className={`w-5 h-5 text-gray-100 transform transition-transform ${expandedCard === idx ? 'rotate-180' : ''}`}
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -293,7 +288,7 @@ function Rutinas() {
                       )}
 
                       {status === "future" && (
-                        <div className="flex items-center justify-center gap-2 text-[#E74C3C]">
+                        <div className="flex items-center justify-center gap-2 text-red-500">
                           <svg className="w-5 h-5 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
@@ -302,10 +297,9 @@ function Rutinas() {
                       )}
 
                       {status === "past" && (
-                        <div className="flex items-center justify-center gap-2 text-[#6b9080]"> {/* Green for completed */}
-                          {/* Added animation */}
+                        <div className="flex items-center justify-center gap-2 text-green-400">
                           <svg
-                            className="w-5 h-5 text-[#6b9080] animate-bounce"
+                            className="w-5 h-5 text-green-400 animate-bounce"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"

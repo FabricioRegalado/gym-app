@@ -3,8 +3,8 @@
 const rutinasData = [
   {
     dia: "Lunes",
-    titulo: "Pecho - Hombro - Tríceps",
-    duracion: "99 min",
+    titulo: "Pecho - Espalda",
+    duracion: "",
     tipo: "detallada",
     contenido: {
       secciones: [
@@ -12,238 +12,214 @@ const rutinasData = [
           grupoMuscular: "Pecho",
           ejercicios: [
             {
-              nombre: "Press alternado inclinado con mancuernas",
+              nombre: "Press banco plano con mancuernas",
               series: ["4 series"],
               repeticiones: [" 5 reps ","+","  8 - 12 reps "],
-              detalle: ["Las reps 5 reps son de cada brazo como en el ejemplo (dejando abajo el que no se utiliza) y las reps de 8 - 12 reps son con ambos brazos al mismo tiempo"],
-              descanso: "2 minutos",
-              link: "https://eresfitness.com/press-alternado-inclinado-con-mancuernas/"
-            },
-            {
-              nombre: "Press de banco plano con mancuernas",
-              series: ["3 series"],
-              repeticiones: ["8 - 10 reps"],
-              detalle: "Las serires son exigentes baja en 3s y sube en 1s",
+              detalle: ["Las reps 5 reps son pesadas y controlads y las reps de 8 - 12 reps son el fallo (con mancuernas mas ligeras)"],
               descanso: "2 minutos",
               link: "https://eresfitness.com/press-de-banca-con-mancuernas/"
             },
             {
+              nombre: "Press de banco inclinado con barra",
+              series: ["3 series"],
+              repeticiones: ["8 - 10 reps"],
+              detalle: "Son a fallo y controlando la subida y bajas (lo mas lento posible)",
+              descanso: "2 minutos",
+              link: "https://eresfitness.com/press-de-banca-inclinado-con-barra/"
+            },
+            {
               nombre: "Aperturas pec deck de pecho",
               series: ["4 series"],
-              repeticiones: [" 15 reps ","+"," 6 - 8 reps "],
+              repeticiones: [" 8 - 12 reps"],
               detalle:
-                "Las 12 reps son subiendo y bajando en 1s y las de 6 - 8 reps en un tempo de 3s bajando y 3s subiendo",
+                "Son subiendo y bajando en 2s y apretando 2s al final de cada repetición",
               descanso: "2 minutos",
               link: "https://eresfitness.com/aperturas-peck-deck-de-pecho/"
             }
           ]
         },
         {
-          grupoMuscular: "Hombro",
+          grupoMuscular: "Espalda",
           ejercicios: [
             {
-              nombre: "Elevaciones Laterales con Mancuernas",
-              series: ["4 series"],
-              repeticiones: ["1 rep + 1s arriba + 2 rep + 2s arriba ... Hasta llegar a 6 reps + 6s arriba"],
-              detalle: "Control total tanto al bajar y al subir",
+              nombre: "Remo con barra recta",
+              series: ["1 serie","+","4 series"],
+              repeticiones: ["12 - 15 reps","+"," 6 - fallo"],
+              detalle: "La serie de 12 - 15 reps es aproximacion y la de 6 - fallo es exigente",
               descanso: "2 minutos y medio de descanso",
-              link: "https://eresfitness.com/elevaciones-laterales-con-mancuernas/"
+              link: "https://eresfitness.com/remo-con-barra-recta/"
             },
             {
-              nombre: "Maquina de hombro (agarre cerrado)",
-              series: ["4 series"],
-              repeticiones: ["6-8 reps (exigentes) +", " 10 - 12 reps explocivas (2 - 3 placas menos)"],
-              detalle: "",
+              nombre: "Jalón Abierto Neutro en Polea Alta (cualquier maneral de ese estilo)",
+              series: ["3 series","+ DropSet"],
+              repeticiones: ["6-8 reps (exigentes) +", " 8 - fallo"],
+              detalle: "Las primeras series son pesadas y controladas, el dropset es quitarle un placa menos y realizar el ejercicios con un tempo de 1s (subir y bajar en 1s)",
               descanso: "2 minutos y medio de descanso",
-              link: "https://eresfitness.com/press-de-hombros-en-maquina/"
+              link: "https://fitcron.com/exercise/jalon-abierto-neutro-en-polea-alta-dorsal/"
             },
             {
-              nombre: "Vuelos posteriores en poleas",
+              nombre: "Jalón Aislado en Polea Alta",
               series: ["4 series"],
               repeticiones: ["10 reps + 15 reps"],
               detalle: "10 reps subiendo y bajando en 2s y 15 reps subiendo y bajando en 1s",
               descanso: "2 minutos y medio de descanso",
-              link: "https://eresfitness.com/aperturas-posteriores-en-polea/"
+              link: "https://fitcron.com/exercise/jalon-aislado-prono-supino-en-polea-alta-dorsal/"
+            },
+            {
+              nombre: "Pill over",
+              series: ["3 series"],
+              repeticiones: ["8 - 10 reps + fallo"],
+              detalle: "Ya que lograste realizar 8 - 10 reps controladas, el fallo (con el mismo peso) es subiendo y bajando en 1s",
+              descanso: "2 minutos",
+              link: "https://fitcron.com/exercise/serratos-con-cuerda-en-polea-dorsal/"
             }
           ]
         },
-        {
-          grupoMuscular: "Tríceps",
-          ejercicios: [
-            {
-              nombre: "Extensión de tríceps en máquina predicador",
-              series: ["4 series"],
-              repeticiones: ["8 - 12 reps"],
-              detalle: "Las repeticiones de 6-8 son exigentes, subiendo en 3s y bajando en 3s",
-              descanso: "2 minutos de descanso",
-              link: "https://eresfitness.com/extension-de-triceps-concentrado-en-maquina/"
-            },
-            {
-              nombre: "Rompecráneos con mancuernas",
-              series: ["3 series"],
-              repeticiones: ["15 reps"],
-              detalle: "Subiendo y bajando en 2s, controlando el movimiento",
-              descanso: "2 minutos ",
-              link: "https://eresfitness.com/rompecraneos-con-mancuernas/"
-            },
-            {
-              nombre: "Maneral: V (Triangulito)",
-              series: ["3 series"],
-              repeticiones: ["6 - 8 reps "],
-              detalle: "Exigentes y controlando las subida y bajada (Exentrica y concentrica)",
-              descanso: "2 minutos y medio",
-              link: "https://fitcron.com/exercise/extension-vertical-en-pronacion-en-polea-alta-triceps/"
-            }
-          ]
-        }
       ]
     }
   },
   {
     dia: "Martes",
-    titulo: "Espalda - Bíceps - Trapecios",
-    duracion: "78 min",
+    titulo: "Pierna (enfoque Cuadriceps)",
+    duracion: "",
     tipo: "detallada",
     contenido: {
       secciones: [
         {
-          grupoMuscular: "Espalda",
+          grupoMuscular: "Cuadriceps",
           ejercicios: [
             {
-              nombre: "Remo supino en polea baja (de pie)",
-              series: ["4 series"],
-              repeticiones: ["8-10 reps"],
-              detalle: "Control total del movimiento, apretando 2s al final de cada repetición ",
+              nombre: "Sentadilla Hack Squat",
+              series: ["1 serie","3 series"],
+              repeticiones: ["15 reps","8-10 reps"],
+              detalle: "1er serie de aproximacion, las 3 series restantes son pesadas y controladas (3s al bajar y 1s al subir)",
               descanso: "2 minutos",
-              link: "https://eresfitness.com/remo-supino-en-polea-baja-de-pie/"
+              link: "https://eresfitness.com/sentadilla-hack-squat/"
             },
             {
-              nombre: "Remo T (agarre abierto)",
-              series: ["4 series"],
-              repeticiones: ["12 reps + 8 reps"],
-              detalle: "Control total del movimiento, 12 reps subiendo y bajando en 1s y 8 reps subiendo y bajando en 3s",
-              descanso: "2 minutos de descanso",
-              link: "https://eresfitness.com/remo-en-barra-t/"
-            },
-            {
-              nombre: "Jalón al pecho a una mano incado con polea",
+              nombre: "Sissy Squat",
               series: ["3 series"],
-              repeticiones: ["10 reps"],
-              detalle: "Manteniendo 2 segundos apretando, subiendo y bajando en 3s",
-              descanso: "1 minuto y medio de descanso",
-              link: "https://eresfitness.com/jalon-al-pecho-a-una-mano-sentado-con-polea/"
+              repeticions: ["8 reps + fallo"],
+              detalle: "8 reps controladas y con peso, el fallo es sin peso ",
+              descanso: "2 minutos ",
+              link: "https://fitcron.com/exercise/sentadilla-asistida-con-mancuerna-pierna/"
             },
-            
             {
-              nombre: "Encogimientos en maquina smith (agarre abierto)",
-              series: ["4 series"],
-              repeticiones: ["12 - 15 reps"],
-              detalle: "Control total del movimientom, apretando 2s al final de cada repetición y bajando en 4s",
-              descanso: "1 minuto y medio de descanso",
-              link: "https://eresfitness.com/encogimiento-de-hombros-en-maquina-smith-agarre-abierto/"
-            },
-            
-          ]
-        },
-        {
-          grupoMuscular: "Bíceps",
-          ejercicios: [
-            {
-              nombre: "Curl con barra Z (agarre abierto)",
+              nombre: "Extension de cuadriceps",
               series: ["3 series"],
-              repeticiones: ["8 - 10 reps"],
-              detalle: "Control total del movimiento, apretando 2s en la parte de arriba y bajando en 3s",
-              descanso: "1 minuto y medio de descanso",
-              link: "https://eresfitness.com/curl-con-barra-z-agarre-abierto/"
+              repeticiones: ["8 - fallo"],
+              detalle: "Subir en 1s y bajar en 3s, el fallo puedes realizarlo en 1s al subir y bajar",
+              descanso: "2 minutos",
+              link: "https://eresfitness.com/extension-de-piernas-en-maquina/"
             },
             {
-              nombre: "Curl Bayesian",
+              nombre: "Desplantes caminando",
               series: ["3 series"],
-              repeticiones: ["8 - 10 reps por cada brazo"],
-              detalle: "Control total del movimiento, apretando 2s al final de cada repetición y bajando en 3s",
-              descanso: "1 minuto y medio de descanso",
-              link: "https://www.endomondo.com/exercise/bayesian-curl"
+              repeticiones: ["24 pasos"],
+              detalle: "Baja en 3s y sube en 1s, manteniendo el equilibrio",
+              descanso: "2 minutos",
+              link: "https://eresfitness.com/zancadas-con-mancuernas-caminando/"
             },
             {
-              nombre: " Curl concentrado en máquina predicador ",
+              nombre: "Pantorrillas (maquina costurera)",
+              series: ["3 series"],
+              repeticiones: ["10 - fallo"],
+              detalle: "Baja en 3s y sube en 1s, manteniendo el control",
+              descanso: "1 minuto y medio de descanso",
+              link: "https://fitcron.com/exercise/extension-de-gemelos-sentado-en-maquina-pierna/"
+            },
+            {
+              nombre: "Femoral acostado",
               series: ["3 series"],
               repeticiones: ["15 reps"],
-              detalle: "Control total del movimiento, subiendo en 2s y bajando en 2s",
-              descanso: "2 minutos y medio de descanso",
-              link: "https://eresfitness.com/curl-concentrado-en-maquina/"
-            }
+              detalle: "Baja en 3s y sube en 1s, manteniendo el control",
+              descanso: "2 minutos",
+              link: "https://fitcron.com/exercise/curl-femoral-horizontal-en-maquina-pierna/"
+            },
           ]
-        }
+        },
       ]
     }
   },
   {
     dia: "Miércoles",
-    titulo: "Pierna",
-    duracion: "70 min",
+    titulo: "Hombro - Brazo",
+    duracion: "",
     tipo: "detallada",
     contenido: {
       secciones: [
         {
-          grupoMuscular: "Pierna",
+          grupoMuscular: "Hombro",
           ejercicios: [
             {
-              nombre: "Sentadilla Smith  / Sentadilla Libre",
+              nombre: "Press Militar con mancuernas",
               series: ["1 serie", "3 series"],
-              repeticiones: ["15 reps", "8 - 10 reps"],
-              detalle: "Control total del movimiento, bajando en 3s y subiendo en 1s",
-              descanso: "2 minutos y medio de descanso",
-              link: "https://www.tiktok.com/@raeskevi/video/7474044553851391278?is_from_webapp=1&sender_device=pc&web_id=7468014344346781189"
+              repeticiones: ["15 reps", "6 - 8 reps"],
+              detalle: "1er serie de aproximacion, las 3 series restantes son pesadas y controladas (3s al bajar y 1s al subir), puedes rematar con un pequeño dropset en la ultima serie",
+              descanso: "2 minutos ",
+              link: "https://eresfitness.com/press-militar-con-mancuernas-o-barra/"
             },
             {
-              nombre: "Extension de cuadriceps",
-              series: ["3 series","1 serie"],
-              repeticiones: ["8 - 10 reps "," 8 reps + fallo "],
-              detalle: "Todas las ejecuciones son controladas, subiendo en 1s bajando en 3s, la ultima serie que es a fallo su movimiento es 1s tanto al subir como al bajar",
-              descanso: "2 minutos",
-              link: "https://eresfitness.com/extension-de-piernas-en-maquina/"
-            },
-            {
-              nombre: "Sissy Squat",
+              nombre: "Vuelos laterales",
               series: ["4 series"],
-              repeticiones: ["8-10 reps + fallo"],
-              detalle: "La ejecución de las 8 - 10 reps es bajando en 2s subiendo en 1s y el fallo es subiendo y bajando en 1s",
+              repeticiones: ["8 - 10 reps "," 10 reps + fallo "],
+              detalle: " Las 8 - 10 reps son pesadas y controladas, el fallo es con un peso menor pero subiendo y bajando en 1s",
               descanso: "2 minutos",
-              link: "https://www.youtube.com/shorts/bSQk0EpgeZ4?feature=share"
+              link: "https://eresfitness.com/elevaciones-laterales-con-mancuernas/"
             },
             {
-              nombre: "Pantorrilla en maquina costurera",
+              nombre: "Remo a la barbilla con barra",
               series: ["3 series"],
-              repeticiones: ["20 reps"],
-              detalle: "Control total del movimiento, manteniendo 2s arriba y bajando lentamente",
+              repeticiones: ["12 - 15 reps"],
+              detalle: "Sube en 2a y baja en 3s, realiza fallo con el mismo peso pero en 1s",
               descanso: "2 minutos",
-              link: "https://eresfitness.com/elevacion-de-talones-sentado/"
+              link: "https://eresfitness.com/remo-al-cuello-con-polea-baja/"
             },
             {
-              nombre: "Curl de femoral acostado",
-              series: ["4 series"],
-              repeticiones: ["6 reps a fallo"],
-              detalle: "Control total del movimiento y bajando lo mas lentamente posible",
-              descanso: "1 minuto y medio de descanso",
-              link: "https://eresfitness.com/curl-femoral-acostado-en-maquina/"
-            },
-            {
-              nombre: "Peso muerto rumano con mancuernas",
+              nombre: "Vuelos laterales individual (recargado en un pilar)",
               series: ["3 series"],
-              repeticiones: ["12 reps"],
-              detalle: "Control total del movimiento",
-              descanso: "1 minuto y medio de descanso",
-              link: "https://fitcron.com/exercise/peso-muerto-rumano-con-mancuernas-pierna/"
+              repeticiones: ["8 - 10 reps"],
+              detalle: "Control total del movimiento, aguantando 2s arriba y bajando en 3s",
+              descanso: "2 minutos",
+              link: "https://eresfitness.com/elevaciones-laterales-con-mancuernas/"
+            },          
+          ]
+        },
+        {
+          grupoMuscular: "Bicep - Tricep Biseries (realiza uno y uno)",
+          ejercicios: [
+            {
+              nombre: "Curl predicador con barra z",
+              series: ["3 series"],
+              repeticiones: ["8 - fallo"],
+              detalle: "Subes en 1s sostienes 2s y bajas en 3s",
+              descanso: "2 minutos ",
+              link: "https://eresfitness.com/curl-de-biceps-en-banco-scott/"
             },
             {
-              nombre: "Abductores",
-              series: ["4 series"],
-              repeticiones: ["Aguantamos 10s + 6 reps a fallo"],
-              detalle: "Exigentes (los segundos se aguantan con las piernas cerradas)",
-              descanso: "1 minuto y medio de descanso",
-              link: "https://eresfitness.com/aductores-en-maquina/"
+              nombre: "Rompe Craneos con barra z",
+              series: ["3 series"],
+              repeticiones: [" 6 - 8 reps + fallo"],
+              detalle: " Las 6 - 8 reps son controladas (3s al bajar, 2s al subir) y el fallo se realiza en 1s ambos movimientos",
+              descanso: "2 minutos",
+              link: "https://eresfitness.com/press-frances-con-polea-baja/"
             },
-            
+            {
+              nombre: "Curl con barra z (agarre prono)",
+              series: ["3 series"],
+              repeticiones: ["10 reps + 10s + 10 reps"],
+              detalle: "Las 10 reps son subiendo y bajando en 2s y los segundos se mantienen a medias",
+              descanso: "2 minutos",
+              link: "https://eresfitness.com/curl-de-biceps-invertido-con-barra/"
+            },
+            {
+              nombre: "Pata unilateral en polea alta",
+              series: ["3 series"],
+              repeticiones: ["12 - 15 reps"],
+              detalle: "Bajas en 3s, aprietas 2s, subes en 3s y sostienes 2s",
+              descanso: "2 minutos",
+              link: "https://eresfitness.com/extension-de-triceps-a-una-mano-en-polea-agarre-cuerda/"
+            },          
           ]
         }
       ]
