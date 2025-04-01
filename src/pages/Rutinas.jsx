@@ -230,7 +230,7 @@ function Rutinas() {
                                 )}
                                 {ejercicio.detalle && (
                                   <p className="text-xs mt-1 text-gray-300 italic">
-                                    {ejercicio.detalle}
+                                    <strong className="text-cyan-300">Detalle:</strong> {ejercicio.detalle}
                                   </p>
                                 )}
                               </motion.li>

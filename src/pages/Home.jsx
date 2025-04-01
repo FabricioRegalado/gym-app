@@ -11,7 +11,7 @@ function Home() {
   const workoutDays = [
     { 
       id: 1, 
-      src: 'images/gym1.jpg', 
+      src: './images/gym1.jpg', 
       title: 'Lunes: Pecho / Espalda',
       description: 'Press plano, inclinado y declinado'
     },

@@ -14,8 +14,11 @@ const rutinasData = [
             {
               nombre: "Press banco plano con mancuernas",
               series: ["4 series"],
-              repeticiones: [" 5 reps ","----------","  8 - 12 reps "],
-              detalle: ["Las reps 5 reps son pesadas y controlads y las reps de 8 - 12 reps son el fallo (con mancuernas mas ligeras)"],
+              repeticiones: ["5 reps", "----------", "8 - 12 reps"],
+              detalle: [
+                "Las 5 reps son pesadas y controladas.",
+                "Las 8 - 12 reps son al fallo (con mancuernas más ligeras)."
+              ],
               descanso: "2 minutos",
               link: "https://eresfitness.com/press-de-banca-con-mancuernas/"
             },
@@ -23,16 +26,19 @@ const rutinasData = [
               nombre: "Press de banco inclinado con barra",
               series: ["3 series"],
               repeticiones: ["8 - 10 reps"],
-              detalle: "Son a fallo y controlando la subida y bajas (lo mas lento posible)",
+              detalle: [
+                "Son a fallo y controlando la subida y bajada (lo más lento posible)."
+              ],
               descanso: "2 minutos",
               link: "https://eresfitness.com/press-de-banca-inclinado-con-barra/"
             },
             {
               nombre: "Aperturas pec deck de pecho",
               series: ["4 series"],
-              repeticiones: [" 8 - 12 reps"],
-              detalle:
-                "Son subiendo y bajando en 2s y apretando 2s al final de cada repetición",
+              repeticiones: ["8 - 12 reps"],
+              detalle: [
+                "Subiendo y bajando en 2s y apretando 2s al final de cada repetición."
+              ],
               descanso: "2 minutos",
               link: "https://eresfitness.com/aperturas-peck-deck-de-pecho/"
             }
@@ -43,17 +49,23 @@ const rutinasData = [
           ejercicios: [
             {
               nombre: "Remo con barra recta",
-              series: ["1 serie","----------","4 series"],
-              repeticiones: ["12 - 15 reps","+"," 6 - fallo"],
-              detalle: "La serie de 12 - 15 reps es aproximacion y la de 6 - fallo es exigente",
+              series: ["1 serie", "----------", "4 series"],
+              repeticiones: ["12 - 15 reps", "+", "6 - fallo"],
+              detalle: [
+                "La serie de 12 - 15 reps es de aproximación.",
+                "La de 6 - fallo es exigente."
+              ],
               descanso: "2 minutos y medio de descanso",
               link: "https://eresfitness.com/remo-con-barra-recta/"
             },
             {
-              nombre: "Jalón Abierto Neutro en Polea Alta (cualquier maneral de ese estilo)",
-              series: ["3 series","+ DropSet"],
-              repeticiones: ["6-8 reps (exigentes) +", " 8 - fallo"],
-              detalle: "Las primeras series son pesadas y controladas, el dropset es quitarle un placa menos y realizar el ejercicios con un tempo de 1s (subir y bajar en 1s)",
+              nombre: "Jalón Abierto Neutro en Polea Alta",
+              series: ["3 series", "+ DropSet"],
+              repeticiones: ["6-8 reps (exigentes)", "+", "8 - fallo"],
+              detalle: [
+                "Las primeras series son pesadas y controladas.",
+                "El dropset es con una placa menos y tempo de 1s (subir y bajar en 1s)."
+              ],
               descanso: "2 minutos y medio de descanso",
               link: "https://fitcron.com/exercise/jalon-abierto-neutro-en-polea-alta-dorsal/"
             },
@@ -61,20 +73,26 @@ const rutinasData = [
               nombre: "Jalón Aislado en Polea Alta",
               series: ["4 series"],
               repeticiones: ["10 reps + 15 reps"],
-              detalle: "10 reps subiendo y bajando en 2s y 15 reps subiendo y bajando en 1s",
+              detalle: [
+                "10 reps subiendo y bajando en 2s.",
+                "15 reps subiendo y bajando en 1s."
+              ],
               descanso: "2 minutos y medio de descanso",
               link: "https://fitcron.com/exercise/jalon-aislado-prono-supino-en-polea-alta-dorsal/"
             },
             {
-              nombre: "Pill over",
+              nombre: "Pull over",
               series: ["3 series"],
               repeticiones: ["8 - 10 reps + fallo"],
-              detalle: "Ya que lograste realizar 8 - 10 reps controladas, el fallo (con el mismo peso) es subiendo y bajando en 1s",
+              detalle: [
+                "Realiza 8 - 10 reps controladas.",
+                "El fallo es con el mismo peso, subiendo y bajando en 1s."
+              ],
               descanso: "2 minutos",
               link: "https://fitcron.com/exercise/serratos-con-cuerda-en-polea-dorsal/"
             }
           ]
-        },
+        }
       ]
     }
   },
@@ -90,25 +108,34 @@ const rutinasData = [
           ejercicios: [
             {
               nombre: "Sentadilla Hack Squat",
-              series: ["1 serie"," --------- ","3 series"],
-              repeticiones: ["15 reps"," --------- ","8-10 reps"],
-              detalle: "1er serie de aproximacion, las 3 series restantes son pesadas y controladas (3s al bajar y 1s al subir)",
+              series: ["1 serie", "---------", "3 series"],
+              repeticiones: ["15 reps", "---------", "8-10 reps"],
+              detalle: [
+                "1er serie de aproximación.",
+                "Las 3 series restantes son pesadas y controladas (3s al bajar y 1s al subir)."
+              ],
               descanso: "2 minutos",
               link: "https://eresfitness.com/sentadilla-hack-squat/"
             },
             {
               nombre: "Sissy Squat",
               series: ["3 series"],
-              repeticions: ["8 reps + fallo"],
-              detalle: "8 reps controladas y con peso, el fallo es sin peso ",
-              descanso: "2 minutos ",
+              repeticiones: ["8 reps + fallo"],
+              detalle: [
+                "8 reps controladas y con peso.",
+                "El fallo es sin peso."
+              ],
+              descanso: "2 minutos",
               link: "https://fitcron.com/exercise/sentadilla-asistida-con-mancuerna-pierna/"
             },
             {
-              nombre: "Extension de cuadriceps",
+              nombre: "Extensión de cuadriceps",
               series: ["3 series"],
               repeticiones: ["8 - fallo"],
-              detalle: "Subir en 1s y bajar en 3s, el fallo puedes realizarlo en 1s al subir y bajar",
+              detalle: [
+                "Subir en 1s y bajar en 3s.",
+                "El fallo puedes realizarlo en 1s al subir y bajar."
+              ],
               descanso: "2 minutos",
               link: "https://eresfitness.com/extension-de-piernas-en-maquina/"
             },
@@ -116,15 +143,19 @@ const rutinasData = [
               nombre: "Desplantes caminando",
               series: ["3 series"],
               repeticiones: ["24 pasos"],
-              detalle: "Baja en 3s y sube en 1s, manteniendo el equilibrio",
+              detalle: [
+                "Baja en 3s y sube en 1s, manteniendo el equilibrio."
+              ],
               descanso: "2 minutos",
               link: "https://eresfitness.com/zancadas-con-mancuernas-caminando/"
             },
             {
-              nombre: "Pantorrillas (maquina costurera)",
+              nombre: "Pantorrillas (máquina costurera)",
               series: ["3 series"],
               repeticiones: ["10 - fallo"],
-              detalle: "Baja en 3s y sube en 1s, manteniendo el control",
+              detalle: [
+                "Baja en 3s y sube en 1s, manteniendo el control."
+              ],
               descanso: "1 minuto y medio de descanso",
               link: "https://fitcron.com/exercise/extension-de-gemelos-sentado-en-maquina-pierna/"
             },
@@ -132,12 +163,14 @@ const rutinasData = [
               nombre: "Femoral acostado",
               series: ["3 series"],
               repeticiones: ["15 reps"],
-              detalle: "Baja en 3s y sube en 1s, manteniendo el control",
+              detalle: [
+                "Baja en 3s y sube en 1s, manteniendo el control."
+              ],
               descanso: "2 minutos",
               link: "https://fitcron.com/exercise/curl-femoral-horizontal-en-maquina-pierna/"
-            },
+            }
           ]
-        },
+        }
       ]
     }
   },
