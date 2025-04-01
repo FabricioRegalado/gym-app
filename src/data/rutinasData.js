@@ -14,7 +14,7 @@ const rutinasData = [
             {
               nombre: "Press banco plano con mancuernas",
               series: ["4 series"],
-              repeticiones: [" 5 reps ","+","  8 - 12 reps "],
+              repeticiones: [" 5 reps ","----------","  8 - 12 reps "],
               detalle: ["Las reps 5 reps son pesadas y controlads y las reps de 8 - 12 reps son el fallo (con mancuernas mas ligeras)"],
               descanso: "2 minutos",
               link: "https://eresfitness.com/press-de-banca-con-mancuernas/"
@@ -43,7 +43,7 @@ const rutinasData = [
           ejercicios: [
             {
               nombre: "Remo con barra recta",
-              series: ["1 serie","+","4 series"],
+              series: ["1 serie","----------","4 series"],
               repeticiones: ["12 - 15 reps","+"," 6 - fallo"],
               detalle: "La serie de 12 - 15 reps es aproximacion y la de 6 - fallo es exigente",
               descanso: "2 minutos y medio de descanso",
@@ -90,8 +90,8 @@ const rutinasData = [
           ejercicios: [
             {
               nombre: "Sentadilla Hack Squat",
-              series: ["1 serie","3 series"],
-              repeticiones: ["15 reps","8-10 reps"],
+              series: ["1 serie"," --------- ","3 series"],
+              repeticiones: ["15 reps"," --------- ","8-10 reps"],
               detalle: "1er serie de aproximacion, las 3 series restantes son pesadas y controladas (3s al bajar y 1s al subir)",
               descanso: "2 minutos",
               link: "https://eresfitness.com/sentadilla-hack-squat/"
@@ -227,7 +227,7 @@ const rutinasData = [
   },
   {
     dia: "Jueves",
-    titulo: "Pecho - Hombro - Triceps",
+    titulo: "Pecho - Espalda - Biceps",
     duracion: "75 min",
     tipo: "detallada",
     contenido: {
@@ -236,27 +236,27 @@ const rutinasData = [
           grupoMuscular: "Pecho",
           ejercicios: [
             {
-              nombre: "Press de pecho en maquina ",
-              series: ["3 series", "3 series"],
-              repeticiones: ["10 - 15 reps"," 8 - fallo"],
-              detalle: "Controlando el movimiento, bajando en 3s y subes en 1s, el fallo se realiza subiendo y bajando en 1s",
+              nombre: "Press en banco inclinado con barra",
+              series: ["1 serie", "2 series", "1 serie"],
+              repeticiones: ["15 reps"," 8 - fallo","DropSet de 6 reps c/u"],
+              detalle: "Primer bloque controlada (subiendo y bajando en 2s), segundo bloque pesado y controlado (3s al bajar y 1s al subir) y el dropset es quitarle un disco menos y realizar el ejercicios con un tempo de 1s (subir y bajar en 1s)",
               descanso: "2 minutos y medio de descanso",
               link: "https://fitcron.com/exercise/press-frontal-inferior-en-maquina-pectoral/"
             },
             {
-              nombre: "Banco inclinado con mancuernas (cerrado)",
+              nombre: "Banco banco plano con mancuernas",
               series: ["4 series"],
-              repeticiones: ["12 - 15 reps"],
+              repeticiones: ["8 resps - fallo"],
               detalle: "Controlando el movimiento, bajando en 3s y subiendo en 1s",
-              descanso: "1 minuto y medio de descanso",
+              descanso: "1 minuto y medio ",
               link: "https://fitcron.com/exercise/press-cerrado-neutro-con-mancuernas-pectoral/"
             },
             {
               nombre: "Cruces en poleas",
-              series: ["3 series","1 serie"],
-              repeticiones: ["8 - 12 reps"," 8 reps + fallo "],
-              detalle: "Apretando en 1s y bajando en 3s, la ultima serie que es a fallo su movimiento es 1s tanto al subir como al bajar",
-              descanso: "1 minuto y medio de descanso",
+              series: ["3 series"],
+              repeticiones: ["10 reps + 10 reps (apuntando para abajow)"],
+              detalle: "Primero se trabajan 10 reps comunes y le sumamos 10 reps pero apuntando para abajo (esto es para trabajar la parte superior del pectoral)",
+              descanso: "1 minuto y medio ",
               link: "https://fitcron.com/exercise/aperturas-con-bandas-pectoral/"
             }
           ]
@@ -266,25 +266,25 @@ const rutinasData = [
           ejercicios: [
             {
               nombre: "Elevaciones Laterales",
-              series: ["4 series"],
+              series: ["3 series"],
               repeticiones: ["15 - 20 reps"],
-              detalle: "Control total del movimiento, mantenemos 2s arriba y bajamos en 3s",
-              descanso: "1 minuto y medio de descanso",
+              detalle: "Control total del movimiento, mantenemos 2s arriba y bajamos en 3s (puedes rematar en cada serie con un cambio de mancuernas menos pesadas y sacar fallo)",
+              descanso: "2 minutos",
               Link: "https://eresfitness.com/elevaciones-laterales-con-mancuernas/"
             },
             {
-              nombre: "Press Militar con mancuernas ",
+              nombre: "Press para hombro en maquina (agarre abierto)",
               series: ["3 series"],
               repeticiones: ["8 reps + fallo "],
-              detalle: "Control total del movimiento, las explosivas son subiendo y bajando en 1s",
+              detalle: "Las 8 reps son bajando en 3s y subiendo en 1s, ya que sientas que estas por llegar al fallo, cambia el tempo a 1s al bajar y subir",
               descanso: "2 minutos",
               link: "https://eresfitness.com/press-militar-con-mancuernas-o-barra/"
             },
             {
-              nombre: [ " | SERIE COMPUESTA | Elevaciones Laterales con Mancuernas + Elevaciones frontales con mancuernas "],
-              series: ["4 series"],
-              repeticiones: [" 15 reps para ambos ejercicios "],
-              detalle: "Control total de movimiento, bajando en 2s y subiendo en 2s, (ambos ejercicios se realizan en la misma serie, no hay descanso hasta culminar ambos ejercicios)",
+              nombre: [ " Vuelos Posteriores  "],
+              series: ["3 series"],
+              repeticiones: [" 15 reps  "],
+              detalle: "Subir y bajar en 3s, agrega 2s isometricos cuando realices el vuelo (aguantar arriba)",
               descanso: "2 minuto y medio",
               link: "https://eresfitness.com/elevaciones-laterales-con-mancuernas/"
               
@@ -295,26 +295,26 @@ const rutinasData = [
           grupoMuscular: "Tríceps",
           ejercicios: [
             {
-              nombre: "Extensión de triceps con mancuernas acostado (agarre prono)",
-              series: ["4 series"],
-              repeticiones: ["12 - 15 reps "],
-              detalle: "Las repeticiones de realizan bajando en 3s y subiendo en 3s (peso neutro)",
-              descanso: "2 de descanso",
+              nombre: "Extension de triceps tras nuca (con cuerda)",
+              series: ["3 series"],
+              repeticiones: ["6 - 8 reps"],
+              detalle: "Tempo: baja en 2s aguantas 3s, subes en 2s y aguantas estirando 2s",
+              descanso: "2 minutos",
               link: "https://eresfitness.com/extension-de-triceps-con-mancuernas-acostado-agarre-prono/"
             },
             {
-              nombre: "Extensión de tríceps predicador en máquina",
+              nombre: "Maquna predicador de triceps",
               series: ["3 series"],
-              repeticiones: ["Aguantamos 10s con los brazos extendidos y depues realizamos 10 reps"],
-              detalle: "Control total del movimiento, bajando en 3s y subiendo en 3s",
+              repeticiones: [" 6 reps - fallo"],
+              detalle: "Peso exigente para que a duras penas saques las 6 reps, baja y sube en 2s",
               descanso: "2 minutos",
               link: "https://eresfitness.com/extension-de-triceps-concentrado-en-maquina/"
             },
             {
-              nombre: "Extensión de tríceps en polea (agarre supino)",
-              series: ["4 series"],
-              repeticiones: ["8 - 15 reps"],
-              detalle: "Exigentes y controlando las subida y bajada (Exentrica | concentrica) y muñecas siempre rectas",
+              nombre: "Extension de triceps unilateral en polea alta",
+              series: ["3 series"],
+              repeticiones: ["10 - 12 reps"],
+              detalle: "Te colocas como si fueras a ejecturar la cuerdita para triceps, pero esta es a una sola mano, controla el moviemiento, tempo: 3s al bajar y 3s al subir",
               descanso: "2 minutos",
               link: "https://eresfitness.com/extension-de-triceps-en-polea-agarre-supino/"
             },
@@ -325,7 +325,7 @@ const rutinasData = [
   },
   {
     dia: "Viernes",
-    titulo: "Espalda - Biceps - Trapecios",
+    titulo: "Femoral - Hombros - Triceps",
     duracion: "65 min",
     tipo: "detallada",
     contenido: {
@@ -396,6 +396,32 @@ const rutinasData = [
             }
           ]
         }
+      ]
+    }
+  },
+  {
+    dia: "Sábado",
+    titulo: "Descanso Activo",
+    duracion: "30 min",
+    tipo: "general",
+    contenido: {
+      ejercicios: [
+        "Estiramientos dinámicos",
+        "Caminata ligera",
+        "Yoga o movilidad"
+      ]
+    }
+  },
+  {
+    dia: "Domingo",
+    titulo: "Día de Descanso",
+    duracion: "",
+    tipo: "general",
+    contenido: {
+      ejercicios: [
+        "Relajación",
+        "Meditación",
+        "Preparación para la semana"
       ]
     }
   }

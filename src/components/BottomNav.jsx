@@ -15,8 +15,8 @@ function BottomNav() {
     const isActive = location.pathname === path;
     return `flex items-center justify-center w-14 h-14 rounded-xl transition-all ${
       isActive 
-        ? 'bg-gradient-to-r from-green-400 to-cyan-400 shadow-lg shadow-cyan-400/20'
-        : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/30 hover:shadow-md hover:shadow-cyan-400/10'
+        ? 'bg-gradient-to-br from-emerald-400/90 to-cyan-400/90 shadow-lg shadow-cyan-400/20'
+        : 'bg-gray-800/20 text-gray-300 hover:bg-gray-700/20 hover:shadow-md hover:shadow-cyan-400/10'
     }`;
   };
 
@@ -32,31 +32,50 @@ function BottomNav() {
 
   return (
     <motion.nav
-      initial={{ y: 100, opacity: 0 }}
+      initial={{ y: 20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
-      className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-gray-900/80 backdrop-blur-lg border border-emerald-400/20 rounded-2xl px-4 py-2 z-50 shadow-2xl shadow-emerald-400/20"
+      transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+      className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-gray-900/60 backdrop-blur-xl border border-gray-700/30 rounded-xl px-3 py-1.5 z-50 shadow-2xl shadow-black/40"
     >
-      <div className="flex space-x-3">
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+      <div className="flex gap-2">
+        <motion.div 
+          whileHover={{ scale: 1.05 }} 
+          whileTap={{ scale: 0.95 }}
+          className="relative"
+        >
           <Link to="/" className={navItemClasses('/')}>
-            <HomeIcon className={`h-7 w-7 ${location.pathname === '/' ? 'text-black' : 'text-current'}`} />
+            <HomeIcon className={`h-6 w-6 ${location.pathname === '/' ? 'text-gray-900' : 'text-gray-300'}`} />
+            {location.pathname === '/' && (
+              <div className="absolute -top-1.5 w-1.5 h-1.5 bg-emerald-400 rounded-full" />
+            )}
           </Link>
         </motion.div>
 
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+        <motion.div 
+          whileHover={{ scale: 1.05 }} 
+          whileTap={{ scale: 0.95 }}
+          className="relative"
+        >
           <Link to="/rutinas" className={navItemClasses('/rutinas')}>
-            <FireIcon className={`h-7 w-7 ${location.pathname === '/rutinas' ? 'text-black' : 'text-current'}`} />
+            <FireIcon className={`h-6 w-6 ${location.pathname === '/rutinas' ? 'text-gray-900' : 'text-gray-300'}`} />
+            {location.pathname === '/rutinas' && (
+              <div className="absolute -top-1.5 w-1.5 h-1.5 bg-cyan-400 rounded-full" />
+            )}
           </Link>
         </motion.div>
 
         {isAuthenticated() && (
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <motion.div 
+            whileHover={{ scale: 1.05 }} 
+            whileTap={{ scale: 0.95 }}
+            className="relative"
+          >
             <button 
               onClick={handleLogout}
-              className="flex items-center justify-center w-14 h-14 rounded-xl bg-gray-800/50 text-red-400 hover:bg-gradient-to-r hover:from-red-500 hover:to-pink-500 hover:text-white transition-all group"
+              className="flex items-center justify-center w-14 h-14 rounded-xl bg-gray-800/20 text-red-400/80 hover:bg-red-500/20 hover:text-red-300 transition-all group"
             >
-              <ArrowRightOnRectangleIcon className="h-7 w-7 group-hover:scale-110 transition-transform" />
+              <ArrowRightOnRectangleIcon className="h-6 w-6 group-hover:scale-110 transition-transform" />
+              <div className="absolute -top-1.5 w-1.5 h-1.5 bg-red-400/80 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
             </button>
           </motion.div>
         )}
