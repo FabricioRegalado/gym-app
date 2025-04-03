@@ -1,5 +1,23 @@
 @import "tailwindcss";
 @import 'swiper/css/bundle';
+
+@layer base {
+  /* Prevenir selección de texto */
+  body {
+    @apply select-none;
+  }
+
+  /* Bloquear arrastre de imágenes */
+  img {
+    @apply pointer-events-none;
+  }
+
+  /* Efecto anti-captura en contenido sensible */
+  .secure-content {
+    @apply backdrop-blur-sm;
+  }
+}
+
 @keyframes shine {
     from { transform: translateX(-100%); }
     to { transform: translateX(100%); }

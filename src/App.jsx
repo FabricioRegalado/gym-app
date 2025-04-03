@@ -12,23 +12,49 @@ function PrivateRoute({ element: Component, ...rest }) {
 
 function App() {
   useEffect(() => {
-    const preventScreenshot = () => {
-      if (document.visibilityState === 'hidden') {
-        document.body.style.display = 'none';
-      } else {
-        document.body.style.display = 'block';
+    const preventActions = (e) => {
+      e.preventDefault();
+    };
+
+    // Bloquear capturas con combinaciones de teclas
+    const blockKeyCombinations = (e) => {
+      if (e.ctrlKey && (e.key === 'p' || e.key === 's')) {
+        e.preventDefault();
       }
     };
 
-    document.addEventListener('visibilitychange', preventScreenshot);
+    // Overlay de seguridad al cambiar pestaña/app
+    const handleVisibilityChange = () => {
+      const overlay = document.getElementById('security-overlay');
+      if (document.visibilityState === 'hidden') {
+        overlay?.classList.remove('hidden');
+      } else {
+        overlay?.classList.add('hidden');
+      }
+    };
+
+    // Event listeners
+    document.addEventListener('contextmenu', preventActions); // Bloquear clic derecho
+    document.addEventListener('keydown', blockKeyCombinations); // Bloquear atajos
+    document.addEventListener('visibilitychange', handleVisibilityChange); // Detectar cambio de app
 
     return () => {
-      document.removeEventListener('visibilitychange', preventScreenshot);
+      document.removeEventListener('contextmenu', preventActions);
+      document.removeEventListener('keydown', blockKeyCombinations);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
   }, []);
 
   return (
     <Router basename="/gym-app">
+      {/* Overlay de seguridad */}
+      <div
+        id="security-overlay"
+        className="hidden fixed inset-0 bg-black/90 z-[9999] flex items-center justify-center text-white text-xl"
+      >
+        ¡Contenido protegido contra capturas!
+      </div>
+
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<PrivateRoute element={Home} />} />
