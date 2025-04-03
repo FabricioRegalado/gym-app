@@ -303,7 +303,7 @@ const rutinasData = [
               repeticiones: ["8 - 10 reps"],
               detalle: "Control total del movimiento, mantenemos 2s arriba y bajamos en 3s (puedes rematar con repeticiones explosivas)",
               descanso: "2 minutos",
-              Link: "https://eresfitness.com/elevaciones-laterales-con-mancuernas/"
+              link: "https://eresfitness.com/remo-con-barra-recta/"
             },
             {
               nombre: "Pull Over (Cuerdita para espalda)",
@@ -311,7 +311,7 @@ const rutinasData = [
               repeticiones: ["8 reps + fallo "],
               detalle: "Las 8 reps son lentas y controladas, el fallo metes explocividad pero con el mismo peso",
               descanso: "2 minutos",
-              link: "https://eresfitness.com/press-militar-con-mancuernas-o-barra/"
+              link: "https://www.simplyfitness.com/es/pages/rope-pulldown"
             },
             {
               nombre: [ " Remo individual con mancuerna + dobles"],
@@ -319,8 +319,7 @@ const rutinasData = [
               repeticiones: [" 10 reps + fallo "],
               detalle: "Primero trabajamos los jalones individuales y despues tomamos el par de mancuernas para trabajar a fallo dobles",
               descanso: "2 minuto y medio",
-              link: "https://eresfitness.com/elevaciones-laterales-con-mancuernas/"
-              
+              link: "https://eresfitness.com/remo-con-mancuerna-unilateral/"
             },
           ]
         },
@@ -333,7 +332,7 @@ const rutinasData = [
               repeticiones: ["10 reps"],
               detalle: "Los brazos inician en forma de martillo y cuando vas subiendo rotas la muñeca, (aprieta 2s arriba / carga pesada)",
               descanso: "2 minutos",
-              link: "https://eresfitness.com/extension-de-triceps-con-mancuernas-acostado-agarre-prono/"
+              link: "https://eresfitness.com/curl-alternado-con-mancuerna/"
             },
             {
               nombre: "Curl Spider (agarre invertido)",
@@ -341,7 +340,7 @@ const rutinasData = [
               repeticiones: [" 6 reps + 6s sosteniendo + 6 reps"],
               detalle: "Te colocas en el banco incliando acostado boca abajo, y con la barra z junto con los brazos colgando ejecutas el curl, cuando sostengas los brazos deben de quedar a medias, no olvides que debes de estirar el brazo completo sin mover el codo",
               descanso: "2 minutos",
-              link: "https://eresfitness.com/extension-de-triceps-concentrado-en-maquina/"
+              link: "https://fitcron.com/exercise/curl-spider-en-pronacion-con-barra-biceps/"
             },
             
           ]
