@@ -55,7 +55,7 @@ function Login() {
         loggedIn: new Date().toISOString()
       }));
 
-      navigate('/', { replace: true });
+      navigate('/', { replace: true, state: { username: foundUser.username } });
     } else {
       setError('Credenciales inválidas');
       setPassword('');

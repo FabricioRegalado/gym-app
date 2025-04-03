@@ -261,7 +261,7 @@ const rutinasData = [
   {
     dia: "Jueves",
     titulo: "Pecho - Espalda - Biceps",
-    duracion: "75 min",
+    duracion: "",
     tipo: "detallada",
     contenido: {
       secciones: [
@@ -295,29 +295,29 @@ const rutinasData = [
           ]
         },
         {
-          grupoMuscular: "Hombro",
+          grupoMuscular: "Espalda",
           ejercicios: [
             {
-              nombre: "Elevaciones Laterales",
-              series: ["3 series"],
-              repeticiones: ["15 - 20 reps"],
-              detalle: "Control total del movimiento, mantenemos 2s arriba y bajamos en 3s (puedes rematar en cada serie con un cambio de mancuernas menos pesadas y sacar fallo)",
+              nombre: "Remo libre(agarre abierto)",
+              series: ["4 series"],
+              repeticiones: ["8 - 10 reps"],
+              detalle: "Control total del movimiento, mantenemos 2s arriba y bajamos en 3s (puedes rematar con repeticiones explosivas)",
               descanso: "2 minutos",
               Link: "https://eresfitness.com/elevaciones-laterales-con-mancuernas/"
             },
             {
-              nombre: "Press para hombro en maquina (agarre abierto)",
+              nombre: "Pull Over (Cuerdita para espalda)",
               series: ["3 series"],
               repeticiones: ["8 reps + fallo "],
-              detalle: "Las 8 reps son bajando en 3s y subiendo en 1s, ya que sientas que estas por llegar al fallo, cambia el tempo a 1s al bajar y subir",
+              detalle: "Las 8 reps son lentas y controladas, el fallo metes explocividad pero con el mismo peso",
               descanso: "2 minutos",
               link: "https://eresfitness.com/press-militar-con-mancuernas-o-barra/"
             },
             {
-              nombre: [ " Vuelos Posteriores  "],
+              nombre: [ " Remo individual con mancuerna + dobles"],
               series: ["3 series"],
-              repeticiones: [" 15 reps  "],
-              detalle: "Subir y bajar en 3s, agrega 2s isometricos cuando realices el vuelo (aguantar arriba)",
+              repeticiones: [" 10 reps + fallo "],
+              detalle: "Primero trabajamos los jalones individuales y despues tomamos el par de mancuernas para trabajar a fallo dobles",
               descanso: "2 minuto y medio",
               link: "https://eresfitness.com/elevaciones-laterales-con-mancuernas/"
               
@@ -325,32 +325,25 @@ const rutinasData = [
           ]
         },
         {
-          grupoMuscular: "Tríceps",
+          grupoMuscular: "Biceps",
           ejercicios: [
             {
-              nombre: "Extension de triceps tras nuca (con cuerda)",
-              series: ["3 series"],
-              repeticiones: ["6 - 8 reps"],
-              detalle: "Tempo: baja en 2s aguantas 3s, subes en 2s y aguantas estirando 2s",
+              nombre: "Curl individual con mancuerna (con rotacion)",
+              series: ["4 series"],
+              repeticiones: ["10 reps"],
+              detalle: "Los brazos inician en forma de martillo y cuando vas subiendo rotas la muñeca, (aprieta 2s arriba / carga pesada)",
               descanso: "2 minutos",
               link: "https://eresfitness.com/extension-de-triceps-con-mancuernas-acostado-agarre-prono/"
             },
             {
-              nombre: "Maquna predicador de triceps",
-              series: ["3 series"],
-              repeticiones: [" 6 reps - fallo"],
-              detalle: "Peso exigente para que a duras penas saques las 6 reps, baja y sube en 2s",
+              nombre: "Curl Spider (agarre invertido)",
+              series: ["4 series"],
+              repeticiones: [" 6 reps + 6s sosteniendo + 6 reps"],
+              detalle: "Te colocas en el banco incliando acostado boca abajo, y con la barra z junto con los brazos colgando ejecutas el curl, cuando sostengas los brazos deben de quedar a medias, no olvides que debes de estirar el brazo completo sin mover el codo",
               descanso: "2 minutos",
               link: "https://eresfitness.com/extension-de-triceps-concentrado-en-maquina/"
             },
-            {
-              nombre: "Extension de triceps unilateral en polea alta",
-              series: ["3 series"],
-              repeticiones: ["10 - 12 reps"],
-              detalle: "Te colocas como si fueras a ejecturar la cuerdita para triceps, pero esta es a una sola mano, controla el moviemiento, tempo: 3s al bajar y 3s al subir",
-              descanso: "2 minutos",
-              link: "https://eresfitness.com/extension-de-triceps-en-polea-agarre-supino/"
-            },
+            
           ]
         }
       ]
