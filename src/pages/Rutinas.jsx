@@ -71,13 +71,27 @@ function Rutinas() {
   const cardVariants = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
-    hover: { y: -3, borderColor: '#60a5fa' }
+    hover: { y: -3, borderColor: '#60a5fa', scale: 1.02 },
+    exit: { opacity: 0, y: 20 }
+  };
+
+  const sectionVariants = {
+    initial: { opacity: 0, x: -20 },
+    animate: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: 20 }
+  };
+
+  const listItemVariants = {
+    initial: { opacity: 0, scale: 0.95 },
+    animate: { opacity: 1, scale: 1 },
+    hover: { scale: 1.05 },
+    exit: { opacity: 0, scale: 0.95 }
   };
 
   const statusStyles = {
     past: 'bg-gray-800 border-2 border-gray-700/50 text-gray-400 cursor-not-allowed',
     current: 'bg-gray-900 border-2 border-blue-500/80 hover:border-blue-400 text-white hover:shadow-2xl cursor-pointer',
-    future: 'bg-gray-900 border-2 border-red-500/50 text-gray-500 cursor-not-allowed'
+    future: 'bg-gray-900 border-2 border-teal-500/50 text-gray-500 cursor-not-allowed'
   };
 
   if (error) {
@@ -102,18 +116,18 @@ function Rutinas() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
+          <h2 className="text-5xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400">
             Plan de Entrenamiento
           </h2>
-          <div className="mx-auto w-48 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 my-6 rounded-full" />
+          <div className="mx-auto w-48 h-1 bg-gradient-to-r from-blue-400 to-teal-400 my-6 rounded-full" />
           
           <div className="flex justify-center gap-6 text-sm">
             <span className="flex items-center gap-2 font-medium">
-              <div className="w-3 h-3 bg-blue-500 rounded-full ring-2 ring-blue-300" />
+              <div className="w-3 h-3 bg-blue-400 rounded-full ring-2 ring-blue-300" />
               Día actual
             </span>
             <span className="flex items-center gap-2 font-medium">
-              <div className="w-3 h-3 bg-red-500 rounded-full ring-2 ring-red-300 animate-pulse" />
+              <div className="w-3 h-3 bg-teal-400 rounded-full ring-2 ring-teal-300 animate-pulse" />
               Próximamente
             </span>
             <span className="flex items-center gap-2 font-medium">
@@ -134,6 +148,7 @@ function Rutinas() {
                 variants={cardVariants}
                 initial="initial"
                 animate="animate"
+                exit="exit"
                 whileHover={isCurrent ? "hover" : {}}
                 transition={{ 
                   delay: idx * 0.1,
@@ -161,8 +176,10 @@ function Rutinas() {
                       rutina.contenido.secciones.map((seccion, sIdx) => (
                         <motion.div
                           key={sIdx}
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
+                          variants={sectionVariants}
+                          initial="initial"
+                          animate="animate"
+                          exit="exit"
                           transition={{ delay: 0.2 * sIdx }}
                         >
                           <div className="flex items-center justify-between mb-4 pb-2 border-b border-gray-700">
@@ -175,7 +192,11 @@ function Rutinas() {
                             {seccion.ejercicios.map((ejercicio, eIdx) => (
                               <motion.li
                                 key={eIdx}
-                                whileHover={{ scale: 1.02 }}
+                                variants={listItemVariants}
+                                initial="initial"
+                                animate="animate"
+                                whileHover="hover"
+                                exit="exit"
                                 className="relative p-4 rounded-lg border border-gray-700 bg-gray-900/50 backdrop-blur-sm"
                               >
                                 <div className="absolute left-0 top-0 h-full w-1 bg-blue-500 rounded-l" />
@@ -184,7 +205,7 @@ function Rutinas() {
                                     href={ejercicio.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-1 bg-gradient-to-r from-green-400 to-cyan-400 hover:from-green-300 hover:to-cyan-300 text-black text-xs px-3 py-1 rounded-full transition-all mb-2 font-bold"
+                                    className="inline-flex items-center gap-1 bg-gradient-to-r from-blue-400 to-teal-400 hover:from-blue-300 hover:to-teal-300 text-black text-xs px-3 py-1 rounded-full transition-all mb-2 font-bold"
                                   >
                                     Ejemplo
                                   </a>
@@ -192,7 +213,7 @@ function Rutinas() {
                                 <h4 className="font-bold text-blue-300 mb-3">{ejercicio.nombre}</h4>
                                 <div className="grid grid-cols-2 gap-4 mb-1 text-xs text-gray-200">
                                   <div>
-                                    <strong className="text-cyan-300">Series:</strong>
+                                    <strong className="text-teal-300">Series:</strong>
                                     <br />
                                     {Array.isArray(ejercicio.series) ? (
                                       ejercicio.series.map((serie, idx) => (
@@ -206,7 +227,7 @@ function Rutinas() {
                                     )}
                                   </div>
                                   <div>
-                                    <strong className="text-cyan-300">Reps:</strong>
+                                    <strong className="text-teal-300">Reps:</strong>
                                     <br />
                                     {Array.isArray(ejercicio.repeticiones) ? (
                                       ejercicio.repeticiones.map((rep, idx) => (
@@ -221,16 +242,16 @@ function Rutinas() {
                                   </div>
                                 </div>
                                 <p className="text-xs text-gray-400">
-                                  <strong className="text-cyan-300">Descanso:</strong> {ejercicio.descanso}
+                                  <strong className="text-teal-300">Descanso:</strong> {ejercicio.descanso}
                                 </p>
                                 {ejercicio.tecnica && (
                                   <p className="text-xs mt-1 text-gray-400">
-                                    <strong className="text-cyan-300">Técnica:</strong> {ejercicio.tecnica}
+                                    <strong className="text-teal-300">Técnica:</strong> {ejercicio.tecnica}
                                   </p>
                                 )}
                                 {ejercicio.detalle && (
                                   <p className="text-xs mt-1 text-gray-300 italic">
-                                    <strong className="text-cyan-300">Detalle:</strong> {ejercicio.detalle}
+                                    <strong className="text-teal-300">Detalle:</strong> {ejercicio.detalle}
                                   </p>
                                 )}
                               </motion.li>
@@ -241,12 +262,17 @@ function Rutinas() {
                     ) : (
                       <ul className="space-y-2">
                         {rutina.contenido.ejercicios.map((ej, ejIdx) => (
-                          <li 
-                            key={ejIdx} 
+                          <motion.li
+                            key={ejIdx}
+                            variants={listItemVariants}
+                            initial="initial"
+                            animate="animate"
+                            whileHover="hover"
+                            exit="exit"
                             className="p-3 rounded-md border border-gray-700 bg-gray-900/50 text-sm font-medium hover:bg-gray-800/50 transition-colors"
                           >
                             {ej}
-                          </li>
+                          </motion.li>
                         ))}
                       </ul>
                     )}
@@ -256,7 +282,7 @@ function Rutinas() {
                 <div className="mt-4 pt-3 border-t border-gray-700">
                   <span className={`text-xs font-bold ${
                     status === 'current' ? 'text-blue-400' :
-                    status === 'future' ? 'text-red-400' :
+                    status === 'future' ? 'text-teal-400' :
                     'text-gray-500'
                   }`}>
                     {status === "current" && "▶ EN PROGRESO"}

@@ -89,7 +89,7 @@ function Login() {
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-center text-3xl font-bold text-emerald-400"
+          className="text-center text-3xl font-bold text-blue-400"
         >
           Inicia Sesión
         </motion.h1>
@@ -103,7 +103,7 @@ function Login() {
             <label className="block text-gray-300 mb-1 font-medium">Usuario</label>
             <input
               type="text"
-              className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-600 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500 text-white placeholder-gray-500 outline-none"
+              className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-500 outline-none"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               placeholder="Tu usuario"
@@ -120,7 +120,7 @@ function Login() {
             <label className="block text-gray-300 mb-1 font-medium">Contraseña</label>
             <input
               type="password"
-              className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-600 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500 text-white placeholder-gray-500 outline-none"
+              className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-600 focus:border-teal-500 focus:ring-2 focus:ring-teal-500 text-white placeholder-gray-500 outline-none"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••"
@@ -146,7 +146,7 @@ function Login() {
           >
             <button
               type="submit"
-              className="w-full py-3 rounded-xl bg-emerald-500 text-black font-bold shadow-lg hover:shadow-emerald-500/20 hover:scale-[1.02] transition-all duration-300"
+              className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-500 to-teal-500 text-black font-bold shadow-lg hover:shadow-blue-500/20 hover:scale-[1.02] transition-all duration-300"
             >
               Entrar
             </button>
@@ -160,13 +160,13 @@ function Login() {
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 0.2 }}
           transition={{ duration: 1.5, delay: 0.5 }}
-          className="absolute top-16 left-16 w-52 h-52 bg-emerald-400/20 blur-3xl rounded-full"
+          className="absolute top-16 left-16 w-52 h-52 bg-blue-400/20 blur-3xl rounded-full"
         />
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 0.2 }}
           transition={{ duration: 1.5, delay: 0.8 }}
-          className="absolute bottom-16 right-16 w-52 h-52 bg-blue-400/20 blur-3xl rounded-full"
+          className="absolute bottom-16 right-16 w-52 h-52 bg-teal-400/20 blur-3xl rounded-full"
         />
       </div>
     </div>
