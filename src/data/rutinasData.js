@@ -274,7 +274,7 @@ const rutinasData = [
               repeticiones: ["15 reps"," 8 - fallo","DropSet de 6 reps c/u"],
               detalle: "Primer bloque controlada (subiendo y bajando en 2s), segundo bloque pesado y controlado (3s al bajar y 1s al subir) y el dropset es quitarle un disco menos y realizar el ejercicios con un tempo de 1s (subir y bajar en 1s)",
               descanso: "2 minutos y medio de descanso",
-              link: "https://fitcron.com/exercise/press-frontal-inferior-en-maquina-pectoral/"
+              link: "https://eresfitness.com/press-de-banca-inclinado-con-barra/"
             },
             {
               nombre: "Banco banco plano con mancuernas",
