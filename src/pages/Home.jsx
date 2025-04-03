@@ -43,6 +43,16 @@ function Home({
     ),
   };
 
+  // Determinar saludo dinámico en español
+  const getSaludo = () => {
+    const hora = new Date().getHours();
+    if (hora >= 6 && hora < 12) return "Buenos días";
+    if (hora >= 12 && hora < 18) return "Buenas tardes";
+    return "Buenas noches";
+  };
+
+  const saludo = getSaludo();
+
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-start bg-black text-white overflow-hidden">
       {/* Fondo mejorado con animación sutil */}
@@ -69,7 +79,7 @@ function Home({
           transition={{ duration: 0.6 }}
           className="text-center mb-8 backdrop-blur-sm bg-white/5 rounded-2xl p-6 border border-white/10 shadow-xl"
         >
-          <h1 className="text-xl font-medium text-gray-300 tracking-wider">Good Morning,</h1>
+          <h1 className="text-xl font-medium text-gray-300 tracking-wider">{saludo},</h1>
           <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent mt-1 tracking-tight">
             {username}
           </h2>

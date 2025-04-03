@@ -35,7 +35,7 @@ function BottomNav() {
       initial={{ y: 20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-      className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-gray-900/60 backdrop-blur-xl border border-gray-700/30 rounded-xl px-3 py-1.5 z-50 shadow-2xl shadow-black/40"
+      className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-gray-900/60 backdrop-blur-xl border border-gray-700/30 rounded-xl px-3 py-1.5 z-50 shadow-2xl shadow-black/40 sm:bottom-2"
     >
       <div className="flex gap-2">
         <motion.div 

@@ -108,7 +108,7 @@ function Rutinas() {
   }
 
   return (
-    <div className="min-h-screen relative pb-24 bg-gray-950 text-white px-4">
+    <div className="min-h-screen relative pb-32 bg-gray-950 text-white px-4 sm:pb-36">
       <div className="relative z-10 pt-12 pb-16 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
