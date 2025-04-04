@@ -356,68 +356,90 @@ const rutinasData = [
     contenido: {
       secciones: [
         {
-          grupoMuscular: "Espalda",
+          grupoMuscular: "Femoral",
           ejercicios: [
             {
-              nombre: "Jalón individual en polea alta (incado)",
+              nombre: "Peso muerto con mancuernas",
               series: ["4 series"],
-              repeticiones: ["8-10 reps"],
-              detalle: "Control total del movimiento, apretando 2s al final de cada repetición (colocar el maneral que utilizamos para pecho)",
+              repeticiones: ["6 reps individuales + fallo dobles"],
+              detalle: "Controla la bajada lentamente al igual que la subida",
               descanso: "1 minuto y medio de descanso",
-              link: "https://eresfitness.com/jalon-al-pecho-a-una-mano-sentado-con-polea/"
+              link: "https://fitcron.com/exercise/peso-muerto-rumano-con-mancuernas-pierna/"
             },
             {
-              nombre: "Remo T (agarre abierto)",
+              nombre: "Maquina de femoral acostado",
               series: ["4 series"],
-              repeticiones: ["8 - 10 reps"],
+              repeticiones: ["8 - 10 reps + fallo explosivas"],
               detalle: "Control total del movimiento, apretando 2s al final de cada repetición y bajando en 3s",
               descanso: "2 minutos de descanso",
-              link: "https://eresfitness.com/remo-en-barra-t/"
+              link: "https://eresfitness.com/curl-femoral-acostado-en-maquina/"
             },
             {
-              nombre: "Pull over con barrita",
+              nombre: "Bulgaras",
               series: ["3 series"],
-              repeticiones: ["8 reps a fallo"],
-              detalle: "Manteniendo 2 segundos siempre apretando",
-              descanso: "1 minuto y medio de descanso",
-              link: "https://www.simplyfitness.com/es/pages/rope-pulldown"
+              repeticiones: ["21´s"],
+              detalle: "7 con dos mancuernas, 7 con una mancuerna y 7 sin peso",
+              descanso: "2 minutos y medio",
+              link: "https://eresfitness.com/sentadilla-bulgara-sin-equipo/"
             },
-            {
-              nombre: "Remo con el maneral amplio de agarre neutro",
-              series: ["3 series","1 serie DropSet"],
-              repeticiones: ["6 - 8 reps", "6 reps (bajamos una placa) + 6 reps (bajamos otra placa) + 8 reps a fallo"],
-              detalle: "Control total del movimientom, apretando 2s al final de cada repetición y bajando en 3s",
-              descanso: "2 minutos y medio de descanso",
-              link: "https://templodelfitness.com/ejercicios/espalda/espalda-polea/como-hacer-remo-con-agarre-abierto-en-polea/"
-            },
+            
           ]
         },
         {
-          grupoMuscular: "Bíceps",
+          grupoMuscular: "Hombros",
           ejercicios: [
             {
-              nombre: "Curl predicador con barra z",
+              nombre: "Press con mancuernas para hombro",
+              series: ["4 series"],
+              repeticiones: ["10 reps + fallo explosivo"],
+              detalle: "las 10 reps son pesadas y controladas, el fallo es explosivo con el mismo peso",
+              descanso: "2 minutos",
+              link: "https://eresfitness.com/press-militar-con-mancuernas-o-barra/"
+            },
+            {
+              nombre: "Vuelos laterales con mancuernas",
+              series: ["4 series"],
+              repeticiones: ["15 a 20 reps"],
+              detalle: "Cuando ya sientas que llegas al fallo, realizalas explosivas",
+              descanso: "1 minuto y medio de descanso",
+              link: "https://eresfitness.com/elevaciones-laterales-con-mancuernas/"
+            },
+            {
+              nombre: "Vuelos posteriores en poleas",
               series: ["3 series"],
+              repeticiones: ["15 reps + fallo "],
+              detalle: "Control total del movimiento y fallo explosivo",
+              descanso: "1 minuto y medio de descanso",
+              link: "https://eresfitness.com/aperturas-posteriores-en-polea/"
+            }
+          ]
+        },
+        {
+          grupoMuscular: "Tricpes",
+          ejercicios: [
+            {
+              nombre: "Jalon tras nuca en polea alta con cuerda",
+              series: ["4 series"],
               repeticiones: ["8 - 10 reps"],
-              detalle: "Control total del movimiento, apretando 2s al final de cada repetición y bajando en 3s",
-              descanso: "1 minuto y medio de descanso",
-              link: "https://fitcron.com/exercise/curl-en-supinacion-abierto-en-banco-scott-con-barra-z-biceps/"
+              detalle: "Bajando y estirando en 3s",
+              descanso: "2 minutos",
+              link: "https://eresfitness.com/extension-en-polea-con-cuerda-sobre-la-cabeza/"
             },
             {
-              nombre: "Curl Bayesian",
-              series: ["3 series"],
-              repeticiones: ["8 - 10 reps por cada brazo"],
-              detalle: "Control total del movimiento, apretando 2s al final de cada repetición y bajando en 3s",
+              nombre: "Triangulo para triceps",
+              series: ["4 series"],
+              repeticiones: ["12 - 15 reps"],
+              detalle: "Realiza el movimiento, subiendo y bajando en 2s",
               descanso: "1 minuto y medio de descanso",
-              link: "https://www.endomondo.com/exercise/bayesian-curl"
+              link: "https://eresfitness.com/extensiones-de-triceps-con-agarre-en-v-en-polea/"
             },
             {
-              nombre: "Curl de bíceps con barra z ",
+              nombre: "Cuerda para triceps (a una mano)",
               series: ["3 series"],
-              repeticiones: ["12-15 reps + 10s al terminar las reps"],
-              detalle: "Control total del movimiento",
+              repeticiones: ["15 reps + fallo "],
+              detalle: "Realiza el movimiento, subiendo y bajando en 1|s",
               descanso: "1 minuto y medio de descanso",
-              link: "https://eresfitness.com/curl-con-barra-z/"
+              link: "https://eresfitness.com/extension-de-triceps-a-una-mano-en-polea-agarre-cuerda/"
             }
           ]
         }
