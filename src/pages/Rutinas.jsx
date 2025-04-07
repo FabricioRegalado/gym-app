@@ -137,7 +137,13 @@ function Rutinas() {
           </div>
         </motion.div>
 
-        <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div
+          className={`grid gap-6`}
+          style={{
+            gridTemplateColumns: `repeat(auto-fit, minmax(300px, 1fr))`,
+            alignItems: 'start',
+          }}
+        >
           {rutinas && rutinas.map((rutina, idx) => {
             const status = getCardStatus(idx);
             const isCurrent = status === 'current';
@@ -211,48 +217,23 @@ function Rutinas() {
                                   </a>
                                 )}
                                 <h4 className="font-bold text-blue-300 mb-3">{ejercicio.nombre}</h4>
-                                <div className="grid grid-cols-2 gap-4 mb-1 text-xs text-gray-200">
-                                  <div>
-                                    <strong className="text-teal-300">Series:</strong>
-                                    <br />
-                                    {Array.isArray(ejercicio.series) ? (
-                                      ejercicio.series.map((serie, idx) => (
-                                        <span key={idx}>
-                                          {serie}
-                                          <br />
-                                        </span>
-                                      ))
-                                    ) : (
-                                      <span>{ejercicio.series}</span>
-                                    )}
-                                  </div>
-                                  <div>
-                                    <strong className="text-teal-300">Reps:</strong>
-                                    <br />
-                                    {Array.isArray(ejercicio.repeticiones) ? (
-                                      ejercicio.repeticiones.map((rep, idx) => (
-                                        <span key={idx}>
-                                          {rep}
-                                          <br />
-                                        </span>
-                                      ))
-                                    ) : (
-                                      <span>{ejercicio.repeticiones}</span>
-                                    )}
-                                  </div>
+                                <div className="flex flex-wrap gap-4 mb-4 text-xs text-gray-200">
+                                  {ejercicio.series && ejercicio.series.map((serie, idx) => (
+                                    <div key={idx} className="flex items-center gap-2">
+                                      <span className="font-semibold text-teal-300">{serie.descripcion}:</span>
+                                      <span>{serie.cantidad} - {serie.repeticiones}</span>
+                                    </div>
+                                  ))}
                                 </div>
-                                <p className="text-xs text-gray-400">
-                                  <strong className="text-teal-300">Descanso:</strong> {ejercicio.descanso}
+                                <p className="text-xs text-gray-400 mb-3">
+                                  <strong className="text-teal-300">Descanso:</strong> {ejercicio.descanso || "No especificado"}
                                 </p>
-                                {ejercicio.tecnica && (
-                                  <p className="text-xs mt-1 text-gray-400">
-                                    <strong className="text-teal-300">Técnica:</strong> {ejercicio.tecnica}
-                                  </p>
-                                )}
-                                {ejercicio.detalle && (
-                                  <p className="text-xs mt-1 text-gray-300 italic">
-                                    <strong className="text-teal-300">Detalle:</strong> {ejercicio.detalle}
-                                  </p>
+                                {ejercicio.detalle && Array.isArray(ejercicio.detalle) && (
+                                  <ul className="text-xs mt-2 text-gray-300 italic list-disc pl-5 space-y-1">
+                                    {ejercicio.detalle.map((detalle, idx) => (
+                                      <li key={idx}>{detalle}</li>
+                                    ))}
+                                  </ul>
                                 )}
                               </motion.li>
                             ))}
