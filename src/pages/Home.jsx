@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiActivity, FiArrowRight } from 'react-icons/fi';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import rutinasData from '../data/rutinasData';
 import rutinasDataRicardo from '../data/rutinasDataRicardo';
+import rutinasDataWendy from '../data/rutinasDataWendy'; // Importar rutinas de Wendy
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -12,13 +13,18 @@ function Home({
   profileImageUrl = "https://images.unsplash.com/photo-1576678927484-cc907957088c?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   backgroundImageUrl = "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
 }) {
-  const location = useLocation();
   const navigate = useNavigate();
-  const username = location.state?.username || 'Usuario';
+
+  // Recuperar datos del usuario desde sessionStorage
+  const userData = JSON.parse(sessionStorage.getItem('userData'));
+  const username = userData?.username || 'Usuario';
 
   // Obtener rutinas según el usuario
-  const userData = JSON.parse(sessionStorage.getItem('userData'));
-  const rutinas = userData?.username === 'ricardo' ? rutinasDataRicardo : rutinasData;
+  const rutinas = userData?.username === 'ricardo'
+    ? rutinasDataRicardo
+    : userData?.username === 'wendy'
+    ? rutinasDataWendy
+    : rutinasData;
 
   // Obtener el día actual
   const todayIndex = new Date().getDay() === 0 ? 0 : new Date().getDay() - 1;

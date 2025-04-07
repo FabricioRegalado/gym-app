@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import rutinasData from '../data/rutinasData';
 import rutinasDataRicardo from '../data/rutinasDataRicardo';
+import rutinasDataWendy from '../data/rutinasDataWendy'; // Import Wendy's data
 
 function ExpandableContent({ expanded, children }) {
   const contentRef = useRef(null);
@@ -40,8 +41,12 @@ function Rutinas() {
   useEffect(() => {
     try {
       const userData = JSON.parse(sessionStorage.getItem('userData'));
-      if (userData && userData.username === 'ricardo') {
-        setRutinas(rutinasDataRicardo);
+      if (userData) {
+        if (userData.username === 'ricardo') {
+          setRutinas(rutinasDataRicardo);
+        } else if (userData.username === 'wendy') {
+          setRutinas(rutinasDataWendy);
+        }
       }
     } catch (error) {
       console.error('Error al obtener los datos del usuario:', error);
@@ -229,9 +234,11 @@ function Rutinas() {
                                   <strong className="text-teal-300">Descanso:</strong> {ejercicio.descanso || "No especificado"}
                                 </p>
                                 {ejercicio.detalle && Array.isArray(ejercicio.detalle) && (
-                                  <ul className="text-xs mt-2 text-gray-300 italic list-disc pl-5 space-y-1">
+                                  <ul className="text-xs mt-3 text-gray-300 space-y-2 pl-4 border-l-2 border-teal-400">
                                     {ejercicio.detalle.map((detalle, idx) => (
-                                      <li key={idx}>{detalle}</li>
+                                      <li key={idx} className="leading-relaxed">
+                                        <span className="text-teal-300 font-medium">•</span> {detalle}
+                                      </li>
                                     ))}
                                   </ul>
                                 )}
