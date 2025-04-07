@@ -20,7 +20,7 @@ const rutinasData = [
                 "Bloque 2: Peso -> 35 - 45lbs | Carga exigente y controladas |NOTA: bajas en 3s, mantienes 1s abajo, subes en 2s y mantienes 1s arriba.",                
               ],
               descanso: "2 minutos y medio",
-              link: "https://eresfitness.com/press-de-banca-con-mancuernas/"
+              link: "https://eresfitness.com/press-de-banca-inclinado-con-mancuernas/"
             },
             {
               nombre: "Press plano en maquina",
@@ -34,7 +34,7 @@ const rutinasData = [
                 
               ],
               descanso: "2 minutos",
-              link: "https://eresfitness.com/press-de-banca-inclinado-con-mancuernas/"
+              link: "https://eresfitness.com/press-de-pecho-en-maquina/"
             },
             {
               nombre: "Cruces en poleas",
@@ -56,7 +56,7 @@ const rutinasData = [
                 "Bloque 1: Peso -> 25 - 35lbs | Carga neutra | NOTA: bajas en 3s y antes de tocar tu pecho mantienes 2s y subes en 1s, el fallo se raliza subiendo y bajando en 1s.",
               ],
               descanso: "2 minutos",
-              link: "https://eresfitness.com/cruces-en-polea-alta-crossover/"
+              link: "https://eresfitness.com/squeeze-press-inclinado-con-mancuernas/"
             },
           ]
         },
@@ -72,7 +72,7 @@ const rutinasData = [
                 "Bloque 1: Peso -> discos 10 - 20lbs por lado | Carga exigente | NOTA: bajas en 3s y subes en 1s."
               ],
               descanso: "2 minutos",
-              link: "https://chelosports.com/cdn/shop/files/maquina9_1_900x.png?v=1729355634"
+              link: "https://fitcron.com/exercise/press-frances-con-barra-triceps/"
             },
             {
               nombre: "Extension de triceps con agarre V en polea alta",
@@ -85,7 +85,7 @@ const rutinasData = [
                 "Bloque 2: Peso -> 7 - 8 placas | Carga neutra | NOTA: realizas las reps, descansas 15s, vuelves a realizar las reps, vuelves a descansar 15 y realizas de nuevo las reps.",
               ],
               descanso: "2 minutos",
-              link: "https://eresfitness.com/remo-a-una-mano-en-polea-baja/"
+              link: "https://eresfitness.com/extensiones-de-triceps-con-agarre-en-v-en-polea/"
             },
             {
               nombre: "Extension de triceps en maquina",
@@ -96,7 +96,7 @@ const rutinasData = [
                 "Bloque 1: Peso -> 3 - 5 placas | Carga exigente | NOTA: bajas en 3s, sostienes 1s y extiendes en 3s.",
               ],
               descanso: "2 minutos y medio de descanso",
-              link: "https://eresfitness.com/remo-en-barra-t/"
+              link: "https://eresfitness.com/extension-de-triceps-concentrado-en-maquina/"
             },
           ]
         }
