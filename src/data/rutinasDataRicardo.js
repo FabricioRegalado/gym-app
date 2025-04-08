@@ -110,7 +110,114 @@ const rutinasData = [
     tipo: "detallada",
     contenido: {
       secciones: [
-        
+        {
+          grupoMuscular: "Cuadriceps",
+          ejercicios: [
+            {
+              nombre: "Sentadilla smith",
+              series: [
+                { descripcion: "Bloque 1: Aproximacion", cantidad: "1 serie", repeticiones: "15 reps" },
+                { descripcion: "Bloque 2: Aproximacion", cantidad: "1 serie", repeticiones: "12 reps" },
+                { descripcion: "Bloque 3: Efectivas", cantidad: "3 series", repeticiones: "8 - 10 reps" },
+
+              ],
+              detalle: [
+                "Bloque 1: Peso -> disco de 30lbs por lado | Carga baja, para articular completamente | NOTA: Bajar y subir en 3s.",
+                "Bloque 2: Peso -> disco de 40lbs por lado | Carga neutra, seguimos aproximando | NOTA: bajar y subir en 3s.",    
+                "Bloque 3: Peso -> disco de 45 - 50lbs por lado | Carga exigente | NOTA: bajas en 3s, mantienes 1s y subes en 1s.",            
+              ],
+              descanso: "2 minutos",
+              link: "https://www.lyfta.app/es/exercise/sentadilla-con-barra-baja-smith-f9"
+            },
+            {
+              nombre: "Deplantes con mancuernas caminando",
+              series: [
+                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "24 pasos" },
+              ],
+              detalle: [
+                "Bloque 1: Peso -> mancuernas de 30 - 35lbs | Carga neutra | NOTA: al dar el paso, bajas en 3s y subes en 1s.",
+                
+              ],
+              descanso: "1 minuto y medio",
+              link: "https://eresfitness.com/zancadas-caminando-sin-equipo/"
+            },
+            {
+              nombre: "Extension de cuadriceps",
+              series: [
+                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "8 - 10 reps" },
+              ],
+              detalle: [
+                "Bloque 1: Peso -> 6 - 8 placas | Carga exigente | NOTA: subes en 1s, mantienes 2s con las piernas extendidas, bajas en 3s.",
+              ],
+              descanso: "1 minuto y medio",
+              link: "https://eresfitness.com/extension-de-piernas-en-maquina/"
+            },
+            {
+              nombre: "Aductor en maquina",
+              series: [
+                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "10s + 10 - 15 reps" },
+              ],
+              detalle: [
+                "Bloque 1: Peso -> 6 - 8 placas | Carga neutra | NOTA: mantienes los 10s con las piernas cerradas, despues realizas las reps.",
+              ],
+              descanso: "1 minuto y medio",
+              link: "https://eresfitness.com/aductores-en-maquina/"
+            },
+          ]
+        },
+        {
+          grupoMuscular: "Hombro",
+          ejercicios: [
+            {
+              nombre: "Press militar con mancuernas",
+              series: [
+                { descripcion: "Bloque 1: Aproximacion", cantidad: "1 serie", repeticiones: "12 - 15 reps" },
+                { descripcion: "Bloque 2: Efectivas", cantidad: "3 series", repeticiones: "8 - 10 reps" },
+              ],
+              detalle: [
+                "Bloque 1: Peso -> mancuernas de 25 - 30lbs | Carga neutra, para articular completamente | NOTA: Bajar y subir en 2s.",
+                "Bloque 2: Peso -> mancuernas de 35 - 45lbs | Carga exigente y controladas |NOTA: bajas en 3s, mantienes 1s abajo, subes en 3s.",
+              ],
+              descanso: "2 minutos",
+              link: "https://eresfitness.com/press-militar-con-mancuernas-o-barra/"
+            },
+            {
+              nombre: "Vuelos laterales con mancuernas",
+              series: [
+                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "12 - 15 reps" },
+                { descripcion: "Bloque 2: Hibrido", cantidad: "1 serie", repeticiones: " 12 - 15 reps + fallo" },
+              ],
+              detalle: [
+                "Bloque 1: Peso -> mancueras de 15 - 20lbs | Carga exigente | NOTA: subes en 1s, mantienes 2s y bajas en 3s.",
+                "Bloque 2: Peso -> mancuernas de 15 - 20lbs + mancuernas de 10 - 12 lbs | Carga exigente + baja | NOTA: realizas las reps efectivas 12 - 15 reps en el tempo que lo realizamos en el bloque anterior, despues cambias de mancuernas y realizas explosivas (subiendo y bajando en 1s).",
+              ],
+              descanso: "2 minutos",
+              link: "https://eresfitness.com/elevaciones-laterales-con-mancuernas/"
+            },
+            {
+              nombre: "Vuelos posteriores en poleas",
+              series: [
+                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "15 reps" }
+              ],
+              detalle: [
+                "Bloque 1: Peso -> 1 placa por lado | Carga efectiva | NOTA: extiendes en 3s, mantienes 2s y regresas en 3s.",
+              ],
+              descanso: "1 minuto y medio",
+              link: "https://eresfitness.com/aperturas-posteriores-en-polea/"
+            },
+            {
+              nombre: "Elevacion frontal individual con polea baja",
+              series: [
+                { descripcion: "Bloque 1: Efectivas", cantidad: "2 series", repeticiones: "20 reps" }
+              ],
+              detalle: [
+                "Bloque 1: Peso -> 2 - 4 placas | Carga efectiva | NOTA: inclina un poco tu torso, subes en 2s, mantienes 1s y bajas en 3s.",
+              ],
+              descanso: "1 minuto y medio",
+              link: "https://eresfitness.com/elevaciones-frontales-con-polea-baja-alternadas/"
+            },
+          ]
+        }
       ]
     }
   },
