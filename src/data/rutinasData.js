@@ -258,40 +258,40 @@ const rutinasData = [
           grupoMuscular: "Bicep - Tricep Biseries (realiza uno y uno)",
           ejercicios: [
             {
-              nombre: "Curl predicador con barra z",
+              nombre: "Curl spider en forma de martillo",
               series: [
-                { descripcion: "Controladas", cantidad: "3 series", repeticiones: "8 - fallo" }
+                { descripcion: "Bloque 1", cantidad: "4 series", repeticiones: "8 - fallo" }
               ],
-              detalle: "Subes en 1s sostienes 2s y bajas en 3s",
-              descanso: "2 minutos ",
-              link: "https://eresfitness.com/curl-de-biceps-en-banco-scott/"
+              detalle: "Subes en 1s sostienes 3s y bajas en 3s",
+              descanso: "1 minuto y medio ",
+              link: "https://fitcron.com/exercise/curl-spider-aislado-neutro-con-mancuerna-biceps/"
             },
             {
-              nombre: "Rompe Craneos con barra z",
+              nombre: "Extension de triceps con barra",
               series: [
-                { descripcion: "Controladas", cantidad: "3 series", repeticiones: "6 - 8 reps + fallo" }
+                { descripcion: "Bloque 1", cantidad: "4 series", repeticiones: "6 - 8 reps + fallo" }
               ],
-              detalle: " Las 6 - 8 reps son controladas (3s al bajar, 2s al subir) y el fallo se realiza en 1s ambos movimientos",
+              detalle: " Las 6 - 8 reps son controladas (3s al bajar, 2s al subir) y el fallo se realiza en 1s ambos movimientos con menor peso",
               descanso: "2 minutos",
-              link: "https://eresfitness.com/press-frances-con-polea-baja/"
+              link: "https://fitcron.com/exercise/extension-vertical-en-supinacion-en-polea-alta-triceps/"
             },
             {
-              nombre: "Curl con barra z (agarre prono)",
+              nombre: "Curl de bicesp con rotacion, acostado en banco inclinado",
               series: [
-                { descripcion: "Controladas", cantidad: "3 series", repeticiones: "10 reps + 10s + 10 reps" }
+                { descripcion: "Bloque 1", cantidad: "3 series", repeticiones: "6 - 10 reps" }
               ],
-              detalle: "Las 10 reps son subiendo y bajando en 2s y los segundos se mantienen a medias",
-              descanso: "2 minutos",
-              link: "https://eresfitness.com/curl-de-biceps-invertido-con-barra/"
+              detalle: "Bloque 1: Baja en 3s, sube en 1s y sostienes 2s.",
+              descanso: "1 minuto y medio",
+              link: "https://fitcron.com/exercise/curl-inclinado-con-giro-alterno-con-mancuernas-biceps/"
             },
             {
-              nombre: "Pata unilateral en polea alta",
+              nombre: "Extension de triceps con cuerda, tras nuca",
               series: [
-                { descripcion: "Controladas", cantidad: "3 series", repeticiones: "12 - 15 reps" }
+                { descripcion: "Bloque 1", cantidad: "3 series", repeticiones: "15 reps" }
               ],
-              detalle: "Bajas en 3s, aprietas 2s, subes en 3s y sostienes 2s",
+              detalle: "Bloque 1: bajas en 3s, mantienes 2s y estiras en 3s",
               descanso: "2 minutos",
-              link: "https://eresfitness.com/extension-de-triceps-a-una-mano-en-polea-agarre-cuerda/"
+              link: "https://fitcron.com/exercise/extension-horizontal-en-martillo-en-polea-alta-triceps/"
             },          
           ]
         }

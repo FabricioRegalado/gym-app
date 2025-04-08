@@ -228,7 +228,98 @@ const rutinasData = [
     tipo: "detallada",
     contenido: {
       secciones: [
-        
+        {
+          grupoMuscular: "Espalda",
+          ejercicios: [
+            {
+              nombre: "Remo individual con mancuerna",
+              series: [
+                { descripcion: "Bloque 1: Aproximacion", cantidad: "1 serie", repeticiones: "15 reps" },
+                { descripcion: "Bloque 2: Efectivas", cantidad: "3 series", repeticiones: "8 - 10 reps" },
+              ],
+              detalle: [
+                "Bloque 1: Peso -> mancuernas de 35 - 40 lbs | Carga neutra, para articular completamente | NOTA: Bajar, subir y mantener 2s.",
+                "Bloque 2: Peso -> mancuernas de 50 - 60 lbs | Carga exigente y controladas | NOTA: bajas en 3s, subes en 1s y mantienes 2s.",
+              ],
+              descanso: "1 minuto y medio",
+              link: "https://eresfitness.com/remo-con-mancuerna-unilateral/"
+            },
+            {
+              nombre: "Jalon al pecho en maquina",
+              series: [
+                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "8 - 10 reps" },
+                { descripcion: "Bloque 2: RestPause", cantidad: "1 serie", repeticiones: " 15 reps" },
+              ],
+              detalle: [
+                "Bloque 1: Peso -> 7 - 9 placas | Carga exigente | NOTA: posicionate hasta que tu cadera pegue al frente, bajas en 3s, mantienes 1s y subes en 2s.",
+                "Bloque 2: Peso -> 6 - 7 placas | Carga neutra | NOTA: misma posicion que el anterior, realizas las reps, luego descansas 15s, vuelves a realizar las reps, vuelves a descansar 15s y vulves a realizar las reps.",
+              ],
+              descanso: "2 minutos",
+              link: "https://fitcron.com/exercise/jalon-en-pronacion-en-maquina-dorsal/"
+            },
+            {
+              nombre: "Pull over con cuerda",
+              series: [
+                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "10 - 15 reps" }
+              ],
+              detalle: [
+                "Bloque 1: Peso -> 6 - 8 placas | Carga efectiva | NOTA: torso inclinado, jalar al ombligo y estirar complentamente, jalas en 3s, mantienes 2s y estiras en 3s.",
+              ],
+              descanso: "1 minuto y medio",
+              link: "https://fitcron.com/exercise/serratos-con-cuerda-en-polea-dorsal/"
+            },
+            {
+              nombre: "Remo a la barbilla con barra z",
+              series: [
+                { descripcion: "Bloque 1: Efectivas", cantidad: "4 series", repeticiones: "15 - 20 reps" }
+              ],
+              detalle: [
+                "Bloque 1: Peso -> barra z de 40 - 60lbs | Carga efectiva | NOTA: subes en 2s, mantienes 3s y bajas en 3s.",
+              ],
+              descanso: "1 minuto y medio",
+              link: "https://fitcron.com/exercise/remo-al-menton-cerrado-con-barra-z-deltoides/"
+            },
+          ]
+        },
+        {
+          grupoMuscular: "Biceps",
+          ejercicios: [
+            {
+              nombre: "Curl con rotacion de mancuernas sentado",
+              series: [
+                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "6 - 8 reps" },
+              ],
+              detalle: [
+                "Bloque 1: Peso -> mancuernas de 35 - 45lbs | Carga exigente y controladas | NOTA: te sientas en un banco con resolanda, tu cadera la colocas mas adelante para que tu espalda alta quede recargada, brazos extendidos y no mover codos al frente, subes en 2s, mantines 2s y bajas en 3s.",
+              ],
+              descanso: "1 minuto y medio",
+              link: "https://fitcron.com/exercise/curl-inclinado-con-giro-alterno-con-mancuernas-biceps/"
+            },
+            {
+              nombre: "Curl Spider en forma de martillos",
+              series: [
+                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "10 - 15 reps" },
+              ],
+              detalle: [
+                "Bloque 1: Peso -> mancuernas de 25 - 30lbs | Carga exigente | NOTA: en el banco inclinado te acuestas boca abajo, estira tus brazos y justo donde queden no los moveras, subes en 1s, mantienes 2s y bajas en 3s.",
+              ],
+              descanso: "1 minuto y medio",
+              link: "https://fitcron.com/exercise/curl-spider-aislado-neutro-con-mancuerna-biceps/"
+            },
+            {
+              nombre: "Curl en maquina predicador",
+              series: [
+                { descripcion: "Bloque 1: Efectivas", cantidad: "4 series", repeticiones: "15 - 20 reps" }
+              ],
+              detalle: [
+                "Bloque 1: Peso -> 5 - 7 placas | Carga efectiva | NOTA: espalda recta, bajas en 3s, subes en 1s y mantiens 3s.",
+              ],
+              descanso: "1 minuto y medio",
+              link: "https://fitcron.com/exercise/curl-en-supinacion-en-maquina-scott-biceps/"
+            },
+            
+          ]
+        },
       ]
     }
   },
