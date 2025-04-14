@@ -12,60 +12,58 @@ const rutinasData = [
           grupoMuscular: "Pecho",
           ejercicios: [
             {
-              nombre: "Press banco plano con mancuernas",
-              series: [
-                { descripcion: "Primer Bloque: Aproximacion", cantidad: "1 serie", repeticiones: "12 - 15 reps" },
-                { descripcion: "Segundo Bloque: Efectivas", cantidad: "2 series", repeticiones: "6 - 10 reps" },
-                { descripcion: "Tercer Bloque: RestPause", cantidad: "1 series", repeticiones: "6 - 8 reps" },
-              ],
-              detalle: [
-                "Bloque 1: Peso ligero, para articular completamente, subiendo y bajando en 2s.",
-                "Bloque 2: Pesadas y controladas, subiendo en 1s y bajando en 3s.",
-                "Bloque 3: Baja el peso de las mancueras, realizas las 6 - 8 reps, descansas 15s, vuelves a hacer 6 - 8 reps y descansas 15s, y vuelves a hacer 6 - 8 reps.",
-                
-              ],
-              descanso: "2 minutos",
-              link: "https://eresfitness.com/press-de-banca-con-mancuernas/"
-            },
-            {
-              nombre: "Aperturas en banco plano con mancuernas",
-              series: [
-                { descripcion: "Primer Bloque: Efectivas", cantidad: "4 series", repeticiones: "8 - 12 reps" },
-                
-              ],
-              detalle: [
-                "Bloque 1: Carga neutra, subiendo y bajando en 3s.",
-              ],
-              descanso: "2 minutos",
-              link: "https://eresfitness.com/apertura-con-mancuernas-en-banco-plano/"
-            },
-            {
               nombre: "Press banco inclinado con mancuernas",
               series: [
-                { descripcion: "Primer Bloque: Efectivas", cantidad: "3 series", repeticiones: "8 - 12 reps" },
-                { descripcion: "Segundo Bloque: Resistencias", cantidad: "1 serie", repeticiones: "1 + 1s, 2 + 2s ........ 7 + 7s" },
-                { descripcion: "Tercer Bloque: RestPause", cantidad: "1 serie", repeticiones: "6 - 8 reps" },
+                { descripcion: "Bloque 1: Aproximacion", cantidad: "1 serie", repeticiones: "15 reps" },
+                { descripcion: "Bloque 2: Aproximacion", cantidad: "1 serie", repeticiones: "10 reps" },
+                { descripcion: "Bloque 3: Efectivas", cantidad: "3 series", repeticiones: "6 - 8 reps" },
               ],
               detalle: [
-                "Bloque 1: Carga exigente, subiendo en 1s bajando en 3s.",
-                "Bloque 2: Menor peso en mancueras, recuerda que los segundos son abajo.",
+                "Bloque 1: Carga ligera | para articular completamente, subiendo y bajando en 2s.",
+                "Bloque 2: Carga neutra | para subir un poco mas la aproximacion, subiendo y bajando en 2s.",
+                "Bloque 3: Carga exigente | maneja rangos de 60 - 70lbs | bajas en 3s, subes en 1s .",
                 
               ],
-              descanso: "2 minutos",
+              descanso: "2 minutos y medio",
               link: "https://eresfitness.com/press-de-banca-inclinado-con-mancuernas/"
             },
             {
-              nombre: "Cruces en poleas",
+              nombre: "Aperturas en banco plano inclinado ",
+              series: [
+                { descripcion: "Bloque 1: Primer y unico bloque: Efectivas", cantidad: "4 series", repeticiones: "12 reps + fallo" },
+                
+              ],
+              detalle: [
+                "Bloque 1: Carga exigente 25 / 30lbs | extender en 3s y cerrar en 1s | el fallo es subiendo y bajando en 1s",
+              ],
+              descanso: "1 minuto y medio",
+              link: "https://eresfitness.com/aperturas-con-mancuernas-en-banco-inclinado/"
+            },
+            {
+              nombre: "Press de pecho en maquina",
+              series: [
+                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "5 reps + 5 reps + fallo dobles" },
+
+              ],
+              detalle: [
+                "Bloque 1:  las 5 reps son individuales y el fallo dobles | baja y sube en 2s",
+                
+              ],
+              descanso: "1 minuto y medio",
+              link: "https://eresfitness.com/press-de-pecho-declinado-en-maquina/"
+            },
+            {
+              nombre: "Cruces para pecho en polea baja",
               series: [
                 { descripcion: "Primer Bloque: Efectivas", cantidad: "3 series", repeticiones: "10 reps + 10 explosivas" },
               ],
               detalle: [
-                "Bloque 1: Carga neutra, las primeras reps son controladas y las explosivas son subiendo y bajando en 1s.",
+                "Bloque 1: carga neutra | subir y bajar en 2s | las explosivas en subiendo y bajando en 1s.",
                 
                 
               ],
-              descanso: "2 minutos y medio",
-              link: "https://eresfitness.com/cruces-en-polea-alta-crossover/"
+              descanso: "1 minuto y medio",
+              link: "https://eresfitness.com/cruces-en-polea-baja/"
             },
           ]
         },
@@ -73,54 +71,52 @@ const rutinasData = [
           grupoMuscular: "Espalda",
           ejercicios: [
             {
-              nombre: "Jalon al pecho en maquina",
+              nombre: "Remo T (AGARRE ABIERTO)",
               series: [
-                { descripcion: "Bloque 1: Aproximación", cantidad: "1 serie", repeticiones: "12 - 15 reps" },
+                { descripcion: "Bloque 1: Aproximación", cantidad: "1 serie", repeticiones: "15 reps" },
                 { descripcion: "Bloque 2: Efectiva", cantidad: "3 series", repeticiones: "6 - fallo" }
               ],
               detalle: [
-                "Bloque 1: Peso ligero, para articular completamente, subiendo y bajando en 2s.",
-                "Bloque 2: Carga pesada, subiendo y bajando en 3s."
+                "Bloque 1: Carga ligera | para articular completamente | subiendo y bajando en 2s.",
+                "Bloque 2: Carga pesada | subiendo y bajando en 3s. | trata de estirar hasta abajo"
               ],
               descanso: "2 minutos",
-              link: "https://chelosports.com/cdn/shop/files/maquina9_1_900x.png?v=1729355634"
+              link: "https://eresfitness.com/remo-en-barra-t/"
             },
             {
-              nombre: "Remo individual en polea baja",
+              nombre: "Remo individual con mancuerna (individuales)",
               series: [
-                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "8 - 12 reps" },
+                { descripcion: "Bloque 1: Efectivas", cantidad: "4 series", repeticiones: "8 - 12 reps" },
               ],
               detalle: [
                 "Bloque 1: Carga exigente, subiendo en 2s PAUSO 1S y regreso en 2s",
               ],
-              descanso: "2 minutos",
-              link: "https://eresfitness.com/remo-a-una-mano-en-polea-baja/"
+              descanso: "1 minuto y medio",
+              link: "https://eresfitness.com/remo-con-mancuerna-unilateral/"
             },
             {
-              nombre: "Remo T (AGARRE ABIERTO)",
+              nombre: "Jalon al pecho en maquina",
               series: [
-                { descripcion: "Bloque 1: Efectivas", cantidad: "4 series", repeticiones: "6 - 8 reps + fallo" }
+                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "6 - 8 reps + fallo" }
               ],
               detalle: [
-                "Bloque 1: SUBIR Y BAJAR EN 2S, recuerda que el fallo es SUBIENDO Y BAJANDO EN 1S.",
+                "Bloque 1: Carga exigente | bajar y subir en 2s | matener apretado 1s siempre | baja una placa de peso para llegar al fallo.",
               ],
-              descanso: "2 minutos y medio de descanso",
-              link: "https://eresfitness.com/remo-en-barra-t/"
+              descanso: "1 minuto y medio",
+              link: "https://eresfitness.com/jalon-al-pecho-agarre-abierto/"
             },
             {
-              nombre: "Pull over",
+              nombre: "Pull over |cuerda / barra|",
               series: [
-                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "10 - 15 reps" },
-                { descripcion: "Bloque 2: RestPause", cantidad: "1 serie", repeticiones: "10 reps" },
+                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "10 reps - fallo" },
 
               ],
               detalle: [
-                "Bloque 1: Carga exigente, subiendo en 2s PAUSAS 1S y regresas en 3s.",
-                "Bloque 2: Carga moderada, realizas 10 reps, descansas 15s, realizas de nuevo 8 - 10 reps y vuelves a descansar 15s y realizas las ultimas 8 - 10 reps.",
-                "El fallo es con el mismo peso, subiendo y bajando en 1s."
+                "Bloque 1: Carga exigente | subiendo en 2s PAUSAS 1S y regresas en 3s.",
+                
               ],
               descanso: "2 minutos",
-              link: "https://youtu.be/6EGtRkayWY8"
+              link: "https://www.facebook.com/actualfit24miranda/posts/pull-over-en-polea-alta-con-cuerdap%C3%A1rate-de-frente-a-la-polea-altadebes-tener-la/456165062778298/"
             }
           ]
         }
