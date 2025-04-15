@@ -134,67 +134,64 @@ const rutinasData = [
           grupoMuscular: "Cuadriceps",
           ejercicios: [
             {
-              nombre: "Sentadilla Smith",
+              nombre: "Sentadilla Perfecta (Espalda en el respaldo)",
               series: [
-                { descripcion: "Bloque 1: Aproximación", cantidad: "1 serie", repeticiones: "15 reps" },
-                { descripcion: "Bloque 2: Efectivas", cantidad: "3 series", repeticiones: "8 - 12 reps" },
-                { descripcion: "Bloque 3: Ascendente - descentente", cantidad: "1 serie", repeticiones: "6 - 12 - 6 reps" },
+                { descripcion: "Bloque 1: Aproximación", cantidad: "1 serie", repeticiones: "20 reps" },
+                { descripcion: "Bloque 2: Aproximación", cantidad: "1 serie", repeticiones: "15 reps" },
+                { descripcion: "Bloque 3: Efectivas", cantidad: "3 series", repeticiones: "6 reps + DropSet 6 reps" },
               ],
               detalle: [
                 "Bloque 1: Carga neutra, subir y bajar en 2s.",
-                "Bloque 2: Carga pesada, subiendo en 1s y bajando en 3s.",
-                "Bloque 3: Carga neutra + pesada, Realizas 6 reps (pesadas), quitas discos y haces 12 reps, vuelves a colocar los discos e intentas sacar 6 .",
+                "Bloque 2: Carga neutra (incrementa mas el peso anterior), subiendo en 1s y bajando en 2s.",
+                "Bloque 3: Carga exigente, Realizas 6 reps (pesadas), quitas discos y haces 6 reps, vuelves a quitar discos e intentas sacar 6 reps nuevamente .",
               ],
               descanso: "2 minutos",
-              link: "https://eresfitness.com/sentadilla-hack-squat/"
+              link: "https://www.ejercicios.com/sentadilla-perfecta-maquina/"
             },
             {
-              nombre: "Sissy Squat",
+              nombre: "Prensa",
               series: [
-                { descripcion: "Bloque 1: Efectivas", cantidad: "4 series", repeticiones: " 10 reps - fallo" },
+                { descripcion: "Bloque 1: Efectivas", cantidad: "4 series", repeticiones: " 1 reps + 1s | 2 reps + 2s | ... | 8 reps + 8s " },
               ],
               detalle: [
-                "Bloque 1: Disco pesado, realiza las repeticions abrazando un disco de tal manera de asegurar las 10 y lograr fallo.",
+                "Bloque 1: Carga neutra | enfoque en resistencias, los segundos son abajo | realiza las repeticiones bajando y subiendo en 1s.",
               ],
               descanso: "2 minutos",
-              link: "https://fitcron.com/exercise/sentadilla-asistida-con-mancuerna-pierna/"
+              link: "https://fitcron.com/exercise/prensa-inclinada-pierna/"
+            },
+            {
+              nombre: "Pantorrillas (máquina de pie)",
+              series: [
+                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "10 reps + 10s + fallo" }
+              ],
+              detalle: [
+                "Bloque 1: Carga neutra | Repeticiones + resesitencias entre medias | Realizas tus 10 reps, agregas 10s arriba, y realizas las que te salgan despues de eso. "
+              ],
+              descanso: "1 minuto y medio de descanso",
+              link: "https://fitcron.com/exercise/extension-de-gemelos-en-maquina-con-carga-superior-pierna/"
             },
             {
               nombre: "Extensión de cuadriceps",
               series: [
-                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "8 reps - fallo" },
-                { descripcion: "Bloque 2: Piramide", cantidad: "1 serie", repeticiones: "6, 8, 12, 8, 6, reps" },
+                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "8 reps (izquierda) | 8 reps (derecha) | Fallo (dobles)" },
               ],
               detalle: [
-                "Bloque 1: Carga pesada, subiendo en 1s y bajando en 3s.",
-                "Bloque 2: Juego de pesos, iniciamos pesado, luego disminuimos el peso y aumentamos las repeticiones, asi hasata completar el bloque entero.",
+                "Bloque 1: Carga neutra | Individual + dobles | sean individuales o dobles, sube en 1s y bajas en 3s.",
               ],
               descanso: "2 minutos",
-              link: "https://eresfitness.com/extension-de-piernas-en-maquina/"
+              link: "https://fitcron.com/exercise/extension-de-cuadriceps-en-maquina-pierna/"
             },
             {
-              nombre: "Sentadilla perfecta (enfoque cuadriceps)",
+              nombre: "Bulgaras",
               series: [
-                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "15 - 20 reps" }
+                { descripcion: "Bloque 1: Efectivas", cantidad: "2 - 3 series", repeticiones: "18'S" }
               ],
               detalle: [
-                "Bloque 1: Carga neutra, subiendo y bajando en 2s.",
+                "Bloque 1: Carga baja - neutra | Realiza 6 reps con dos mancuernas, 6 reps con una y por ultima de 6  - fallo sin nada.",
               ],
               descanso: "2 minutos",
-              link: "https://eresfitness.com/zancadas-con-mancuernas-caminando/"
+              link: "https://eresfitness.com/sentadilla-bulgara-con-mancuernas/"
             },
-            {
-              nombre: "Pantorrillas (máquina costurera)",
-              series: [
-                { descripcion: "Controladas", cantidad: "3 series", repeticiones: "10 - fallo" }
-              ],
-              detalle: [
-                "Baja en 3s y sube en 1s, manteniendo el control."
-              ],
-              descanso: "1 minuto y medio de descanso",
-              link: "https://fitcron.com/exercise/extension-de-gemelos-sentado-en-maquina-pierna/"
-            },
-            
           ]
         }
       ]
