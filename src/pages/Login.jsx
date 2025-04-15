@@ -27,9 +27,9 @@ function Login() {
     { username: 'rodrigo', password: 'rod20252' },
     { username: 'david', password: 'dav20253' },
     { username: 'efrain', password: 'efra20251' },
-    { username: 'ricardo', password: 'rica20254' },
+    
     { username: 'luis', password: 'lu20255' },
-    { username: 'wendy', password: 'wen20256' },
+    
   ];
 
   const [username, setUsername] = useState('');
