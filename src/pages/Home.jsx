@@ -1,189 +1,232 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FiActivity, FiArrowRight } from 'react-icons/fi';
+import { FiArrowRight } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
 import rutinasData from '../data/rutinasData';
 import rutinasDataRicardo from '../data/rutinasDataRicardo';
-import rutinasDataWendy from '../data/rutinasDataWendy'; // Importar rutinas de Wendy
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import rutinasDataWendy from '../data/rutinasDataWendy';
 
-function Home({ 
-  profileImageUrl = "https://images.unsplash.com/photo-1576678927484-cc907957088c?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  backgroundImageUrl = "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+function Typewriter({ words, className = '' }) {
+  const [wordIndex, setWordIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [blink, setBlink] = useState(true);
+
+  useEffect(() => {
+    if (charIndex < words[wordIndex].text.length) {
+      const t = setTimeout(() => setCharIndex(i => i + 1), 100);
+      return () => clearTimeout(t);
+    } else {
+      const t = setTimeout(() => {
+        setCharIndex(0);
+        setWordIndex(i => (i + 1) % words.length);
+      }, 800);
+      return () => clearTimeout(t);
+    }
+  }, [charIndex, wordIndex, words]);
+
+  useEffect(() => {
+    const b = setInterval(() => setBlink(b => !b), 500);
+    return () => clearInterval(b);
+  }, []);
+
+  const { text, colorClass } = words[wordIndex];
+  return (
+    <span className={`${className} ${colorClass}`}>
+      {text.slice(0, charIndex)}
+      <span className="inline-block">{blink ? '|' : ' '}</span>
+    </span>
+  );
+}
+
+function Home({
+  profileImageUrl = "...",
+  backgroundImageUrl = "..."
 }) {
   const navigate = useNavigate();
-
-  // Recuperar datos del usuario desde sessionStorage
   const userData = JSON.parse(sessionStorage.getItem('userData'));
   const username = userData?.username || 'Usuario';
-
-  // Obtener rutinas según el usuario
   const rutinas = userData?.username === 'ricardo'
     ? rutinasDataRicardo
     : userData?.username === 'wendy'
-    ? rutinasDataWendy
-    : rutinasData;
+      ? rutinasDataWendy
+      : rutinasData;
 
-  // Obtener el día actual
-  const todayIndex = new Date().getDay() === 0 ? 0 : new Date().getDay() - 1;
-  const rutinaHoy = rutinas[todayIndex];
+  const todayIndex = new Date().getDay() === 0 ? 6 : new Date().getDay() - 1;
+  const rutinaHoy = rutinas[todayIndex] || {};
 
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    arrows: false,
-    appendDots: dots => (
-      <div className="custom-dots-container">
-        <ul className="flex justify-center space-x-2">{dots}</ul>
-      </div>
-    ),
-    customPaging: () => (
-      <div className="w-2 h-2 rounded-full bg-blue-400/30 transition-colors duration-300" />
-    ),
-  };
-
-  // Determinar saludo dinámico en español
   const getSaludo = () => {
-    const hora = new Date().getHours();
-    if (hora >= 6 && hora < 12) return "Buenos días";
-    if (hora >= 12 && hora < 18) return "Buenas tardes";
-    return "Buenas noches";
+    const h = new Date().getHours();
+    if (h < 12) return '¡Buenos días';
+    if (h < 18) return '¡Buenas tardes';
+    return '¡Buenas noches';
   };
-
   const saludo = getSaludo();
 
+  // Semanas en español
+  const diasSemana = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+  const today = new Date();
+  const weekStart = new Date(today);
+  weekStart.setDate(today.getDate() - today.getDay());
+  const weekDates = Array.from({ length: 7 }).map((_, i) => {
+    const d = new Date(weekStart);
+    d.setDate(weekStart.getDate() + i);
+    return d;
+  });
+
+  // 8 palabras motivadoras en español
+  const motivWords = [
+    { text: 'Enfoque', colorClass: 'text-blue-400' },
+    { text: 'Fuerza', colorClass: 'text-teal-400' },
+    { text: 'Consistencia', colorClass: 'text-purple-400' },
+    { text: 'Progreso', colorClass: 'text-yellow-400' },
+    { text: 'Disciplina', colorClass: 'text-red-400' },
+    { text: 'Superación', colorClass: 'text-pink-400' },
+    { text: 'Motivación', colorClass: 'text-green-400' },
+    { text: 'Resiliencia', colorClass: 'text-indigo-400' },
+  ];
+
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-start bg-black text-white overflow-hidden">
-      {/* Fondo mejorado con animación sutil */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="absolute inset-0"
-      >
+    <div className="relative min-h-screen bg-black text-white overflow-hidden">
+      {/* Fondo */}
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="absolute inset-0">
         <img
           src={backgroundImageUrl}
-          alt="Background"
+          alt="Fondo"
           className="w-full h-full object-cover opacity-20 blur-sm animate-pulse-slow"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/95 via-black/80 to-black/70" />
       </motion.div>
 
-      {/* Contenido principal */}
-      <div className="relative z-10 w-full max-w-sm flex flex-col items-center px-4 pt-8">
-        
-        {/* Header con efecto neón sutil */}
+      <div className="relative z-10 max-w-md mx-auto pt-8 pb-12 px-4 flex flex-col gap-6">
+        {/* Saludo */}
         <motion.div
-          initial={{ y: -30, opacity: 0 }}
+          initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-8 backdrop-blur-sm bg-white/5 rounded-2xl p-6 border border-white/10 shadow-xl"
+          transition={{ duration: 0.5 }}
+          className="text-center"
         >
-          <h1 className="text-xl font-medium text-gray-300 tracking-wider">{saludo},</h1>
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent mt-1 tracking-tight">
+          <p className="text-gray-400">{saludo},</p>
+          <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
             {username}
-          </h2>
+          </h1>
         </motion.div>
 
-        {/* Tarjeta de perfil con efecto de halo */}
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="relative mb-8 group"
-        >
-          <div className="relative w-44 h-44 rounded-full border-4 border-transparent bg-gradient-to-r from-blue-500 via-teal-500 to-green-500 p-1 shadow-lg hover:shadow-xl transition-all duration-500">
-            <div className="w-full h-full rounded-full bg-black flex items-center justify-center overflow-hidden relative">
-              <img
-                src={profileImageUrl}
-                alt="Profile"
-                className="w-40 h-40 rounded-full object-cover transform group-hover:scale-105 transition-transform duration-300 z-10"
-              />
-              <div className="absolute inset-0 bg-blue-400/10 rounded-full blur-md group-hover:opacity-50 opacity-0 transition-opacity duration-300" />
-            </div>
-            
-            {/* Icono decorativo */}
-            <div className="absolute -top-2 -right-2 bg-blue-500/20 p-2 rounded-full backdrop-blur-sm border border-blue-400/30">
-              <FiActivity className="text-blue-400 w-6 h-6 animate-pulse" />
-            </div>
-          </div>
-
-          {/* Anillo de progreso */}
-          <motion.div
-            className="absolute inset-0 flex items-center justify-center pointer-events-none"
-            initial={{ rotate: 0 }}
-            animate={{ rotate: 360 }}
-            transition={{ repeat: Infinity, duration: 15, ease: 'linear' }}
-          >
-            <div className="w-48 h-48 rounded-full border-2 border-dashed border-blue-400/20 animate-pulse-slow" />
-          </motion.div>
-        </motion.div>
-
-        {/* Carrusel */}
+        {/* Typewriter motivacional */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="w-full mb-8"
+          transition={{ delay: 0.3 }}
+          className="text-center text-lg"
         >
-          <h3 className="text-xl font-bold text-gray-300 mb-4 px-2 tracking-wide">
-            <span className="bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
-              Hoy trabajas:
-            </span>
-          </h3>
-          <Slider {...sliderSettings} className="w-full">
-            {rutinaHoy?.contenido?.secciones.map((seccion, index) => (
-              <div key={index} className="px-2">
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  className="backdrop-blur-sm bg-white/5 rounded-xl p-4 border border-white/10 hover:bg-white/10 transition-all mx-2"
+          <Typewriter words={motivWords} className="font-semibold" />
+        </motion.div>
+
+        {/* Calendario en español */}
+        <motion.div
+          initial={{ x: -30, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          className="grid grid-cols-7 gap-2"
+        >
+          {weekDates.map((d, i) => {
+            const isToday =
+              d.getDate() === today.getDate() &&
+              d.getMonth() === today.getMonth();
+            return (
+              <div key={i} className="flex flex-col items-center">
+                <span className={`text-xs ${isToday ? 'text-white font-bold' : 'text-gray-500'}`}>
+                  {diasSemana[d.getDay()]}
+                </span>
+                <div
+                  className={`mt-1 w-8 h-8 flex items-center justify-center rounded-full ${isToday
+                      ? 'bg-gradient-to-r from-blue-500 to-teal-500'
+                      : 'bg-white/10'
+                    }`}
                 >
-                  <h4 className="text-lg font-semibold text-blue-400 mb-2 tracking-wide">
-                    {seccion.grupoMuscular}
-                  </h4>
-                  <ul className="space-y-2">
-                    {seccion.ejercicios.map((ejercicio, idx) => (
-                      <li 
-                        key={idx} 
-                        className="text-sm text-gray-300 font-medium px-3 py-1.5 rounded-lg bg-white/5 tracking-wide"
-                      >
-                        {ejercicio.nombre}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
+                  <span className={isToday ? 'text-black' : 'text-gray-300'}>
+                    {d.getDate()}
+                  </span>
+                </div>
               </div>
+            );
+          })}
+        </motion.div>
+
+        {/* Tu plan de hoy - Versión Mejorada */}
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.4, ease: [0.6, 0.05, 0.01, 0.9] }}
+          className="space-y-5"
+        >
+          <div className="flex items-center justify-between mb-1">
+            <h3 className="text-gray-100 text-base font-medium tracking-tight">Tu plan de hoy</h3>
+            <span className="text-xs text-emerald-400/80 bg-emerald-400/10 px-2 py-1 rounded-full">
+              {rutinaHoy.contenido?.secciones?.length} secciones
+            </span>
+          </div>
+
+          <div className="space-y-4">
+            {rutinaHoy.contenido?.secciones?.map((sec, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.08 * i }}
+                className="group relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm
+                 border border-white/10 rounded-xl p-4 shadow-xl hover:border-white/20 transition-all"
+              >
+                {/* Barra de acento animada */}
+                <motion.div
+                  className={`absolute top-0 left-0 w-1 h-full rounded-r-lg ${i % 2 === 0 ? 'bg-sky-500' : 'bg-emerald-500'
+                    }`}
+                  initial={{ scaleY: 0 }}
+                  animate={{ scaleY: 1 }}
+                  transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
+                />
+
+                <div className="flex items-center mb-3 ml-2">
+                  <h4 className="text-gray-100 font-semibold text-sm flex items-center">
+                    <span className="mr-2 opacity-80">🏋️</span>
+                    {sec.grupoMuscular}
+                  </h4>
+                </div>
+
+                <ul className="space-y-2.5 ml-6">
+                  {sec.ejercicios?.map((e, idx) => (
+                    <li
+                      key={idx}
+                      className="text-gray-300 text-sm flex items-center hover:text-white transition-colors"
+                    >
+                      <span className="w-1.5 h-1.5 bg-current rounded-full mr-3 opacity-60" />
+                      <span className="truncate">{e.nombre}</span>
+                      {idx === 0 && (
+                        <span className="ml-2 text-xs text-emerald-400 bg-emerald-400/10 px-1.5 py-0.5 rounded">
+                          Primero
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
             ))}
-          </Slider>
+          </div>
         </motion.div>
 
         {/* Botón */}
         <motion.div
-          className="w-full flex justify-center mb-6"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.6 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
+          className="flex justify-center"
         >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          <button
             onClick={() => navigate('/rutinas')}
-            className="px-8 py-3.5 text-lg font-bold text-white bg-gradient-to-r from-blue-500 to-teal-500 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-3"
+            className="px-6 py-3 flex items-center gap-2 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full shadow-lg hover:shadow-xl transition-all"
           >
-            <span>Ir a Rutinas</span>
-            <motion.span
-              animate={{ x: [0, 4, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5 }}
-            >
-              <FiArrowRight className="w-5 h-5" />
-            </motion.span>
-          </motion.button>
+            <span className="text-black font-bold">Ver Rutinas</span>
+            <FiArrowRight className="w-5 h-5 text-black animate-pulse" />
+          </button>
         </motion.div>
       </div>
     </div>
