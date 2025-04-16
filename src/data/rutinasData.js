@@ -22,7 +22,7 @@ const rutinasData = [
                 "Bloque 1: Carga ligera | para articular completamente, subiendo y bajando en 2s.",
                 "Bloque 2: Carga neutra | para subir un poco mas la aproximacion, subiendo y bajando en 2s.",
                 "Bloque 3: Carga exigente | maneja rangos de 60 - 70lbs | bajas en 3s, subes en 1s .",
-                
+
               ],
               descanso: "2 minutos y medio",
               link: "https://eresfitness.com/press-de-banca-inclinado-con-mancuernas/"
@@ -31,7 +31,7 @@ const rutinasData = [
               nombre: "Aperturas en banco plano inclinado ",
               series: [
                 { descripcion: "Bloque 1: Primer y unico bloque: Efectivas", cantidad: "4 series", repeticiones: "12 reps + fallo" },
-                
+
               ],
               detalle: [
                 "Bloque 1: Carga exigente 25 / 30lbs | extender en 3s y cerrar en 1s | el fallo es subiendo y bajando en 1s",
@@ -47,7 +47,7 @@ const rutinasData = [
               ],
               detalle: [
                 "Bloque 1:  las 5 reps son individuales y el fallo dobles | baja y sube en 2s",
-                
+
               ],
               descanso: "1 minuto y medio",
               link: "https://eresfitness.com/press-de-pecho-declinado-en-maquina/"
@@ -59,8 +59,8 @@ const rutinasData = [
               ],
               detalle: [
                 "Bloque 1: carga neutra | subir y bajar en 2s | las explosivas en subiendo y bajando en 1s.",
-                
-                
+
+
               ],
               descanso: "1 minuto y medio",
               link: "https://eresfitness.com/cruces-en-polea-baja/"
@@ -113,7 +113,7 @@ const rutinasData = [
               ],
               detalle: [
                 "Bloque 1: Carga exigente | subiendo en 2s PAUSAS 1S y regresas en 3s.",
-                
+
               ],
               descanso: "2 minutos",
               link: "https://www.facebook.com/actualfit24miranda/posts/pull-over-en-polea-alta-con-cuerdap%C3%A1rate-de-frente-a-la-polea-altadebes-tener-la/456165062778298/"
@@ -208,84 +208,111 @@ const rutinasData = [
           grupoMuscular: "Hombro",
           ejercicios: [
             {
-              nombre: "Press Militar con mancuernas",
+              nombre: "Press de hombro con mancuernas",
               series: [
-                { descripcion: "Serie de aproximación", cantidad: "1 serie", repeticiones: "15 reps" },
-                { descripcion: "Pesadas y controladas", cantidad: "3 series", repeticiones: "6 - 8 reps" }
+                { descripcion: "Bloque 1: Aproximacion", cantidad: "1 serie", repeticiones: "15 reps" },
+                { descripcion: "Bloque 2: Efectivas", cantidad: "3 series", repeticiones: "6 - 8 reps" },
+      
               ],
-              detalle: "1er serie de aproximacion, las 3 series restantes son pesadas y controladas (3s al bajar y 1s al subir), puedes rematar con un pequeño dropset en la ultima serie",
-              descanso: "2 minutos ",
-              link: "https://eresfitness.com/press-militar-con-mancuernas-o-barra/"
+              detalle:
+              [
+                "Bloque 1: Carga neutra | subir y bajar en 2s",
+                "Bloque 2: Carga exigente | bajar en 3s, mantienes 1s y subes en 1s",
+              ],
+              descanso: "1 minuto y medio ",
+              link: "https://fitcron.com/exercise/press-militar-con-giro-con-mancuernas-deltoides/"
             },
             {
               nombre: "Vuelos laterales",
               series: [
-                { descripcion: "Pesadas y controladas", cantidad: "4 series", repeticiones: "8 - 10 reps" },
-                { descripcion: "Fallo con peso menor", cantidad: "4 series", repeticiones: "10 reps + fallo" }
+                { descripcion: "Bloque 1: Aproximacion", cantidad: "1 serie", repeticiones: "20 - 25 reps" },
+                { descripcion: "Bloque 2: Efectivas", cantidad: "3 series", repeticiones: "12 reps + fallo" }
               ],
-              detalle: " Las 8 - 10 reps son pesadas y controladas, el fallo es con un peso menor pero subiendo y bajando en 1s",
+              detalle: 
+              [
+                "Bloque 1: Carga neutra | subir en 2s, mantienes 2s y bajas en 2s",
+                "Bloque 2: Carga exigente | bajas en 3s, mantienes 2s y subes en 1s | el fallo es explosivo con 5lbs menos y rapidas ",
+              ],
               descanso: "2 minutos",
-              link: "https://eresfitness.com/elevaciones-laterales-con-mancuernas/"
+              link: "https://fitcron.com/exercise/elevaciones-laterales-neutras-con-mancuernas-deltoides/"
             },
             {
-              nombre: "Remo a la barbilla con barra",
+              nombre: "Vuelos posteriores en polea",
               series: [
-                { descripcion: "Controladas", cantidad: "3 series", repeticiones: "12 - 15 reps" }
+                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "15 reps" }
               ],
-              detalle: "Sube en 2a y baja en 3s, realiza fallo con el mismo peso pero en 1s",
+              detalle: "Carga Exigente | extiendes en 2s, regresas en 3s ",
               descanso: "2 minutos",
-              link: "https://eresfitness.com/remo-al-cuello-con-polea-baja/"
+              link: "https://fitcron.com/exercise/pajaros-de-pie-con-bandas-deltoides/"
             },
             {
-              nombre: "Vuelos laterales individual (recargado en un pilar)",
+              nombre: "Remo a la barbilla para trapecios con barra z",
               series: [
-                { descripcion: "Controladas", cantidad: "3 series", repeticiones: "8 - 10 reps" }
+                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "10 reps + 10s + 10 reps" }
               ],
-              detalle: "Control total del movimiento, aguantando 2s arriba y bajando en 3s",
+              detalle: "Bloque 1: Carga exigente | 10 reps : subes en 2s y bajas en 3s, 10s: (manten la barra arriba), 10 reps : subes en 2s y bajas en 3s ",
               descanso: "2 minutos",
-              link: "https://eresfitness.com/elevaciones-laterales-con-mancuernas/"
-            },          
+              link: "https://fitcron.com/exercise/remo-al-menton-cerrado-con-barra-z-deltoides/"
+            },
           ]
         },
         {
           grupoMuscular: "Bicep - Tricep Biseries (realiza uno y uno)",
           ejercicios: [
             {
-              nombre: "Curl spider en forma de martillo",
+              nombre: "Curl de biceps con barra Z",
               series: [
-                { descripcion: "Bloque 1", cantidad: "4 series", repeticiones: "8 - fallo" }
+                { descripcion: "Bloque 1", cantidad: "4 series", repeticiones: "10 reps + fallo cortas" }
               ],
-              detalle: "Subes en 1s sostienes 3s y bajas en 3s",
-              descanso: "1 minuto y medio ",
-              link: "https://fitcron.com/exercise/curl-spider-aislado-neutro-con-mancuerna-biceps/"
-            },
-            {
-              nombre: "Extension de triceps con barra",
-              series: [
-                { descripcion: "Bloque 1", cantidad: "4 series", repeticiones: "6 - 8 reps + fallo" }
-              ],
-              detalle: " Las 6 - 8 reps son controladas (3s al bajar, 2s al subir) y el fallo se realiza en 1s ambos movimientos con menor peso",
+              detalle: "Bloque 1: Carga exigente | subes en 2s, aprietas 2s y bajas en 3s | las cortas solo llegas a la mitad",
               descanso: "2 minutos",
-              link: "https://fitcron.com/exercise/extension-vertical-en-supinacion-en-polea-alta-triceps/"
+              link: "https://fitcron.com/exercise/curl-en-supinacion-abierto-con-barra-z-biceps/"
             },
             {
-              nombre: "Curl de bicesp con rotacion, acostado en banco inclinado",
+              nombre: "Extension de triceps con agarre V",
               series: [
-                { descripcion: "Bloque 1", cantidad: "3 series", repeticiones: "6 - 10 reps" }
+                { descripcion: "Bloque 1", cantidad: "4 series", repeticiones: "8 reps + fallo" }
               ],
-              detalle: "Bloque 1: Baja en 3s, sube en 1s y sostienes 2s.",
+              detalle: "Bloque 1: Carga exigente | 8 reps: bajas en 3s, mantienes 2s, subes en 3s (hasta la barbilla) | fallo: solo realizas el recorrido hasta medias (pudes bajarle 2 placas)",
+              descanso: "2 minutos",
+              link: "https://fitcron.com/exercise/extension-vertical-en-pronacion-en-polea-alta-triceps/"
+            },
+            {
+              nombre: "Curl de bicep en predicador con mancuerna en forma de martillo",
+              series: [
+                { descripcion: "Bloque 1", cantidad: "3 series", repeticiones: "10 - 15 reps" }
+              ],
+              detalle: "Bloque 1: Carga neutra | La mancuerna en forma de martillo, subes en 2s, aprietas 1s y bajas en 3s.",
               descanso: "1 minuto y medio",
-              link: "https://fitcron.com/exercise/curl-inclinado-con-giro-alterno-con-mancuernas-biceps/"
+              link: "https://fitcron.com/exercise/curl-en-banco-scott-en-supinacion-con-mancuerna-biceps/"
             },
             {
               nombre: "Extension de triceps con cuerda, tras nuca",
               series: [
-                { descripcion: "Bloque 1", cantidad: "3 series", repeticiones: "15 reps" }
+                { descripcion: "Bloque 1", cantidad: "3 series", repeticiones: "8 - 12 reps" }
               ],
-              detalle: "Bloque 1: bajas en 3s, mantienes 2s y estiras en 3s",
-              descanso: "2 minutos",
+              detalle: "Bloque 1: Carga exignete | bajas en 3s, mantienes 2s y estiras en 3s",
+              descanso: "1 minuto y medio",
               link: "https://fitcron.com/exercise/extension-horizontal-en-martillo-en-polea-alta-triceps/"
-            },          
+            },
+            {
+              nombre: "Curl Bayesian con mancuernas en banco inclinado (idividual)",
+              series: [
+                { descripcion: "Bloque 1", cantidad: "3 series", repeticiones: "8 - 12 reps" }
+              ],
+              detalle: "Bloque 1: Carga exignete | bajas en 3s, mantienes 2s y esubes en 1s",
+              descanso: "1 minuto y medio",
+              link: "https://www.inspireusafoundation.org/wp-content/uploads/2022/10/incline-dumbbell-curl.gif"
+            },
+            {
+              nombre: "Copa para triceps con mancuerna",
+              series: [
+                { descripcion: "Bloque 1", cantidad: "3 series", repeticiones: "20 reps" }
+              ],
+              detalle: "Bloque 1: Carga neutra | bajas en 3s, mantienes 2s y estiras en 3s",
+              descanso: "1 minuto y medio",
+              link: "https://eresfitness.com/press-de-copa-con-mancuerna-de-pie/"
+            },
           ]
         }
       ]
@@ -385,7 +412,7 @@ const rutinasData = [
               descanso: "2 minutos",
               link: "https://fitcron.com/exercise/curl-spider-en-pronacion-con-barra-biceps/"
             },
-            
+
           ]
         }
       ]
@@ -428,7 +455,7 @@ const rutinasData = [
               descanso: "2 minutos y medio",
               link: "https://eresfitness.com/sentadilla-bulgara-sin-equipo/"
             },
-            
+
           ]
         },
         {

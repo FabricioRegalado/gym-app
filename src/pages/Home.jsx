@@ -152,12 +152,12 @@ function Home({
           })}
         </motion.div>
 
-        {/* Tu plan de hoy - Versión Mejorada */}
+        {/* Tu plan de hoy */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4, ease: [0.6, 0.05, 0.01, 0.9] }}
-          className="space-y-5"
+          className="space-y-4"
         >
           <div className="flex items-center justify-between mb-1">
             <h3 className="text-gray-100 text-base font-medium tracking-tight">Tu plan de hoy</h3>
@@ -166,67 +166,74 @@ function Home({
             </span>
           </div>
 
-          <div className="space-y-4">
-            {rutinaHoy.contenido?.secciones?.map((sec, i) => (
+          {rutinaHoy.contenido?.secciones?.map((sec, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.08 * i }}
+              className="group relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm
+               border border-white/10 rounded-xl p-4 shadow-xl hover:border-white/20 transition-all"
+            >
+              {/* Barra de acento animada */}
               <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.08 * i }}
-                className="group relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm
-                 border border-white/10 rounded-xl p-4 shadow-xl hover:border-white/20 transition-all"
-              >
-                {/* Barra de acento animada */}
-                <motion.div
-                  className={`absolute top-0 left-0 w-1 h-full rounded-r-lg ${i % 2 === 0 ? 'bg-sky-500' : 'bg-emerald-500'
-                    }`}
-                  initial={{ scaleY: 0 }}
-                  animate={{ scaleY: 1 }}
-                  transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
-                />
+                className={`absolute top-0 left-0 w-1 h-full rounded-r-lg ${i % 2 === 0 ? 'bg-sky-500' : 'bg-emerald-500'
+                  }`}
+                initial={{ scaleY: 0 }}
+                animate={{ scaleY: 1 }}
+                transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
+              />
 
-                <div className="flex items-center mb-3 ml-2">
-                  <h4 className="text-gray-100 font-semibold text-sm flex items-center">
-                    <span className="mr-2 opacity-80">🏋️</span>
-                    {sec.grupoMuscular}
-                  </h4>
-                </div>
+              <div className="flex items-center mb-3 ml-2">
+                <h4 className="text-gray-100 font-semibold text-sm flex items-center">
+                  <span className="mr-2 opacity-80">🏋️</span>
+                  {sec.grupoMuscular}
+                </h4>
+              </div>
 
-                <ul className="space-y-2.5 ml-6">
-                  {sec.ejercicios?.map((e, idx) => (
-                    <li
-                      key={idx}
-                      className="text-gray-300 text-sm flex items-center hover:text-white transition-colors"
-                    >
-                      <span className="w-1.5 h-1.5 bg-current rounded-full mr-3 opacity-60" />
-                      <span className="truncate">{e.nombre}</span>
-                      {idx === 0 && (
-                        <span className="ml-2 text-xs text-emerald-400 bg-emerald-400/10 px-1.5 py-0.5 rounded">
-                          Primero
-                        </span>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
+              <ul className="space-y-2.5 ml-6">
+                {sec.ejercicios?.map((e, idx) => (
+                  <li
+                    key={idx}
+                    className="text-gray-300 text-sm flex items-center hover:text-white transition-colors"
+                  >
+                    <span className="w-1.5 h-1.5 bg-current rounded-full mr-3 opacity-60" />
+                    <span className="truncate">{e.nombre}</span>
+                    {idx === 0 && (
+                      <span className="ml-2 text-xs text-emerald-400 bg-emerald-400/10 px-1.5 py-0.5 rounded">
+                        Primero
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
         </motion.div>
 
-        {/* Botón */}
+        {/* Botón flotante "Ver Rutinas" */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="flex justify-center"
+          className="fixed right-4 bottom-1/2 transform translate-y-1/2 z-50 group"
         >
-          <button
+          <motion.button
             onClick={() => navigate('/rutinas')}
-            className="px-6 py-3 flex items-center gap-2 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full shadow-lg hover:shadow-xl transition-all"
+            whileHover={{ width: 'auto', padding: '0.75rem 1.5rem' }}
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center gap-2 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full shadow-lg hover:shadow-xl transition-all px-4 py-3 w-12 h-12 justify-center overflow-hidden"
           >
-            <span className="text-black font-bold">Ver Rutinas</span>
             <FiArrowRight className="w-5 h-5 text-black animate-pulse" />
-          </button>
+            <motion.span
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3 }}
+              className="text-black font-bold whitespace-nowrap hidden group-hover:inline"
+            >
+              Ver Rutinas
+            </motion.span>
+          </motion.button>
         </motion.div>
       </div>
     </div>
