@@ -12,58 +12,56 @@ const rutinasData = [
           grupoMuscular: "Pecho",
           ejercicios: [
             {
-              nombre: "Press banco inclinado con mancuernas",
+              nombre: "Press banco plano con barra",
               series: [
-                { descripcion: "Bloque 1: Aproximacion", cantidad: "1 serie", repeticiones: "15 reps" },
+                { descripcion: "Bloque 1: Aproximacion", cantidad: "1 serie", repeticiones: "20 reps" },
                 { descripcion: "Bloque 2: Aproximacion", cantidad: "1 serie", repeticiones: "10 reps" },
-                { descripcion: "Bloque 3: Efectivas", cantidad: "3 series", repeticiones: "6 - 8 reps" },
+                { descripcion: "Bloque 3: Efectivas", cantidad: "3 series", repeticiones: "8 - 10 reps" },
               ],
               detalle: [
-                "Bloque 1: Carga ligera | para articular completamente, subiendo y bajando en 2s.",
-                "Bloque 2: Carga neutra | para subir un poco mas la aproximacion, subiendo y bajando en 2s.",
-                "Bloque 3: Carga exigente | maneja rangos de 60 - 70lbs | bajas en 3s, subes en 1s .",
+                "Bloque 1: Carga ligera | peso inicial, subiendo y bajando en 2s.",
+                "Bloque 2: Carga neutra | peso moderado, subiendo y bajando en 2s.",
+                "Bloque 3: Carga exigente | bajas en 2s, subes en 1s .",
 
               ],
-              descanso: "2 minutos y medio",
+              descanso: "1 minutos y medio",
+              link: "https://fitcron.com/exercise/aperturas-en-maquina-pectoral/"
+            },
+            {
+              nombre: "Peck Deck ",
+              series: [
+                { descripcion: "Bloque 1: Primer y unico bloque: Efectivas", cantidad: "3 series", repeticiones: "10s + 10 reps + 10s" },
+
+              ],
+              detalle: [
+                "Bloque 1: Carga neutra | los segundos son con los brazos juntos, depues realizas las reps.",
+              ],
+              descanso: "1 minuto y medio",
+              link: "https://fitcron.com/exercise/aperturas-en-maquina-pectoral/"
+            },
+            {
+              nombre: "Press con mancuernas en banco inclinado",
+              series: [
+                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "8 - 12 reps" },
+
+              ],
+              detalle: [
+                "Bloque 1:  Carga neutra/exigente | subiendo en 1s, bajando en 2s.",
+
+              ],
+              descanso: "1 minuto y medio",
               link: "https://eresfitness.com/press-de-banca-inclinado-con-mancuernas/"
             },
             {
-              nombre: "Aperturas en banco plano inclinado ",
+              nombre: "Press en maquina de pecho (unilateral)",
               series: [
-                { descripcion: "Bloque 1: Primer y unico bloque: Efectivas", cantidad: "4 series", repeticiones: "12 reps + fallo" },
-
+                { descripcion: "Primer Bloque: Efectivas", cantidad: "3 series", repeticiones: "8 reps (cada brazo) + fallo dobles" },
               ],
               detalle: [
-                "Bloque 1: Carga exigente 25 / 30lbs | extender en 3s y cerrar en 1s | el fallo es subiendo y bajando en 1s",
+                "Bloque 1: Carga neutra | (el brazo se queda abajo) subir y bajar en 2s .",
               ],
               descanso: "1 minuto y medio",
-              link: "https://eresfitness.com/aperturas-con-mancuernas-en-banco-inclinado/"
-            },
-            {
-              nombre: "Press de pecho en maquina",
-              series: [
-                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "5 reps + 5 reps + fallo dobles" },
-
-              ],
-              detalle: [
-                "Bloque 1:  las 5 reps son individuales y el fallo dobles | baja y sube en 2s",
-
-              ],
-              descanso: "1 minuto y medio",
-              link: "https://eresfitness.com/press-de-pecho-declinado-en-maquina/"
-            },
-            {
-              nombre: "Cruces para pecho en polea baja",
-              series: [
-                { descripcion: "Primer Bloque: Efectivas", cantidad: "3 series", repeticiones: "10 reps + 10 explosivas" },
-              ],
-              detalle: [
-                "Bloque 1: carga neutra | subir y bajar en 2s | las explosivas en subiendo y bajando en 1s.",
-
-
-              ],
-              descanso: "1 minuto y medio",
-              link: "https://eresfitness.com/cruces-en-polea-baja/"
+              link: "https://fitcron.com/exercise/press-frontal-superior-en-maquina-pectoral/"
             },
           ]
         },
@@ -73,50 +71,50 @@ const rutinasData = [
             {
               nombre: "Remo T (AGARRE ABIERTO)",
               series: [
-                { descripcion: "Bloque 1: Aproximación", cantidad: "1 serie", repeticiones: "15 reps" },
-                { descripcion: "Bloque 2: Efectiva", cantidad: "3 series", repeticiones: "6 - fallo" }
+                { descripcion: "Bloque 1: Aproximación", cantidad: "2 serie", repeticiones: "12 - 15 reps" },
+                { descripcion: "Bloque 2: Efectivas", cantidad: "3 series", repeticiones: "6 - 10 reps" }
               ],
               detalle: [
                 "Bloque 1: Carga ligera | para articular completamente | subiendo y bajando en 2s.",
                 "Bloque 2: Carga pesada | subiendo y bajando en 3s. | trata de estirar hasta abajo"
               ],
               descanso: "2 minutos",
-              link: "https://eresfitness.com/remo-en-barra-t/"
+              link: "https://fitcron.com/exercise/remo-en-barra-t-en-pronacion-dorsal/"
             },
             {
-              nombre: "Remo individual con mancuerna (individuales)",
+              nombre: "Jalon al pecho en polea alta (agarre neutro)",
               series: [
-                { descripcion: "Bloque 1: Efectivas", cantidad: "4 series", repeticiones: "8 - 12 reps" },
+                { descripcion: "Bloque 1: Efectivas", cantidad: "4 series", repeticiones: "8 - 12reps" },
               ],
               detalle: [
-                "Bloque 1: Carga exigente, subiendo en 2s PAUSO 1S y regreso en 2s",
+                "Bloque 1: Carga exigente | subiendo en 1s, bajo en 2s, aprieto 1s y repito",
               ],
               descanso: "1 minuto y medio",
-              link: "https://eresfitness.com/remo-con-mancuerna-unilateral/"
+              link: "https://fitcron.com/exercise/jalon-cerrado-neutro-con-inclinacion-en-polea-alta-dorsal/"
+            },
+            {
+              nombre: "Jalon individual con mancuernas",
+              series: [
+                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "8 - 12reps" }
+              ],
+              detalle: [
+                "Bloque 1: Carga exigente | bajar y subir en 2s | matener apretado 1s siempre.",
+              ],
+              descanso: "1 minuto y medio",
+              link: "https://fitcron.com/exercise/remo-aislado-con-mancuerna-dorsal/"
             },
             {
               nombre: "Jalon al pecho en maquina",
               series: [
-                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "6 - 8 reps + fallo" }
-              ],
-              detalle: [
-                "Bloque 1: Carga exigente | bajar y subir en 2s | matener apretado 1s siempre | baja una placa de peso para llegar al fallo.",
-              ],
-              descanso: "1 minuto y medio",
-              link: "https://eresfitness.com/jalon-al-pecho-agarre-abierto/"
-            },
-            {
-              nombre: "Pull over |cuerda / barra|",
-              series: [
-                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "10 reps - fallo" },
+                { descripcion: "Bloque 1: Efectivas/RestPause", cantidad: "3 series", repeticiones: "12 reps | 8 - 10 reps | 6 reps - fallo " },
 
               ],
               detalle: [
-                "Bloque 1: Carga exigente | subiendo en 2s PAUSAS 1S y regresas en 3s.",
+                "Bloque 1: Carga neutra | realizaas 12 reps (descansas 15s), relizas 8 - 10 reps (descansas 15s), realizas 6 reps - fallo (repetir en cada serie.",
 
               ],
               descanso: "2 minutos",
-              link: "https://www.facebook.com/actualfit24miranda/posts/pull-over-en-polea-alta-con-cuerdap%C3%A1rate-de-frente-a-la-polea-altadebes-tener-la/456165062778298/"
+              link: "https://fitcron.com/exercise/jalon-en-pronacion-en-maquina-dorsal/"
             }
           ]
         }
