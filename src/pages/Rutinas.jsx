@@ -233,14 +233,20 @@ function Rutinas() {
                                 <p className="text-xs text-gray-400 mb-3">
                                   <strong className="text-teal-300">Descanso:</strong> {ejercicio.descanso || "No especificado"}
                                 </p>
-                                {ejercicio.detalle && Array.isArray(ejercicio.detalle) && (
-                                  <ul className="text-xs mt-3 text-gray-300 space-y-2 pl-4 border-l-2 border-teal-400">
-                                    {ejercicio.detalle.map((detalle, idx) => (
-                                      <li key={idx} className="leading-relaxed">
-                                        <span className="text-teal-300 font-medium">•</span> {detalle}
-                                      </li>
-                                    ))}
-                                  </ul>
+                                {ejercicio.detalle && (
+                                  Array.isArray(ejercicio.detalle) ? (
+                                    <ul className="text-xs mt-3 text-gray-300 space-y-2 pl-4 border-l-2 border-teal-400">
+                                      {ejercicio.detalle.map((detalle, idx) => (
+                                        <li key={idx} className="leading-relaxed">
+                                          <span className="text-teal-300 font-medium">•</span> {detalle}
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  ) : (
+                                    <p className="text-xs mt-3 text-gray-300 pl-4 border-l-2 border-teal-400">
+                                      <span className="text-teal-300 font-medium">•</span> {ejercicio.detalle}
+                                    </p>
+                                  )
                                 )}
                               </motion.li>
                             ))}
