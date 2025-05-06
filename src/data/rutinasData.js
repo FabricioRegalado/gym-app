@@ -123,16 +123,16 @@ const rutinasData = [
   },
   {
     dia: "Martes",
-    titulo: "Pierna (enfoque Cuadriceps)",
+    titulo: "Pierna Comppleta",
     duracion: "",
     tipo: "detallada",
     contenido: {
       secciones: [
         {
-          grupoMuscular: "Cuadriceps",
+          grupoMuscular: "| Cuadriceps | Puedes combinar 2 ejercicios |",
           ejercicios: [
             {
-              nombre: "Sentadilla Perfecta (Espalda en el respaldo)",
+              nombre: "Sentadilla Smith",
               series: [
                 { descripcion: "Bloque 1: Aproximación", cantidad: "1 serie", repeticiones: "20 reps" },
                 { descripcion: "Bloque 2: Aproximación", cantidad: "1 serie", repeticiones: "15 reps" },
@@ -144,30 +144,20 @@ const rutinasData = [
                 "Bloque 3: Carga exigente, Realizas 6 reps (pesadas), quitas discos y haces 6 reps, vuelves a quitar discos e intentas sacar 6 reps nuevamente .",
               ],
               descanso: "2 minutos",
-              link: "https://www.ejercicios.com/sentadilla-perfecta-maquina/"
+              link: "https://eresfitness.com/sentadilla-silla-en-maquina-smith/"
             },
             {
-              nombre: "Prensa",
+              nombre: "Desplantes caminando",
               series: [
-                { descripcion: "Bloque 1: Efectivas", cantidad: "4 series", repeticiones: " 1 reps + 1s | 2 reps + 2s | ... | 8 reps + 8s " },
+                { descripcion: "Bloque 1: Efectivas", cantidad: "4 series", repeticiones: " 16 pasos " },
               ],
               detalle: [
-                "Bloque 1: Carga neutra | enfoque en resistencias, los segundos son abajo | realiza las repeticiones bajando y subiendo en 1s.",
+                "Bloque 1: Carga exigente | realiza las repeticiones bajando y subiendo en 2s.",
               ],
               descanso: "2 minutos",
-              link: "https://fitcron.com/exercise/prensa-inclinada-pierna/"
+              link: "https://eresfitness.com/zancadas-caminando-sin-equipo/"
             },
-            {
-              nombre: "Pantorrillas (máquina de pie)",
-              series: [
-                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "10 reps + 10s + fallo" }
-              ],
-              detalle: [
-                "Bloque 1: Carga neutra | Repeticiones + resesitencias entre medias | Realizas tus 10 reps, agregas 10s arriba, y realizas las que te salgan despues de eso. "
-              ],
-              descanso: "1 minuto y medio de descanso",
-              link: "https://fitcron.com/exercise/extension-de-gemelos-en-maquina-con-carga-superior-pierna/"
-            },
+            
             {
               nombre: "Extensión de cuadriceps",
               series: [
@@ -180,15 +170,31 @@ const rutinasData = [
               link: "https://fitcron.com/exercise/extension-de-cuadriceps-en-maquina-pierna/"
             },
             {
+              nombre: "Peso muerto con mancuernas",
+              series: [
+                { descripcion: "Controladas", cantidad: "4 series", repeticiones: "6 reps individuales + fallo dobles" }
+              ],
+              detalle: "Controla la bajada lentamente al igual que la subida",
+              descanso: "1 minuto y medio de descanso",
+              link: "https://fitcron.com/exercise/peso-muerto-rumano-con-mancuernas-pierna/"
+            },
+            {
+              nombre: "Maquina de femoral acostado",
+              series: [
+                { descripcion: "Controladas", cantidad: "4 series", repeticiones: "8 - 10 reps + fallo explosivas" }
+              ],
+              detalle: "Control total del movimiento, apretando 2s al final de cada repetición y bajando en 3s",
+              descanso: "2 minutos de descanso",
+              link: "https://eresfitness.com/curl-femoral-acostado-en-maquina/"
+            },
+            {
               nombre: "Bulgaras",
               series: [
-                { descripcion: "Bloque 1: Efectivas", cantidad: "2 - 3 series", repeticiones: "18'S" }
+                { descripcion: "Controladas", cantidad: "3 series", repeticiones: "21´s" }
               ],
-              detalle: [
-                "Bloque 1: Carga baja - neutra | Realiza 6 reps con dos mancuernas, 6 reps con una y por ultima de 6  - fallo sin nada.",
-              ],
-              descanso: "2 minutos",
-              link: "https://eresfitness.com/sentadilla-bulgara-con-mancuernas/"
+              detalle: "7 con dos mancuernas, 7 con una mancuerna y 7 sin peso",
+              descanso: "2 minutos y medio",
+              link: "https://eresfitness.com/sentadilla-bulgara-sin-equipo/"
             },
           ]
         }
