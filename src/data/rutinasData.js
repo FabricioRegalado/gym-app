@@ -12,45 +12,42 @@ const rutinasData = [
           grupoMuscular: "Pecho",
           ejercicios: [
             {
-              nombre: "Press banco plano con barra",
+              nombre: "Press banco inclinado con mancuernas (Cerrado)",
               series: [
-                { descripcion: "Bloque 1: Aproximacion", cantidad: "1 serie", repeticiones: "20 reps" },
-                { descripcion: "Bloque 2: Aproximacion", cantidad: "1 serie", repeticiones: "10 reps" },
-                { descripcion: "Bloque 3: Efectivas", cantidad: "3 series", repeticiones: "8 - 10 reps" },
+                { descripcion: "Bloque 1: Efectivas", cantidad: "4 series", repeticiones: "6 - 10 reps" },
               ],
               detalle: [
-                "Bloque 1: Carga ligera | peso inicial, subiendo y bajando en 2s.",
-                "Bloque 2: Carga neutra | peso moderado, subiendo y bajando en 2s.",
-                "Bloque 3: Carga exigente | bajas en 2s, subes en 1s .",
+                "Bloque 1: Carga exigente | sube el peso en cada serie, controla el movimiento",
+                
 
               ],
               descanso: "1 minutos y medio",
-              link: "https://fitcron.com/exercise/aperturas-en-maquina-pectoral/"
+              link: "https://eresfitness.com/press-martillo-en-banco-inclinado-con-mancuernas/"
             },
             {
               nombre: "Peck Deck ",
               series: [
-                { descripcion: "Bloque 1: Primer y unico bloque: Efectivas", cantidad: "3 series", repeticiones: "10s + 10 reps + 10s" },
+                { descripcion: "Bloque 1 : Efectivas", cantidad: "4 series", repeticiones: "12 - 15 reps" },
 
               ],
               detalle: [
-                "Bloque 1: Carga neutra | los segundos son con los brazos juntos, depues realizas las reps.",
+                "Bloque 1: Carga neutra | nada de carrera, abre y cierra lento",
               ],
               descanso: "1 minuto y medio",
               link: "https://fitcron.com/exercise/aperturas-en-maquina-pectoral/"
             },
             {
-              nombre: "Press con mancuernas en banco inclinado",
+              nombre: "Press con barra en banco plano",
               series: [
-                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "8 - 12 reps" },
+                { descripcion: "Bloque 1: Efectivas", cantidad: "4 series", repeticiones: "6 - 8 reps" },
 
               ],
               detalle: [
-                "Bloque 1:  Carga neutra/exigente | subiendo en 1s, bajando en 2s.",
+                "Bloque 1:  Carga exigente | subiendo en 1s, bajando en 2s.",
 
               ],
               descanso: "1 minuto y medio",
-              link: "https://eresfitness.com/press-de-banca-inclinado-con-mancuernas/"
+              link: "https://eresfitness.com/press-de-banca-con-barra/"
             },
             {
               nombre: "Press en maquina de pecho (unilateral)",
@@ -66,10 +63,10 @@ const rutinasData = [
           ]
         },
         {
-          grupoMuscular: "Espalda",
+          grupoMuscular: "Espalda - Puedes combinar 2 ejercicios",
           ejercicios: [
             {
-              nombre: "Remo T (AGARRE ABIERTO)",
+              nombre: "Remo T (Agarre Cerrado)",
               series: [
                 { descripcion: "Bloque 1: Aproximación", cantidad: "2 serie", repeticiones: "12 - 15 reps" },
                 { descripcion: "Bloque 2: Efectivas", cantidad: "3 series", repeticiones: "6 - 10 reps" }
@@ -80,17 +77,6 @@ const rutinasData = [
               ],
               descanso: "2 minutos",
               link: "https://fitcron.com/exercise/remo-en-barra-t-en-pronacion-dorsal/"
-            },
-            {
-              nombre: "Jalon al pecho en polea alta (agarre neutro)",
-              series: [
-                { descripcion: "Bloque 1: Efectivas", cantidad: "4 series", repeticiones: "8 - 12reps" },
-              ],
-              detalle: [
-                "Bloque 1: Carga exigente | subiendo en 1s, bajo en 2s, aprieto 1s y repito",
-              ],
-              descanso: "1 minuto y medio",
-              link: "https://fitcron.com/exercise/jalon-cerrado-neutro-con-inclinacion-en-polea-alta-dorsal/"
             },
             {
               nombre: "Jalon individual con mancuernas",
@@ -104,7 +90,20 @@ const rutinasData = [
               link: "https://fitcron.com/exercise/remo-aislado-con-mancuerna-dorsal/"
             },
             {
-              nombre: "Jalon al pecho en maquina",
+              nombre: "Pull over, con cuerda o barra", 
+              series: [
+                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "8 - 12reps" }
+              ],
+              detalle: [
+                "Bloque 1: Carga exigente | Subes y bajas en 2s, aprieta 3s abajo.",
+              ],
+              descanso: "1 minuto y medio",
+              link: "https://www.simplyfitness.com/es/pages/rope-pulldown"
+            },
+            
+            
+            {
+              nombre: "Jalon al pecho en polea alta (agarre abierto)",
               series: [
                 { descripcion: "Bloque 1: Efectivas/RestPause", cantidad: "3 series", repeticiones: "12 reps | 8 - 10 reps | 6 reps - fallo " },
 
@@ -114,7 +113,7 @@ const rutinasData = [
 
               ],
               descanso: "2 minutos",
-              link: "https://fitcron.com/exercise/jalon-en-pronacion-en-maquina-dorsal/"
+              link: "https://eresfitness.com/jalon-al-pecho-agarre-abierto/"
             }
           ]
         }
