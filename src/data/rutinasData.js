@@ -122,78 +122,109 @@ const rutinasData = [
   },
   {
     dia: "Martes",
-    titulo: "Pierna Comppleta",
+    titulo: "Hombro - Biceps - Triceps",
     duracion: "",
     tipo: "detallada",
     contenido: {
       secciones: [
         {
-          grupoMuscular: "| Cuadriceps | Puedes combinar 2 ejercicios |",
+          grupoMuscular: "| Hombro - combina 2 ejercicios|",
           ejercicios: [
             {
-              nombre: "Sentadilla Smith",
+              nombre: "Press militar en maquina",
               series: [
-                { descripcion: "Bloque 1: Aproximación", cantidad: "1 serie", repeticiones: "20 reps" },
-                { descripcion: "Bloque 2: Aproximación", cantidad: "1 serie", repeticiones: "15 reps" },
-                { descripcion: "Bloque 3: Efectivas", cantidad: "3 series", repeticiones: "6 reps + DropSet 6 reps" },
+                { descripcion: "Bloque 1: Aproximación", cantidad: "1 serie", repeticiones: "15 reps" },
+                { descripcion: "Bloque 2: Efectivas", cantidad: "3 series", repeticiones: "6 - 8 reps " },
               ],
               detalle: [
                 "Bloque 1: Carga neutra, subir y bajar en 2s.",
-                "Bloque 2: Carga neutra (incrementa mas el peso anterior), subiendo en 1s y bajando en 2s.",
-                "Bloque 3: Carga exigente, Realizas 6 reps (pesadas), quitas discos y haces 6 reps, vuelves a quitar discos e intentas sacar 6 reps nuevamente .",
+                "Bloque 2: Carga exigente  ultima seire realiza un dropset , quitas una placa y realizas 6 reps quitas otra placa y otras 6, asi hasta llegar a 3 niveles.",
               ],
               descanso: "2 minutos",
-              link: "https://eresfitness.com/sentadilla-silla-en-maquina-smith/"
+              link: "https://eresfitness.com/press-de-hombros-en-maquina/"
             },
             {
-              nombre: "Desplantes caminando",
+              nombre: "Jalon a la barbilla con barra",
               series: [
-                { descripcion: "Bloque 1: Efectivas", cantidad: "4 series", repeticiones: " 16 pasos " },
+                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: " 20 reps" },
               ],
               detalle: [
                 "Bloque 1: Carga exigente | realiza las repeticiones bajando y subiendo en 2s.",
               ],
               descanso: "2 minutos",
-              link: "https://eresfitness.com/zancadas-caminando-sin-equipo/"
+              link: "https://www.cambiatufisico.com/remo-al-menton/"
             },
             
             {
-              nombre: "Extensión de cuadriceps",
+              nombre: "Laterales ",
               series: [
-                { descripcion: "Bloque 1: Efectivas", cantidad: "3 series", repeticiones: "8 reps (izquierda) | 8 reps (derecha) | Fallo (dobles)" },
+                { descripcion: "Bloque 1: Efectivas", cantidad: "4 series", repeticiones: "10 reps pesadas + 15 ligeras" },
               ],
               detalle: [
-                "Bloque 1: Carga neutra | Individual + dobles | sean individuales o dobles, sube en 1s y bajas en 3s.",
+                "Bloque 1: Carga neutra | controla el movimiento no son rapidas.",
               ],
               descanso: "2 minutos",
-              link: "https://fitcron.com/exercise/extension-de-cuadriceps-en-maquina-pierna/"
+              link: "https://eresfitness.com/elevaciones-laterales-con-mancuernas/"
+            },
+            
+          ]
+        }
+        {
+          grupoMuscular: "Bicep - Tricep Biseries (realiza uno y uno)",
+          ejercicios: [
+            {
+              nombre: "Curl alternado con mancuernas ",
+              series: [
+                { descripcion: "Bloque 1", cantidad: "4 series", repeticiones: "10 reps cada lado" }
+              ],
+              detalle: "Bloque 1: Carga exigente | subes en 2s, aprietas 2s y bajas en 3s ",
+              descanso: "2 minutos",
+              link: "https://eresfitness.com/curl-alternado-con-mancuerna/"
             },
             {
-              nombre: "Peso muerto con mancuernas",
+              nombre: "Extension de triceps con agarre V",
               series: [
-                { descripcion: "Controladas", cantidad: "4 series", repeticiones: "6 reps individuales + fallo dobles" }
+                { descripcion: "Bloque 1", cantidad: "4 series", repeticiones: "8 reps + fallo" }
               ],
-              detalle: "Controla la bajada lentamente al igual que la subida",
-              descanso: "1 minuto y medio de descanso",
-              link: "https://fitcron.com/exercise/peso-muerto-rumano-con-mancuernas-pierna/"
+              detalle: "Bloque 1: Carga exigente | 8 reps: bajas en 3s, mantienes 2s, subes en 3s (hasta la barbilla) | fallo: solo realizas el recorrido hasta medias (pudes bajarle 2 placas)",
+              descanso: "2 minutos",
+              link: "https://eresfitness.com/extensiones-de-triceps-con-agarre-en-v-en-polea/"
             },
             {
-              nombre: "Maquina de femoral acostado",
+              nombre: "Maquina de biceps (predicador)",
               series: [
-                { descripcion: "Controladas", cantidad: "4 series", repeticiones: "8 - 10 reps + fallo explosivas" }
+                { descripcion: "Bloque 1", cantidad: "3 series", repeticiones: "10 - 15 reps" }
               ],
-              detalle: "Control total del movimiento, apretando 2s al final de cada repetición y bajando en 3s",
-              descanso: "2 minutos de descanso",
-              link: "https://eresfitness.com/curl-femoral-acostado-en-maquina/"
+              detalle: "Bloque 1: Carga neutra | subes en 2s, aprietas 1s y bajas en 3s.",
+              descanso: "1 minuto y medio",
+              link: "https://eresfitness.com/curl-concentrado-en-maquina/"
             },
             {
-              nombre: "Bulgaras",
+              nombre: "Extension de triceps con cuerda, tras nuca",
               series: [
-                { descripcion: "Controladas", cantidad: "3 series", repeticiones: "21´s" }
+                { descripcion: "Bloque 1", cantidad: "3 series", repeticiones: "8 - 12 reps" }
               ],
-              detalle: "7 con dos mancuernas, 7 con una mancuerna y 7 sin peso",
-              descanso: "2 minutos y medio",
-              link: "https://eresfitness.com/sentadilla-bulgara-sin-equipo/"
+              detalle: "Bloque 1: Carga exignete | bajas en 3s, mantienes 2s y estiras en 3s",
+              descanso: "1 minuto y medio",
+              link: "https://eresfitness.com/extension-en-polea-con-cuerda-sobre-la-cabeza/"
+            },
+            {
+              nombre: "Curl Bayesian con mancuernas en banco inclinado (idividual)",
+              series: [
+                { descripcion: "Bloque 1", cantidad: "3 series", repeticiones: "8 - 12 reps" }
+              ],
+              detalle: "Bloque 1: Carga exignete | bajas en 3s, mantienes 2s y esubes en 1s",
+              descanso: "1 minuto y medio",
+              link: "https://www.inspireusafoundation.org/wp-content/uploads/2022/10/incline-dumbbell-curl.gif"
+            },
+            {
+              nombre: "Maquina de triceps ",
+              series: [
+                { descripcion: "Bloque 1", cantidad: "3 series", repeticiones: "20 reps" }
+              ],
+              detalle: "Bloque 1: Carga neutra | ",
+              descanso: "1 minuto y medio",
+              link: "https://eresfitness.com/extension-de-triceps-concentrado-en-maquina/"
             },
           ]
         }
