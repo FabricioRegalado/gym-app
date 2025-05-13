@@ -18,8 +18,6 @@ const rutinasData = [
               ],
               detalle: [
                 "Bloque 1: Carga exigente | sube el peso en cada serie, controla el movimiento",
-                
-
               ],
               descanso: "1 minutos y medio",
               link: "https://eresfitness.com/press-martillo-en-banco-inclinado-con-mancuernas/"
@@ -28,7 +26,6 @@ const rutinasData = [
               nombre: "Peck Deck ",
               series: [
                 { descripcion: "Bloque 1 : Efectivas", cantidad: "4 series", repeticiones: "12 - 15 reps" },
-
               ],
               detalle: [
                 "Bloque 1: Carga neutra | nada de carrera, abre y cierra lento",
@@ -40,11 +37,9 @@ const rutinasData = [
               nombre: "Press con barra en banco plano",
               series: [
                 { descripcion: "Bloque 1: Efectivas", cantidad: "4 series", repeticiones: "6 - 8 reps" },
-
               ],
               detalle: [
                 "Bloque 1:  Carga exigente | subiendo en 1s, bajando en 2s.",
-
               ],
               descanso: "1 minuto y medio",
               link: "https://eresfitness.com/press-de-banca-con-barra/"
@@ -100,17 +95,13 @@ const rutinasData = [
               descanso: "1 minuto y medio",
               link: "https://www.simplyfitness.com/es/pages/rope-pulldown"
             },
-            
-            
             {
               nombre: "Jalon al pecho en polea alta (agarre abierto)",
               series: [
                 { descripcion: "Bloque 1: Efectivas/RestPause", cantidad: "3 series", repeticiones: "12 reps | 8 - 10 reps | 6 reps - fallo " },
-
               ],
               detalle: [
                 "Bloque 1: Carga neutra | realizaas 12 reps (descansas 15s), relizas 8 - 10 reps (descansas 15s), realizas 6 reps - fallo (repetir en cada serie.",
-
               ],
               descanso: "2 minutos",
               link: "https://eresfitness.com/jalon-al-pecho-agarre-abierto/"
@@ -154,7 +145,6 @@ const rutinasData = [
               descanso: "2 minutos",
               link: "https://www.cambiatufisico.com/remo-al-menton/"
             },
-            
             {
               nombre: "Laterales ",
               series: [
@@ -166,9 +156,8 @@ const rutinasData = [
               descanso: "2 minutos",
               link: "https://eresfitness.com/elevaciones-laterales-con-mancuernas/"
             },
-            
           ]
-        }
+        },
         {
           grupoMuscular: "Bicep - Tricep Biseries (realiza uno y uno)",
           ejercicios: [
@@ -177,7 +166,9 @@ const rutinasData = [
               series: [
                 { descripcion: "Bloque 1", cantidad: "4 series", repeticiones: "10 reps cada lado" }
               ],
-              detalle: "Bloque 1: Carga exigente | subes en 2s, aprietas 2s y bajas en 3s ",
+              detalle: [
+                "Bloque 1: Carga exigente | subes en 2s, aprietas 2s y bajas en 3s "
+              ],
               descanso: "2 minutos",
               link: "https://eresfitness.com/curl-alternado-con-mancuerna/"
             },
@@ -186,7 +177,9 @@ const rutinasData = [
               series: [
                 { descripcion: "Bloque 1", cantidad: "4 series", repeticiones: "8 reps + fallo" }
               ],
-              detalle: "Bloque 1: Carga exigente | 8 reps: bajas en 3s, mantienes 2s, subes en 3s (hasta la barbilla) | fallo: solo realizas el recorrido hasta medias (pudes bajarle 2 placas)",
+              detalle: [
+                "Bloque 1: Carga exigente | 8 reps: bajas en 3s, mantienes 2s, subes en 3s (hasta la barbilla) | fallo: solo realizas el recorrido hasta medias (puedes bajarle 2 placas)"
+              ],
               descanso: "2 minutos",
               link: "https://eresfitness.com/extensiones-de-triceps-con-agarre-en-v-en-polea/"
             },
@@ -195,7 +188,9 @@ const rutinasData = [
               series: [
                 { descripcion: "Bloque 1", cantidad: "3 series", repeticiones: "10 - 15 reps" }
               ],
-              detalle: "Bloque 1: Carga neutra | subes en 2s, aprietas 1s y bajas en 3s.",
+              detalle: [
+                "Bloque 1: Carga neutra | subes en 2s, aprietas 1s y bajas en 3s."
+              ],
               descanso: "1 minuto y medio",
               link: "https://eresfitness.com/curl-concentrado-en-maquina/"
             },
@@ -204,16 +199,20 @@ const rutinasData = [
               series: [
                 { descripcion: "Bloque 1", cantidad: "3 series", repeticiones: "8 - 12 reps" }
               ],
-              detalle: "Bloque 1: Carga exignete | bajas en 3s, mantienes 2s y estiras en 3s",
+              detalle: [
+                "Bloque 1: Carga exigente | bajas en 3s, mantienes 2s y estiras en 3s"
+              ],
               descanso: "1 minuto y medio",
               link: "https://eresfitness.com/extension-en-polea-con-cuerda-sobre-la-cabeza/"
             },
             {
-              nombre: "Curl Bayesian con mancuernas en banco inclinado (idividual)",
+              nombre: "Curl Bayesian con mancuernas en banco inclinado (individual)",
               series: [
                 { descripcion: "Bloque 1", cantidad: "3 series", repeticiones: "8 - 12 reps" }
               ],
-              detalle: "Bloque 1: Carga exignete | bajas en 3s, mantienes 2s y esubes en 1s",
+              detalle: [
+                "Bloque 1: Carga exigente | bajas en 3s, mantienes 2s y subes en 1s"
+              ],
               descanso: "1 minuto y medio",
               link: "https://www.inspireusafoundation.org/wp-content/uploads/2022/10/incline-dumbbell-curl.gif"
             },
@@ -222,7 +221,9 @@ const rutinasData = [
               series: [
                 { descripcion: "Bloque 1", cantidad: "3 series", repeticiones: "20 reps" }
               ],
-              detalle: "Bloque 1: Carga neutra | ",
+              detalle: [
+                "Bloque 1: Carga neutra | "
+              ],
               descanso: "1 minuto y medio",
               link: "https://eresfitness.com/extension-de-triceps-concentrado-en-maquina/"
             },
@@ -246,7 +247,6 @@ const rutinasData = [
               series: [
                 { descripcion: "Bloque 1: Aproximacion", cantidad: "1 serie", repeticiones: "15 reps" },
                 { descripcion: "Bloque 2: Efectivas", cantidad: "3 series", repeticiones: "6 - 8 reps" },
-      
               ],
               detalle:
               [
@@ -307,7 +307,7 @@ const rutinasData = [
               series: [
                 { descripcion: "Bloque 1", cantidad: "4 series", repeticiones: "8 reps + fallo" }
               ],
-              detalle: "Bloque 1: Carga exigente | 8 reps: bajas en 3s, mantienes 2s, subes en 3s (hasta la barbilla) | fallo: solo realizas el recorrido hasta medias (pudes bajarle 2 placas)",
+              detalle: "Bloque 1: Carga exigente | 8 reps: bajas en 3s, mantienes 2s, subes en 3s (hasta la barbilla) | fallo: solo realizas el recorrido hasta medias (puedes bajarle 2 placas)",
               descanso: "2 minutos",
               link: "https://fitcron.com/exercise/extension-vertical-en-pronacion-en-polea-alta-triceps/"
             },
@@ -325,16 +325,16 @@ const rutinasData = [
               series: [
                 { descripcion: "Bloque 1", cantidad: "3 series", repeticiones: "8 - 12 reps" }
               ],
-              detalle: "Bloque 1: Carga exignete | bajas en 3s, mantienes 2s y estiras en 3s",
+              detalle: "Bloque 1: Carga exigente | bajas en 3s, mantienes 2s y estiras en 3s",
               descanso: "1 minuto y medio",
               link: "https://fitcron.com/exercise/extension-horizontal-en-martillo-en-polea-alta-triceps/"
             },
             {
-              nombre: "Curl Bayesian con mancuernas en banco inclinado (idividual)",
+              nombre: "Curl Bayesian con mancuernas en banco inclinado (individual)",
               series: [
                 { descripcion: "Bloque 1", cantidad: "3 series", repeticiones: "8 - 12 reps" }
               ],
-              detalle: "Bloque 1: Carga exignete | bajas en 3s, mantienes 2s y esubes en 1s",
+              detalle: "Bloque 1: Carga exigente | bajas en 3s, mantienes 2s y subes en 1s",
               descanso: "1 minuto y medio",
               link: "https://www.inspireusafoundation.org/wp-content/uploads/2022/10/incline-dumbbell-curl.gif"
             },
@@ -374,7 +374,7 @@ const rutinasData = [
               link: "https://eresfitness.com/press-de-banca-inclinado-con-barra/"
             },
             {
-              nombre: "Banco banco plano con mancuernas",
+              nombre: "Banco plano con mancuernas",
               series: [
                 { descripcion: "Controladas", cantidad: "4 series", repeticiones: "8 reps - fallo" }
               ],
@@ -446,7 +446,6 @@ const rutinasData = [
               descanso: "2 minutos",
               link: "https://fitcron.com/exercise/curl-spider-en-pronacion-con-barra-biceps/"
             },
-
           ]
         }
       ]
@@ -489,7 +488,6 @@ const rutinasData = [
               descanso: "2 minutos y medio",
               link: "https://eresfitness.com/sentadilla-bulgara-sin-equipo/"
             },
-
           ]
         },
         {
@@ -525,10 +523,10 @@ const rutinasData = [
           ]
         },
         {
-          grupoMuscular: "Tricpes",
+          grupoMuscular: "Triceps",
           ejercicios: [
             {
-              nombre: "Jalon tras nuca en polea alta con cuerda",
+              nombre: "Jalón tras nuca en polea alta con cuerda",
               series: [
                 { descripcion: "Controladas", cantidad: "4 series", repeticiones: "8 - 10 reps" }
               ],
@@ -550,7 +548,7 @@ const rutinasData = [
               series: [
                 { descripcion: "Controladas", cantidad: "3 series", repeticiones: "15 reps + fallo" }
               ],
-              detalle: "Realiza el movimiento, subiendo y bajando en 1|s",
+              detalle: "Realiza el movimiento, subiendo y bajando en 1s",
               descanso: "1 minuto y medio de descanso",
               link: "https://eresfitness.com/extension-de-triceps-a-una-mano-en-polea-agarre-cuerda/"
             }
