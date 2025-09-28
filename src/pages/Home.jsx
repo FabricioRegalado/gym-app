@@ -1,47 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FiArrowRight } from 'react-icons/fi';
+import { FiArrowRight, FiCalendar, FiTarget } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
 import rutinasData from '../data/rutinasData';
 import rutinasDataRicardo from '../data/rutinasDataRicardo';
 import rutinasDataWendy from '../data/rutinasDataWendy';
 
-function Typewriter({ words, className = '' }) {
-  const [wordIndex, setWordIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  const [blink, setBlink] = useState(true);
-
-  useEffect(() => {
-    if (charIndex < words[wordIndex].text.length) {
-      const t = setTimeout(() => setCharIndex(i => i + 1), 100);
-      return () => clearTimeout(t);
-    } else {
-      const t = setTimeout(() => {
-        setCharIndex(0);
-        setWordIndex(i => (i + 1) % words.length);
-      }, 800);
-      return () => clearTimeout(t);
-    }
-  }, [charIndex, wordIndex, words]);
-
-  useEffect(() => {
-    const b = setInterval(() => setBlink(b => !b), 500);
-    return () => clearInterval(b);
-  }, []);
-
-  const { text, colorClass } = words[wordIndex];
-  return (
-    <span className={`${className} ${colorClass}`}>
-      {text.slice(0, charIndex)}
-      <span className="inline-block">{blink ? '|' : ' '}</span>
-    </span>
-  );
-}
-
-function Home({
-  profileImageUrl = "...",
-  backgroundImageUrl = "..."
-}) {
+function Home() {
   const navigate = useNavigate();
   const userData = JSON.parse(sessionStorage.getItem('userData'));
   const username = userData?.username || 'Usuario';
@@ -56,13 +21,11 @@ function Home({
 
   const getSaludo = () => {
     const h = new Date().getHours();
-    if (h < 12) return '¡Buenos días';
-    if (h < 18) return '¡Buenas tardes';
-    return '¡Buenas noches';
+    if (h < 12) return 'Buenos días';
+    if (h < 18) return 'Buenas tardes';
+    return 'Buenas noches';
   };
-  const saludo = getSaludo();
 
-  // Semanas en español
   const diasSemana = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
   const today = new Date();
   const weekStart = new Date(today);
@@ -73,170 +36,199 @@ function Home({
     return d;
   });
 
-  // 8 palabras motivadoras en español
-  const motivWords = [
-    { text: 'Enfoque', colorClass: 'text-blue-400' },
-    { text: 'Fuerza', colorClass: 'text-teal-400' },
-    { text: 'Consistencia', colorClass: 'text-purple-400' },
-    { text: 'Progreso', colorClass: 'text-yellow-400' },
-    { text: 'Disciplina', colorClass: 'text-red-400' },
-    { text: 'Superación', colorClass: 'text-pink-400' },
-    { text: 'Motivación', colorClass: 'text-green-400' },
-    { text: 'Resiliencia', colorClass: 'text-indigo-400' },
-  ];
+
 
   return (
-    <div className="relative min-h-screen bg-black text-white overflow-hidden">
-      {/* Fondo */}
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="absolute inset-0">
-        <img
-          src={backgroundImageUrl}
-          alt="Fondo"
-          className="w-full h-full object-cover opacity-20 blur-sm animate-pulse-slow"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/95 via-black/80 to-black/70" />
-      </motion.div>
-
-      <div className="relative z-10 max-w-md mx-auto pt-8 pb-12 px-4 flex flex-col gap-6">
-        {/* Saludo */}
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-indigo-50/30 pb-24 relative overflow-hidden">
+      {/* Elementos decorativos de fondo */}
+      <div className="absolute top-0 right-0 w-72 h-72 bg-blue-200/20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/3 left-0 w-96 h-96 bg-indigo-200/15 rounded-full blur-3xl"></div>
+      
+      <div className="max-w-md mx-auto px-4 py-8 relative z-10">
+        {/* Header */}
         <motion.div
-          initial={{ y: -20, opacity: 0 }}
+          initial={{ y: -30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="text-center"
+          transition={{ duration: 0.6, ease: [0.25, 0.25, 0, 1] }}
+          className="mb-10"
         >
-          <p className="text-gray-400">{saludo},</p>
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
-            {username}
-          </h1>
+          <motion.p 
+            className="text-gray-600 text-sm font-medium mb-2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            {getSaludo()}
+          </motion.p>
+          <motion.h1 
+            className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-1"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            Hola, {username}
+          </motion.h1>
+          <motion.div
+            className="w-12 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"
+            initial={{ width: 0 }}
+            animate={{ width: 48 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+          ></motion.div>
         </motion.div>
 
-        {/* Typewriter motivacional */}
+        {/* Calendario de la semana */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="text-center text-lg"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="bg-white/80 backdrop-blur-xl rounded-2xl p-6 shadow-lg border border-white/50 mb-8 relative overflow-hidden"
         >
-          <Typewriter words={motivWords} className="font-semibold" />
-        </motion.div>
-
-        {/* Calendario en español */}
-        <motion.div
-          initial={{ x: -30, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="grid grid-cols-7 gap-2"
-        >
-          {weekDates.map((d, i) => {
-            const isToday =
-              d.getDate() === today.getDate() &&
-              d.getMonth() === today.getMonth();
-            return (
-              <div key={i} className="flex flex-col items-center">
-                <span className={`text-xs ${isToday ? 'text-white font-bold' : 'text-gray-500'}`}>
-                  {diasSemana[d.getDay()]}
-                </span>
-                <div
-                  className={`mt-1 w-8 h-8 flex items-center justify-center rounded-full ${isToday
-                      ? 'bg-gradient-to-r from-blue-500 to-teal-500'
-                      : 'bg-white/10'
-                    }`}
-                >
-                  <span className={isToday ? 'text-black' : 'text-gray-300'}>
-                    {d.getDate()}
-                  </span>
-                </div>
-              </div>
-            );
-          })}
-        </motion.div>
-
-        {/* Tu plan de hoy */}
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.4, ease: [0.6, 0.05, 0.01, 0.9] }}
-          className="space-y-4"
-        >
-          <div className="flex items-center justify-between mb-1">
-            <h3 className="text-gray-100 text-base font-medium tracking-tight">Tu plan de hoy</h3>
-            <span className="text-xs text-emerald-400/80 bg-emerald-400/10 px-2 py-1 rounded-full">
-              {rutinaHoy.contenido?.secciones?.length} secciones
-            </span>
-          </div>
-
-          {rutinaHoy.contenido?.secciones?.map((sec, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.08 * i }}
-              className="group relative bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm
-               border border-white/10 rounded-xl p-4 shadow-xl hover:border-white/20 transition-all"
+          <div className="absolute inset-0 bg-gradient-to-br from-white/60 to-white/30"></div>
+          <div className="relative z-10">
+            <motion.h2 
+              className="text-sm font-bold text-gray-700 mb-4 flex items-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
             >
-              {/* Barra de acento animada */}
-              <motion.div
-                className={`absolute top-0 left-0 w-1 h-full rounded-r-lg ${i % 2 === 0 ? 'bg-sky-500' : 'bg-emerald-500'
-                  }`}
-                initial={{ scaleY: 0 }}
-                animate={{ scaleY: 1 }}
-                transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
-              />
-
-              <div className="flex items-center mb-3 ml-2">
-                <h4 className="text-gray-100 font-semibold text-sm flex items-center">
-                  <span className="mr-2 opacity-80">🏋️</span>
-                  {sec.grupoMuscular}
-                </h4>
-              </div>
-
-              <ul className="space-y-2.5 ml-6">
-                {sec.ejercicios?.map((e, idx) => (
-                  <li
-                    key={idx}
-                    className="text-gray-300 text-sm flex items-center hover:text-white transition-colors"
+              <FiCalendar className="mr-2 text-blue-600" />
+              Esta semana
+            </motion.h2>
+            <div className="flex justify-between">
+              {weekDates.map((d, i) => {
+                const isToday = d.getDate() === today.getDate() && d.getMonth() === today.getMonth();
+                return (
+                  <motion.div 
+                    key={i} 
+                    className="flex flex-col items-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 + i * 0.1 }}
+                    whileHover={{ scale: 1.05 }}
                   >
-                    <span className="w-1.5 h-1.5 bg-current rounded-full mr-3 opacity-60" />
-                    <span className="truncate">{e.nombre}</span>
-                    {idx === 0 && (
-                      <span className="ml-2 text-xs text-emerald-400 bg-emerald-400/10 px-1.5 py-0.5 rounded">
-                        Primero
-                      </span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+                    <span className={`text-xs font-semibold mb-2 ${isToday ? 'text-blue-600' : 'text-gray-500'}`}>
+                      {diasSemana[d.getDay()]}
+                    </span>
+                    <div
+                      className={`w-10 h-10 flex items-center justify-center rounded-xl text-sm font-bold transition-all duration-200 ${
+                        isToday
+                          ? 'bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-lg scale-110'
+                          : 'text-gray-700 hover:bg-gray-100 hover:scale-105'
+                      }`}
+                    >
+                      {d.getDate()}
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
         </motion.div>
 
-        {/* Botón flotante "Ver Rutinas" */}
+        {/* Rutina de hoy */}
         <motion.div
-          initial={{ x: 100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="fixed right-4 bottom-1/2 transform translate-y-1/2 z-50"
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="bg-white/80 backdrop-blur-xl rounded-2xl p-8 shadow-lg border border-white/50 mb-8 relative overflow-hidden"
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-white/60 to-white/30"></div>
+          <div className="relative z-10">
+            <div className="flex items-center justify-between mb-6">
+              <motion.h2 
+                className="text-xl font-bold text-gray-900 flex items-center"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6 }}
+              >
+                <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-2 rounded-xl mr-3 shadow-lg">
+                  <FiTarget className="text-white text-lg" />
+                </div>
+                Hoy: {rutinaHoy.titulo}
+              </motion.h2>
+              {rutinaHoy.duracion && (
+                <motion.span 
+                  className="text-xs bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 px-3 py-2 rounded-full font-bold shadow-sm"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.7, type: "spring" }}
+                >
+                  {rutinaHoy.duracion}
+                </motion.span>
+              )}
+            </div>
+
+            {rutinaHoy.contenido?.secciones ? (
+              <div className="space-y-6">
+                {rutinaHoy.contenido.secciones.map((sec, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.8 + (i * 0.1), duration: 0.5 }}
+                    className="relative bg-gradient-to-r from-blue-50/50 to-indigo-50/30 rounded-xl p-5"
+                  >
+                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-indigo-500 rounded-full"></div>
+                    <h3 className="font-bold text-gray-900 mb-3 flex items-center">
+                      <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mr-3"></div>
+                      {sec.grupoMuscular}
+                    </h3>
+                    <ul className="space-y-2 ml-5">
+                      {sec.ejercicios?.slice(0, 3).map((e, idx) => (
+                        <motion.li 
+                          key={idx} 
+                          className="text-sm text-gray-700 flex items-center font-medium"
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 0.9 + (i * 0.1) + (idx * 0.05) }}
+                        >
+                          <span className="w-1.5 h-1.5 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mr-3" />
+                          {e.nombre}
+                        </motion.li>
+                      ))}
+                      {sec.ejercicios?.length > 3 && (
+                        <li className="text-sm text-blue-600 italic font-medium ml-4">
+                          +{sec.ejercicios.length - 3} ejercicios más
+                        </li>
+                      )}
+                    </ul>
+                  </motion.div>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-12">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.8, type: "spring" }}
+                  className="w-16 h-16 bg-gradient-to-br from-green-100 to-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4"
+                >
+                  <div className="text-2xl">🏖️</div>
+                </motion.div>
+                <p className="text-gray-600 font-semibold text-lg">No hay rutina programada para hoy</p>
+                <p className="text-sm text-gray-500 mt-2 font-medium">¡Día de descanso merecido!</p>
+              </div>
+            )}
+          </div>
+        </motion.div>
+
+        {/* Botón Ver rutinas completas */}
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
         >
           <motion.button
             onClick={() => navigate('/rutinas')}
-            animate={{
-              scale: [1, 1.2, 1],
-              rotate: [0, 10, -10, 0],
-              boxShadow: [
-                "0 0 15px rgba(0, 191, 255, 0.5)",
-                "0 0 25px rgba(0, 191, 255, 0.7)",
-                "0 0 15px rgba(0, 191, 255, 0.5)"
-              ],
-            }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              repeatType: "loop",
-            }}
-            className="flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-teal-500 rounded-full shadow-xl hover:shadow-2xl transition-all border-4 border-white"
+            whileHover={{ scale: 1.02, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold py-5 px-8 rounded-2xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl relative overflow-hidden group"
           >
-            <FiArrowRight className="w-8 h-8 text-white" />
+            <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 -skew-x-12 group-hover:translate-x-full transition-transform duration-1000"></div>
+            <span className="relative z-10 flex items-center text-lg">
+              Ver rutinas completas
+              <FiArrowRight className="ml-3 text-xl" />
+            </span>
           </motion.button>
         </motion.div>
       </div>

@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiChevronDown, FiChevronUp, FiExternalLink, FiClock, FiTarget, FiMaximize2, FiMinimize2 } from 'react-icons/fi';
+import { FiChevronDown, FiChevronUp, FiExternalLink, FiClock, FiTarget } from 'react-icons/fi';
 import rutinasData from '../data/rutinasData';
 import rutinasDataRicardo from '../data/rutinasDataRicardo';
 import rutinasDataWendy from '../data/rutinasDataWendy';
 
 function Rutinas() {
-  const [expandedCards, setExpandedCards] = useState(new Set());
+  const [expandedCard, setExpandedCard] = useState(null);
   const [rutinas, setRutinas] = useState(rutinasData);
-  const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
     try {
@@ -39,24 +38,7 @@ function Rutinas() {
   };
 
   const handleCardToggle = (index) => {
-    const newExpandedCards = new Set(expandedCards);
-    if (newExpandedCards.has(index)) {
-      newExpandedCards.delete(index);
-    } else {
-      newExpandedCards.add(index);
-    }
-    setExpandedCards(newExpandedCards);
-  };
-
-  const handleToggleAll = () => {
-    if (showAll) {
-      setExpandedCards(new Set());
-      setShowAll(false);
-    } else {
-      const allIndices = rutinas.map((_, index) => index);
-      setExpandedCards(new Set(allIndices));
-      setShowAll(true);
-    }
+    setExpandedCard(expandedCard === index ? null : index);
   };
 
   const diasSemana = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
@@ -68,34 +50,21 @@ function Rutinas() {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-8"
+          className="text-center mb-8"
         >
-          <div className="text-center mb-6">
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">
-              Plan de Entrenamiento
-            </h1>
-            <p className="text-gray-600">
-              Tu rutina semanal personalizada
-            </p>
-          </div>
-          
-          {/* Botón para expandir/colapsar todo */}
-          <div className="flex justify-center">
-            <button
-              onClick={handleToggleAll}
-              className="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors shadow-sm"
-            >
-              {showAll ? <FiMinimize2 className="w-4 h-4" /> : <FiMaximize2 className="w-4 h-4" />}
-              <span>{showAll ? 'Colapsar todo' : 'Ver todo'}</span>
-            </button>
-          </div>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            Plan de Entrenamiento
+          </h1>
+          <p className="text-gray-600">
+            Tu rutina semanal personalizada
+          </p>
         </motion.div>
 
         {/* Lista de rutinas */}
         <div className="space-y-4">
           {rutinas.map((rutina, index) => {
             const status = getCardStatus(index);
-            const isExpanded = expandedCards.has(index);
+            const isExpanded = expandedCard === index;
             const isToday = status === 'current';
 
             return (
@@ -107,62 +76,57 @@ function Rutinas() {
                 className={`bg-white rounded-xl shadow-sm border transition-all duration-200 ${
                   isToday
                     ? 'border-blue-500 ring-2 ring-blue-100'
+                    : status === 'past'
+                    ? 'border-gray-200 opacity-75'
                     : 'border-gray-200 hover:border-gray-300'
                 }`}
               >
                 {/* Header del card */}
                 <div
-                  className="p-6 cursor-pointer hover:bg-gray-50 transition-colors"
-                  onClick={() => handleCardToggle(index)}
+                  className={`p-6 cursor-pointer ${
+                    status === 'past' ? 'cursor-not-allowed' : ''
+                  }`}
+                  onClick={() => status !== 'past' && handleCardToggle(index)}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-4">
                       <div
-                        className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-sm transition-colors ${
+                        className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-sm ${
                           isToday
                             ? 'bg-blue-600 text-white'
-                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                            : status === 'past'
+                            ? 'bg-gray-200 text-gray-500'
+                            : 'bg-gray-100 text-gray-700'
                         }`}
                       >
                         {diasSemana[index].slice(0, 3).toUpperCase()}
                       </div>
                       <div>
                         <h3 className={`font-bold text-lg ${
-                          isToday ? 'text-blue-600' : 'text-gray-900'
+                          isToday ? 'text-blue-600' : status === 'past' ? 'text-gray-500' : 'text-gray-900'
                         }`}>
                           {rutina.titulo}
                         </h3>
-                        <p className="text-sm text-gray-600">
+                        <p className={`text-sm ${
+                          status === 'past' ? 'text-gray-400' : 'text-gray-600'
+                        }`}>
                           {diasSemana[index]}
                           {rutina.duracion && ` • ${rutina.duracion}`}
-                          {rutina.contenido?.secciones && 
-                            ` • ${rutina.contenido.secciones.reduce((total, sec) => total + (sec.ejercicios?.length || 0), 0)} ejercicios`
-                          }
                         </p>
                       </div>
                     </div>
 
                     <div className="flex items-center space-x-2">
-                      <div className="flex items-center space-x-2">
-                        {isToday && (
-                          <span className="bg-blue-100 text-blue-600 text-xs font-semibold px-2 py-1 rounded-full">
-                            HOY
-                          </span>
-                        )}
-                        {status === 'past' && (
-                          <span className="bg-gray-100 text-gray-500 text-xs font-semibold px-2 py-1 rounded-full">
-                            PASADO
-                          </span>
-                        )}
-                        {status === 'future' && (
-                          <span className="bg-green-100 text-green-600 text-xs font-semibold px-2 py-1 rounded-full">
-                            PRÓXIMO
-                          </span>
-                        )}
+                      {isToday && (
+                        <span className="bg-blue-100 text-blue-600 text-xs font-semibold px-2 py-1 rounded-full">
+                          HOY
+                        </span>
+                      )}
+                      {status !== 'past' && (
                         <div className="text-gray-400">
                           {isExpanded ? <FiChevronUp /> : <FiChevronDown />}
                         </div>
-                      </div>
+                      )}
                     </div>
                   </div>
                 </div>

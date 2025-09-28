@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { HomeIcon, FireIcon, ArrowRightOnRectangleIcon } from '@heroicons/react/24/outline';
+import { FiHome, FiTarget, FiLogOut } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 
 function BottomNav() {
@@ -9,15 +9,6 @@ function BottomNav() {
   
   const isAuthenticated = () => {
     return sessionStorage.getItem('authToken') !== null;
-  };
-
-  const navItemClasses = (path) => {
-    const isActive = location.pathname === path;
-    return `flex items-center justify-center w-14 h-14 rounded-xl transition-all ${
-      isActive 
-        ? 'bg-gradient-to-br from-emerald-400/90 to-cyan-400/90 shadow-lg shadow-cyan-400/20'
-        : 'bg-gray-800/20 text-gray-300 hover:bg-gray-700/20 hover:shadow-md hover:shadow-cyan-400/10'
-    }`;
   };
 
   const handleLogout = () => {
@@ -30,55 +21,66 @@ function BottomNav() {
     return null;
   }
 
+  const navItems = [
+    { path: '/', icon: FiHome, label: 'Inicio' },
+    { path: '/rutinas', icon: FiTarget, label: 'Rutinas' },
+  ];
+
   return (
     <motion.nav
-      initial={{ y: 20, opacity: 0 }}
+      initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-      className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-gray-900/60 backdrop-blur-xl border border-gray-700/30 rounded-xl px-3 py-1.5 z-50 shadow-2xl shadow-black/40 sm:bottom-2"
+      transition={{ type: 'spring', stiffness: 300, damping: 25, delay: 0.2 }}
+      className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white/80 backdrop-blur-xl border border-white/20 rounded-3xl px-6 py-3 shadow-2xl z-50 hover:shadow-3xl transition-all duration-300"
     >
-      <div className="flex gap-2">
-        <motion.div 
-          whileHover={{ scale: 1.05 }} 
-          whileTap={{ scale: 0.95 }}
-          className="relative"
-        >
-          <Link to="/" className={navItemClasses('/')}>
-            <HomeIcon className={`h-6 w-6 ${location.pathname === '/' ? 'text-gray-900' : 'text-gray-300'}`} />
-            {location.pathname === '/' && (
-              <div className="absolute -top-1.5 w-1.5 h-1.5 bg-emerald-400 rounded-full" />
-            )}
-          </Link>
-        </motion.div>
-
-        <motion.div 
-          whileHover={{ scale: 1.05 }} 
-          whileTap={{ scale: 0.95 }}
-          className="relative"
-        >
-          <Link to="/rutinas" className={navItemClasses('/rutinas')}>
-            <FireIcon className={`h-6 w-6 ${location.pathname === '/rutinas' ? 'text-gray-900' : 'text-gray-300'}`} />
-            {location.pathname === '/rutinas' && (
-              <div className="absolute -top-1.5 w-1.5 h-1.5 bg-cyan-400 rounded-full" />
-            )}
-          </Link>
-        </motion.div>
-
-        {isAuthenticated() && (
-          <motion.div 
-            whileHover={{ scale: 1.05 }} 
-            whileTap={{ scale: 0.95 }}
-            className="relative"
-          >
-            <button 
-              onClick={handleLogout}
-              className="flex items-center justify-center w-14 h-14 rounded-xl bg-gray-800/20 text-red-400/80 hover:bg-red-500/20 hover:text-red-300 transition-all group"
+      <div className="flex items-center space-x-2">
+        {navItems.map(({ path, icon: Icon, label }) => {
+          const isActive = location.pathname === path;
+          
+          return (
+            <motion.div
+              key={path}
+              whileHover={{ scale: 1.1, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="relative"
             >
-              <ArrowRightOnRectangleIcon className="h-6 w-6 group-hover:scale-110 transition-transform" />
-              <div className="absolute -top-1.5 w-1.5 h-1.5 bg-red-400/80 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-            </button>
-          </motion.div>
-        )}
+              <Link
+                to={path}
+                className={`flex items-center justify-center w-14 h-14 rounded-2xl transition-all duration-300 relative overflow-hidden ${
+                  isActive
+                    ? 'bg-gradient-to-br from-blue-500 to-indigo-600 text-white shadow-lg'
+                    : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100/80'
+                }`}
+              >
+                {isActive && (
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -skew-x-12 animate-pulse"></div>
+                )}
+                <Icon className={`w-6 h-6 relative z-10 ${isActive ? 'drop-shadow-sm' : ''}`} />
+              </Link>
+              {isActive && (
+                <motion.div
+                  layoutId="activeTab"
+                  className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full"
+                  transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                />
+              )}
+            </motion.div>
+          );
+        })}
+        
+        {/* Separador */}
+        <div className="w-px h-10 bg-gradient-to-b from-transparent via-gray-300 to-transparent mx-3" />
+        
+        {/* Botón logout */}
+        <motion.button
+          whileHover={{ scale: 1.1, y: -2 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={handleLogout}
+          className="flex items-center justify-center w-14 h-14 text-red-500 hover:text-red-600 hover:bg-red-50/80 rounded-2xl transition-all duration-300 relative overflow-hidden group"
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-red-50/0 via-red-100/50 to-red-50/0 -skew-x-12 group-hover:translate-x-full transition-transform duration-700"></div>
+          <FiLogOut className="w-6 h-6 relative z-10" />
+        </motion.button>
       </div>
     </motion.nav>
   );
