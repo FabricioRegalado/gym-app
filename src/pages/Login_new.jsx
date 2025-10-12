@@ -30,6 +30,7 @@ function Login() {
     { username: 'luis', password: 'lu20255' },
     { username: 'ricardo', password: 'ric20254' },
     { username: 'wendy', password: 'wen20256' },
+    { username: 'eustolio', password: 'eust20257' },
   ];
 
   const [username, setUsername] = useState('');

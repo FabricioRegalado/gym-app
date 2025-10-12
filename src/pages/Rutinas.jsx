@@ -1,27 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiChevronDown, FiChevronUp, FiExternalLink, FiClock, FiTarget, FiMaximize2, FiMinimize2 } from 'react-icons/fi';
-import rutinasData from '../data/rutinasData';
-import rutinasDataRicardo from '../data/rutinasDataRicardo';
-import rutinasDataWendy from '../data/rutinasDataWendy';
+import { getUserRoutines } from '../data/userRoutinesConfig';
 
 function Rutinas() {
   const [expandedCards, setExpandedCards] = useState(new Set());
-  const [rutinas, setRutinas] = useState(rutinasData);
+  const [rutinas, setRutinas] = useState([]);
   const [showAll, setShowAll] = useState(false);
+  const [currentUser, setCurrentUser] = useState('');
 
   useEffect(() => {
     try {
       const userData = JSON.parse(sessionStorage.getItem('userData'));
-      if (userData) {
-        if (userData.username === 'ricardo') {
-          setRutinas(rutinasDataRicardo);
-        } else if (userData.username === 'wendy') {
-          setRutinas(rutinasDataWendy);
-        }
+      if (userData && userData.username) {
+        setCurrentUser(userData.username);
+        // Obtener las rutinas específicas del usuario
+        const userRutinas = getUserRoutines(userData.username);
+        setRutinas(userRutinas);
+      } else {
+        // Si no hay usuario logueado, usar rutinas por defecto
+        const defaultRutinas = getUserRoutines(null);
+        setRutinas(defaultRutinas);
       }
     } catch (error) {
       console.error('Error al obtener los datos del usuario:', error);
+      // En caso de error, usar rutinas por defecto
+      const defaultRutinas = getUserRoutines(null);
+      setRutinas(defaultRutinas);
     }
   }, []);
 
@@ -77,6 +82,11 @@ function Rutinas() {
             <p className="text-gray-600">
               Tu rutina semanal personalizada
             </p>
+            {currentUser && (
+              <p className="text-sm text-blue-600 font-medium mt-2">
+                Rutina de: {currentUser.charAt(0).toUpperCase() + currentUser.slice(1)}
+              </p>
+            )}
           </div>
           
           {/* Botón para expandir/colapsar todo */}
